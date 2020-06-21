@@ -43,19 +43,19 @@ def labels(text,colortext,font,background,row,column):
     tk.Label(root, text=text,fg=colortext,font=font,bg=background).grid(
         row=row,column=column,sticky=tk.E,padx=10,pady=10)
 
-def entryfield(num,row,column):
-    memory[num] = tk.Entry(root)
-    memory[num].grid(row=row,column=column,sticky=tk.W,padx=10,pady=10)
+def entryfield(identifier,row,column):
+    memory[identifier] = tk.Entry(root)
+    memory[identifier].grid(row=row,column=column,sticky=tk.W,padx=10,pady=10)
 
-def entryinsert(num,text,color):
+def entryinsert(identifier,text,color):
     #memory["variable_entry"] = text
-    #memory[num].insert(0,memory["variable_entry"])
-    memory[num].insert(0,text)
-    memory[num].config(fg=color)        
+    #memory[identifier].insert(0,memory["variable_entry"])
+    memory[identifier].insert(0,text)
+    memory[identifier].config(fg=color)        
 
-def checkbox(num,text,row,column):
-    memory[num] = tk.IntVar()
-    memory[text] = tk.Checkbutton(root,text=text,variable=memory[num])
+def checkbox(identifier,text,row,column):
+    memory[identifier] = tk.IntVar()
+    memory[text] = tk.Checkbutton(root,text=text,variable=memory[identifier])
     memory[text].grid(row=row,column=column,sticky=tk.W,padx=10,pady=10)
 
 def radiobox(text,value,row,column):
@@ -67,15 +67,15 @@ def popup(choices,variable,default,row,column):
     popupmenu = tk.OptionMenu(root, memory[variable], command=selection, *choices)
     memory[variable].set(default) # default value
     popupmenu.grid(row=row,column=column,sticky=tk.W,padx=10,pady=10)
-'''
-def textarea(num,row,column):
-    memory[num] = tk.Text(root,height=10, width=30,background="grey95")
-    memory[num].grid(row=row,column=column,sticky=tk.W,padx=10,pady=10)
-'''
-def textarea(num,row,column):
-    memory[num] = scrolledtext.ScrolledText(root,wrap = tk.WORD,height=10, width=30,background="grey95")
-    memory[num].grid(row=row,column=column,sticky=tk.W,padx=10,pady=10)
 
-def instertextarea(num,text,color):    
-    memory[num].insert(1.0,text)
-    memory[num].config(fg=color)
+def textarea(identifier,row,column):
+    memory[identifier] = tk.Text(root,height=10, width=30,background="grey95")
+    memory[identifier].grid(row=row,column=column,sticky=tk.W,padx=10,pady=10)
+
+def textareascroll(identifier,row,column):
+    memory[identifier] = scrolledtext.ScrolledText(root,wrap = tk.WORD,height=10, width=30,background="grey95")
+    memory[identifier].grid(row=row,column=column,sticky=tk.W,padx=10,pady=10)
+
+def instertextarea(identifier,text,color):    
+    memory[identifier].insert(1.0,text)
+    memory[identifier].config(fg=color)

@@ -24,14 +24,24 @@ def selection(*args):
     print("Dropdown menu = %s" % memory["variable"].get())
     print("Dropdown menu = %s" % memory["variable2"].get())
 
+def alignment(sticky):
+    if sticky == "right":
+        sticky = tk.E
+    elif sticky == "left":
+        sticky = tk.W
+    elif sticky == "center":
+        sticky = tk.EW
+    return sticky
+    
 def dialog():
     memory["filename"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
                                             title = "Select file") 
     file = memory["filename"].split("/")[-1]
 
-def buttons(text,command,row,column):
+def buttons(text,command,row,column,sticky):
+    sticky = alignment(sticky) 
     tk.Button(root, text=text,command=command).grid(
-        row=row,column=column,sticky=tk.W,padx=10,pady=10)
+        row=row,column=column,sticky=sticky,padx=10,pady=10)
 
 def labels(text,colortext,font,background,row,column,sticky):
     if font == "":
@@ -40,12 +50,7 @@ def labels(text,colortext,font,background,row,column,sticky):
         colortext = "black"
     if background == "":
         background = "white"
-    if sticky == "right":
-        sticky = tk.E
-    elif sticky == "left":
-        sticky = tk.W
-    elif sticky == "center":
-        sticky = tk.EW        
+    sticky = alignment(sticky)      
     tk.Label(root, text=text,fg=colortext,font=font,bg=background).grid(
         row=row,column=column,sticky=sticky,padx=10,pady=10)
 

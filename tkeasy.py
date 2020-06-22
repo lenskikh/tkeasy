@@ -33,15 +33,21 @@ def buttons(text,command,row,column):
     tk.Button(root, text=text,command=command).grid(
         row=row,column=column,sticky=tk.W,padx=10,pady=10)
 
-def labels(text,colortext,font,background,row,column):
+def labels(text,colortext,font,background,row,column,sticky):
     if font == "":
         font = "14"
     if colortext == "":
         colortext = "black"
     if background == "":
         background = "white"
+    if sticky == "right":
+        sticky = tk.E
+    elif sticky == "left":
+        sticky = tk.W
+    elif sticky == "center":
+        sticky = tk.EW        
     tk.Label(root, text=text,fg=colortext,font=font,bg=background).grid(
-        row=row,column=column,sticky=tk.E,padx=10,pady=10)
+        row=row,column=column,sticky=sticky,padx=10,pady=10)
 
 def entryfield(identifier,row,column):
     memory[identifier] = tk.Entry(root)

@@ -3,7 +3,7 @@ from tkeasy import *
 
 def info():
     text = memory["The first entry"].get()
-    labels(text,"black","","white",3,0,"center")
+    labels(text,"white","","red",3,0,"center")
 
 title("Example 1")
 

@@ -25,13 +25,16 @@ def selection(*args):
     print("Dropdown menu = %s" % memory["variable2"].get())
 
 #clear entry if text inside field used as prompting
-def clear(event):
-    memoryForClear = str(root.focus_get())
-    if memoryForClear in memory["focus"]:
-        pass #entry field was cleared
-    else:
-        root.focus_get().delete(0, tk.END)
-        memory["focus"]+=memoryForClear   
+def clear(event):    
+    try: #if user click outside field we'll get error message
+        memoryForClear = str(root.focus_get())
+        if memoryForClear in memory["focus"]:
+            pass #entry field was cleared
+        else:
+            root.focus_get().delete(0, tk.END)
+            memory["focus"]+=memoryForClear
+    except:
+        pass
 
 def alignment(sticky):
     if sticky == "right":

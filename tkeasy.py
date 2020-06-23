@@ -5,26 +5,12 @@ from tkinter import scrolledtext
 
 root = tk.Tk()
 memory = {"filename":"", "event":0,"checkbox 1":0,"multi":"","focus":""}
-radioBox = tk.IntVar()
+radioBox = tk.StringVar()
 radioBox.set(1)
 
 def title(title):
     root.title(title)
     
-def show_entry_fields():
-    print("Find entry = " + memory["find entry"].get())
-    print("Replace entry = " + memory["replace entry"].get())
-    print("Checkbox = %s" % memory["checkbox"].get())
-    print("Radiobox = %s" % radioBox.get())
-    memory["find entry"].delete(0, tk.END)
-    memory["replace entry"].delete(0, tk.END)
-
-def selection(*args):
-    pass
-    #print("Radiobox = %s" % radioBox.get())
-    #memory["variable"] = memory["variable"].get()
-    #print("Dropdown menu = %s" % memory["variable2"].get())
-
 #clear entry if text inside field used as prompting
 def clear(event):    
     try: #if user click outside field we'll get error message
@@ -88,7 +74,7 @@ def checkbox(identifier,text,row,column):
     memory[text].grid(row=row,column=column,sticky=tk.W,padx=2,pady=2)
 
 def radiobox(text,value,row,column):
-    radiob = tk.Radiobutton(root, text=text, variable=radioBox,command=selection, value=value)
+    radiob = tk.Radiobutton(root, text=text, variable=radioBox, value=value)
     radiob.grid(row=row,column=column,sticky=tk.W,padx=2,pady=2)
 
 def dropdownlist(choices,variable,default,row,column):

@@ -20,9 +20,10 @@ def show_entry_fields():
     memory["replace entry"].delete(0, tk.END)
 
 def selection(*args):
-    print("Radiobox = %s" % radioBox.get())
-    print("Dropdown menu = %s" % memory["variable"].get())
-    print("Dropdown menu = %s" % memory["variable2"].get())
+    pass
+    #print("Radiobox = %s" % radioBox.get())
+    #memory["variable"] = memory["variable"].get()
+    #print("Dropdown menu = %s" % memory["variable2"].get())
 
 #clear entry if text inside field used as prompting
 def clear(event):    
@@ -90,9 +91,9 @@ def radiobox(text,value,row,column):
     radiob = tk.Radiobutton(root, text=text, variable=radioBox,command=selection, value=value)
     radiob.grid(row=row,column=column,sticky=tk.W,padx=2,pady=2)
 
-def popup(choices,variable,default,row,column):
+def dropdownlist(choices,variable,default,row,column):
     memory[variable] = tk.StringVar(root)
-    popupmenu = tk.OptionMenu(root, memory[variable], command=selection, *choices)
+    popupmenu = tk.OptionMenu(root, memory[variable], *choices)
     memory[variable].set(default) # default value
     popupmenu.grid(row=row,column=column,sticky=tk.W,padx=2,pady=2)
 

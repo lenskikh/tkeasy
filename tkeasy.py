@@ -6,13 +6,12 @@ from tkinter import scrolledtext
 root = tk.Tk()
 memory = {"filename":"", "key TAB":""}
 radioBox = tk.StringVar()
-radioBox.set("Male")
 
 def title(title):
     root.title(title)
     
 #clear entry if text inside field used as prompting
-def clear(event):    
+def clearbyclick(event):    
     try: #if user click outside field we'll get error message
         memoryForClear = str(root.focus_get())
         if memoryForClear in memory["key TAB"]:
@@ -73,7 +72,8 @@ def checkbox(identifier,text,row,column):
     memory[text] = tk.Checkbutton(root,text=text,variable=memory[identifier])
     memory[text].grid(row=row,column=column,sticky=tk.W,padx=2,pady=2)
 
-def radiobox(text,value,row,column):
+def radiobox(default,text,value,row,column):
+    radioBox.set(default)    
     radiob = tk.Radiobutton(root, text=text, variable=radioBox, value=value)
     radiob.grid(row=row,column=column,sticky=tk.W,padx=2,pady=2)
 

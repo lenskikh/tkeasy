@@ -63,9 +63,9 @@ def entryfield(identifier,row,column):
     memory[identifier] = tk.Entry(root)
     memory[identifier].grid(row=row,column=column,sticky=tk.W,padx=2,pady=2)
     
-def entryinsert(identifier,text,color):
+def entryinsert(identifier,text,colortext):
     memory[identifier].insert(0,text)
-    memory[identifier].config(fg=color)
+    memory[identifier].config(fg=colortext)
 
 def checkbox(identifier,text,row,column):
     memory[identifier] = tk.IntVar()

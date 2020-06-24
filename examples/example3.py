@@ -2,8 +2,6 @@ from tkeasy import *
 
 title("Example 3")
 
-memory["first"] = "First name"
-
 def info():
     text1 = memory["entry 1"].get()
     labels(text1,"white","16","grey",0,1,"center")
@@ -18,7 +16,7 @@ def info():
     labels(age,"white","16","grey",3,1,"center")     
 
 entryfield("entry 1",0,0)
-entryinsert("entry 1",memory["first"],"black")
+entryinsert("entry 1","First name","black")
 
 entryfield("entry 2",1,0)
 entryinsert("entry 2","Second name","black")

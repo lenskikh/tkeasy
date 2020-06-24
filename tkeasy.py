@@ -4,9 +4,9 @@ from tkinter import filedialog
 from tkinter import scrolledtext 
 
 root = tk.Tk()
-memory = {"filename":"", "event":0,"checkbox 1":0,"multi":"","focus":""}
+memory = {"filename":"", "key TAB":""}
 radioBox = tk.StringVar()
-radioBox.set(1)
+radioBox.set("Male")
 
 def title(title):
     root.title(title)
@@ -15,20 +15,20 @@ def title(title):
 def clear(event):    
     try: #if user click outside field we'll get error message
         memoryForClear = str(root.focus_get())
-        if memoryForClear in memory["focus"]:
+        if memoryForClear in memory["key TAB"]:
             pass #entry field was cleared
-        elif "TAB" in memory["focus"]:
+        elif "TAB" in memory["key TAB"]:
             pass
         else:
             root.focus_get().delete(0, tk.END)
-            memory["focus"]+=memoryForClear
+            memory["key TAB"]+=memoryForClear
     except:
         pass
     
 def key(event):
     char = str(event.char)
     if char == '\t':
-        memory["focus"]+="TAB"
+        memory["key TAB"]+="TAB"
     
 def alignment(sticky):
     if sticky == "right":

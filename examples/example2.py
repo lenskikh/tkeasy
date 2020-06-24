@@ -25,7 +25,7 @@ entryinsert("entry 3","County","black")
 buttons("Get info",info,3,0,"right")
 
 #clear text when click in entry field
-root.bind("<Button-1>", clear)
+root.bind("<Button-1>", clearbyclick)
 root.bind("<Key>", key)
 
 root.mainloop()

@@ -30,7 +30,7 @@ dropdownlist(age,"age var","Age",3,0)
 buttons("Get info",info,4,1,"right")
 
 #clear text when click in entry field
-root.bind("<Button-1>", clear)
+root.bind("<Button-1>", clearbyclick)
 root.bind("<Key>", key)
 
 root.mainloop()

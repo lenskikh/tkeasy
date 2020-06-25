@@ -44,8 +44,7 @@ def selectfile():
 
 def selectfolder():
     memory["filename"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
-                                            title = "Select folder") 
-    file = memory["filename"].split("/")[-1]    
+                                            title = "Select folder")   
 
 def buttons(text,command,row,column,sticky):
     sticky = alignment(sticky) 

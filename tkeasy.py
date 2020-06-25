@@ -40,8 +40,12 @@ def alignment(sticky):
     
 def selectfile():
     memory["filename"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
-                                            title = "Select file") 
-    file = memory["filename"].split("/")[-1]
+                                            title = "Select file")
+
+def selectfolder():
+    memory["filename"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
+                                            title = "Select folder") 
+    file = memory["filename"].split("/")[-1]    
 
 def buttons(text,command,row,column,sticky):
     sticky = alignment(sticky) 

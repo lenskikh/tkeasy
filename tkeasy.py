@@ -38,7 +38,7 @@ def alignment(sticky):
         sticky = tk.EW
     return sticky
     
-def dialog():
+def selectfile():
     memory["filename"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
                                             title = "Select file") 
     file = memory["filename"].split("/")[-1]

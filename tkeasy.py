@@ -100,4 +100,7 @@ def instertextarea(identifier,text,color):
     memory[identifier].config(fg=color)
 
 def msgbox(title,message): 
-    msgbox = tk.messagebox.showinfo(title=title, message=message)      
+    msgbox = tk.messagebox.showinfo(title=title, message=message)
+
+def msgboxwarning(title,message): 
+    msgbox = tk.messagebox.showwarning(title=title, message=message)       

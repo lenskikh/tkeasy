@@ -1,7 +1,8 @@
 import os
 import tkinter as tk
 from tkinter import filedialog
-from tkinter import scrolledtext 
+from tkinter import scrolledtext
+import tkinter.messagebox
 
 root = tk.Tk()
 memory = {"filename":"", "key TAB":""}
@@ -97,3 +98,6 @@ def textareascroll(identifier,row,column):
 def instertextarea(identifier,text,color):    
     memory[identifier].insert(1.0,text)
     memory[identifier].config(fg=color)
+
+def msgbox(title,message): 
+    msgbox = tk.messagebox.showinfo(title=title, message=message)      

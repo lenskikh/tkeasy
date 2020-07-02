@@ -103,4 +103,7 @@ def msgbox(title,message):
     msgbox = tk.messagebox.showinfo(title=title, message=message)
 
 def msgboxwarning(title,message): 
-    msgbox = tk.messagebox.showwarning(title=title, message=message)       
+    msgbox = tk.messagebox.showwarning(title=title, message=message)
+
+def msgboxask(identifier,title,message): 
+    memory[identifier] = tk.messagebox.askyesnocancel(title=title, message=message)

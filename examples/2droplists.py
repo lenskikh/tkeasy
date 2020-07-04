@@ -1,6 +1,6 @@
 from tkeasy import *
 
-title("Example 3")
+title("2 droplists")
 
 def info():
     text1 = memory["entry 1"].get()

@@ -11,8 +11,8 @@ radioBox = tk.StringVar()
 def title(title):
     root.title(title)
 
-def size(x,y):
-    root.geometry(str(x)+"x"+str(y))
+def size(width,height):
+    root.geometry(str(width)+"x"+str(height))
 
 #clear entry if text inside field used as prompting
 def clearbyclick(event):    

@@ -1,6 +1,6 @@
 from tkeasy import *
 
-title("Ask message box")
+title("Ask message box","")
 
 def showinfo():
     print(memory["ask"])

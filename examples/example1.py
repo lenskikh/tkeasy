@@ -5,8 +5,6 @@ def info():
     text = memory["The first entry"].get()
     labels(text,"white","16","red",3,0,"center")
 
-title("Example 1")
-
 labels("Entry field","black","14","white",0,0,"center")
 
 entryfield("The first entry",1,0)

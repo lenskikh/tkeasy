@@ -1,6 +1,6 @@
 from tkeasy import *
 
-title("Example 6")
+title("Message box Warning","")
 
 msgboxwarning("Message box","test")
 

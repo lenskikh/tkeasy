@@ -1,7 +1,5 @@
 from tkeasy import *
 
-title("Example 2")
-
 def info():
     text1 = memory["entry 1"].get()
     labels(text1,"white","16","blue",4,0,"center")

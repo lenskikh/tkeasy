@@ -8,11 +8,9 @@ root = tk.Tk()
 memory = {"filename":"", "key TAB":""}
 radioBox = tk.StringVar()
 
-def title(title):
+def title(title,size):
     root.title(title)
-
-def size(width,height):
-    root.geometry(str(width)+"x"+str(height))
+    root.geometry(size)
 
 #clear entry if text inside field used as prompting
 def clearbyclick(event):    

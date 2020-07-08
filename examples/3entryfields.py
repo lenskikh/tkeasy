@@ -1,6 +1,6 @@
 from tkeasy import *
 
-title("3 entries")
+title("3 entries","")
 
 def info():
     text1 = memory["entry 1"].get()

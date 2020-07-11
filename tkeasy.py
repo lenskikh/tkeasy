@@ -35,6 +35,9 @@ def key(event):
     char = str(event.char)
     if char == '\t':
         memory["key TAB"]+="TAB"
+
+def new_window(identifier):
+    memory[identifier] = tk.Toplevel(root)
     
 def alignment(sticky):
     if sticky == "right":

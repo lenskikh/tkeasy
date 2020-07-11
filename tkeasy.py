@@ -16,6 +16,7 @@ def title(title,size):
         root.geometry(size)
 
 #clear entry if text inside field used as prompting
+#when you click in entry field, a text inside text will be cleared
 def clearbyclick(event):    
     try: #if user click outside field we'll get error message
         memoryForClear = str(root.focus_get())
@@ -28,7 +29,8 @@ def clearbyclick(event):
             memory["key TAB"]+=memoryForClear
     except:
         pass
-    
+
+#if press TAB key a text inside entry will be cleared
 def key(event):
     char = str(event.char)
     if char == '\t':

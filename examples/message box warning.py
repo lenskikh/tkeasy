@@ -1,6 +1,6 @@
 from tkeasy import *
 
-title("Message box Warning","")
+title_size("Message box Warning","")
 
 msgboxwarning("Message box","test")
 

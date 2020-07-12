@@ -1,6 +1,6 @@
 from tkeasy import *
 
-title("2 droplists","270x150")
+title_size("2 droplists","270x150")
 
 def info():
     text1 = memory["entry 1"].get()

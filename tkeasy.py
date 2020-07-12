@@ -8,12 +8,17 @@ root = tk.Tk()
 memory = {"filename":"", "key TAB":""}
 radioBox = tk.StringVar()
 
-def title_size(title,size):
+def title_size(**kwargs):
+    title = ""
+    title = kwargs["title"]
     root.title(title)
-    if size == "":
-        pass
-    else:
+
+    size = ""
+    try:
+        size = kwargs["size"]
         root.geometry(size)
+    except KeyError:
+        pass        
 
 #clear entry if text inside field used as prompting
 #when you click in entry field, a text inside text will be cleared

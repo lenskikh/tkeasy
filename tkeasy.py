@@ -8,7 +8,7 @@ root = tk.Tk()
 memory = {"filename":"", "key TAB":""}
 radioBox = tk.StringVar()
 
-def title(title,size):
+def title_size(title,size):
     root.title(title)
     if size == "":
         pass

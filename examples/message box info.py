@@ -1,6 +1,6 @@
 from tkeasy import *
 
-title("Message box","")
+title_size("Message box","")
 
 msgbox("Message box","test")
 

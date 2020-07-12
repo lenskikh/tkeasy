@@ -39,7 +39,13 @@ def key(event):
 def new_window(identifier):
     memory[identifier] = tk.Toplevel(root)
     
-def alignment(sticky):
+def alignment(**kwargs):
+    sticky = ""
+    try:
+        sticky = kwargs["sticky"]
+    except KeyError:
+        sticky = tk.W
+        
     if sticky == "right":
         sticky = tk.E
     elif sticky == "left":
@@ -56,8 +62,12 @@ def selectfolder():
     memory["filename"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
                                             title = "Select folder")   
 
-def buttons(text,command,row,column,sticky):
-    sticky = alignment(sticky) 
+def buttons(**kwargs):
+    sticky = alignment(**kwargs)
+    text = kwargs["text"]
+    command = kwargs["command"]
+    row = kwargs["row"]
+    column = kwargs["column"]
     tk.Button(root, text=text,command=command).grid(
         row=row,column=column,sticky=sticky,padx=2,pady=2)
 

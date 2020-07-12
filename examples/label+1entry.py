@@ -1,6 +1,6 @@
 from tkeasy import *
 
-title(title="LABEL + ONE ENTRY",size="")
+title_size(title="LABEL + ONE ENTRY",size="")
 
 def info():
     text = memory["The first entry"].get()

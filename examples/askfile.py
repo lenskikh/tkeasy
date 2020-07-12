@@ -1,7 +1,7 @@
 #ask folder - gui widget
 from tkeasy import *
 
-title("Ask folder","")
+title_size("Ask folder","")
 
 def readname():
     print (memory["filename"])

@@ -9,7 +9,6 @@ memory = {"filename":"", "key TAB":""}
 radioBox = tk.StringVar()
 
 def title_size(**kwargs):
-    title = ""
     title = kwargs["title"]
     root.title(title)
 
@@ -75,7 +74,7 @@ def buttons(**kwargs):
     column = kwargs["column"]
     tk.Button(root, text=text,command=command).grid(
         row=row,column=column,sticky=sticky,padx=2,pady=2)
-
+'''
 def labels(text,colortext,font,background,row,column,sticky):
     if font == "":
         font = "14"
@@ -84,6 +83,18 @@ def labels(text,colortext,font,background,row,column,sticky):
     if background == "":
         background = "white"
     sticky = alignment(sticky)      
+    tk.Label(root, text=text,fg=colortext,font=font,bg=background).grid(
+        row=row,column=column,sticky=sticky,padx=2,pady=2)
+'''
+def labels(**kwargs):
+    sticky = alignment(**kwargs)
+    text = kwargs["text"]
+    font = kwargs["font"]
+    colortext = kwargs["colortext"]
+    background = kwargs["background"]
+    row = kwargs["row"]
+    column = kwargs["column"]
+    
     tk.Label(root, text=text,fg=colortext,font=font,bg=background).grid(
         row=row,column=column,sticky=sticky,padx=2,pady=2)
 

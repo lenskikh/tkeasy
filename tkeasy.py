@@ -128,7 +128,9 @@ def entryinsert(identifier,text,colortext):
 
 def checkbox(identifier,text,**kwargs):
     memory[identifier] = tk.IntVar()
-    memory[text] = tk.Checkbutton(root,text=text,variable=memory[identifier])
+    memory[text] = tk.Checkbutton(root,
+        text=text,
+        variable=memory[identifier])
     memory[text].grid(
         row=kwargs["row"],
         column=kwargs["column"],
@@ -136,10 +138,18 @@ def checkbox(identifier,text,**kwargs):
         padx=padx(**kwargs),
         pady=pady(**kwargs))
 
-def radiobox(default,text,value,row,column):
-    radioBox.set(default)    
-    radiob = tk.Radiobutton(root, text=text, variable=radioBox, value=value)
-    radiob.grid(row=row,column=column,sticky=alignment(),padx=padx(),pady=pady())
+def radiobox(**kwargs):
+    radioBox.set(kwargs["default"])    
+    radiob = tk.Radiobutton(root, 
+        text=kwargs["text"], 
+        variable=radioBox, 
+        value=kwargs["text"])
+    radiob.grid(
+        row=kwargs["row"],
+        column=kwargs["column"],
+        sticky=alignment(**kwargs),
+        padx=padx(**kwargs),
+        pady=pady(**kwargs))    
 
 def dropdownlist(choices,variable,default,row,column):
     memory[variable] = tk.StringVar(root)

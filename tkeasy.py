@@ -78,6 +78,13 @@ def background(**kwargs):
         background = "white"
     return background
 
+def padx(**kwargs):
+    try:
+        padx = kwargs["padx"]
+    except KeyError:
+        padx = 2
+    return padx
+
 def buttons(**kwargs):
     sticky = alignment(**kwargs)
     text = kwargs["text"]
@@ -87,14 +94,17 @@ def buttons(**kwargs):
     tk.Button(root, text=text,command=command).grid(
         row=row,column=column,
         sticky=alignment(**kwargs),
-        padx=2,pady=2)
+        padx=padx(**kwargs),pady=2)
    
 def labels(**kwargs):
     row = kwargs["row"]
     column = kwargs["column"]
     
     tk.Label(root, text=kwargs["text"],fg=colortext(**kwargs),
-             bg=background(**kwargs)).grid(row=row,column=column,sticky=alignment(**kwargs),padx=2,pady=2)
+             bg=background(**kwargs)).grid(
+                 row=row,column=column,
+                 sticky=alignment(**kwargs),
+                 padx=padx(**kwargs),pady=2)
 
 def entryfield(identifier,row,column):
     memory[identifier] = tk.Entry(root)

@@ -44,7 +44,6 @@ def new_window(identifier):
     memory[identifier] = tk.Toplevel(root)
     
 def alignment(**kwargs):
-    sticky = ""
     try:
         sticky = kwargs["sticky"]
     except KeyError:

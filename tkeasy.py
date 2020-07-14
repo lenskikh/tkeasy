@@ -92,10 +92,9 @@ def pady(**kwargs):
         pady = 2
     return pady
 
-def buttons(**kwargs):
-    sticky = alignment(**kwargs)
-    
-    tk.Button(root, text=kwargs["text"],
+def buttons(**kwargs):   
+    tk.Button(root, 
+        text=kwargs["text"],
         command=kwargs["command"]).grid(
         row=kwargs["row"],
         column=kwargs["column"],
@@ -103,14 +102,13 @@ def buttons(**kwargs):
         padx=padx(**kwargs),
         pady=pady(**kwargs))
    
-def labels(**kwargs):
-    row = kwargs["row"]
-    column = kwargs["column"]
-    
-    tk.Label(root, text=kwargs["text"],
+def labels(**kwargs):   
+    tk.Label(root, 
+        text=kwargs["text"],
         fg=colortext(**kwargs),
         bg=background(**kwargs)).grid(
-        row=row,column=column,
+        row=kwargs["row"],
+        column=kwargs["column"],
         sticky=alignment(**kwargs),
         padx=padx(**kwargs),
         pady=pady(**kwargs))

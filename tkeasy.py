@@ -46,7 +46,6 @@ def new_window(identifier):
 def alignment(**kwargs):
     try:
         sticky = kwargs["sticky"]
-        print(sticky) 
         if sticky == "right":
             sticky = tk.E
         elif sticky == "left":
@@ -54,9 +53,7 @@ def alignment(**kwargs):
         elif sticky == "center":
             sticky = tk.EW        
     except KeyError:
-        sticky = tk.EW
-
-       
+        sticky = tk.EW       
 
     return sticky
     
@@ -97,30 +94,35 @@ def pady(**kwargs):
 
 def buttons(**kwargs):
     sticky = alignment(**kwargs)
-    text = kwargs["text"]
-    command = kwargs["command"]
-    row = kwargs["row"]
-    column = kwargs["column"]
-    tk.Button(root, text=text,command=command).grid(
-        row=row,column=column,
+    
+    tk.Button(root, text=kwargs["text"],
+        command=kwargs["command"]).grid(
+        row=kwargs["row"],
+        column=kwargs["column"],
         sticky=alignment(**kwargs),
-        padx=padx(**kwargs),pady=pady(**kwargs))
+        padx=padx(**kwargs),
+        pady=pady(**kwargs))
    
 def labels(**kwargs):
     row = kwargs["row"]
     column = kwargs["column"]
     
-    tk.Label(root, text=kwargs["text"],fg=colortext(**kwargs),
-             bg=background(**kwargs)).grid(
-                 row=row,column=column,
-                 sticky=alignment(**kwargs),
-                 padx=padx(**kwargs),pady=pady(**kwargs))
+    tk.Label(root, text=kwargs["text"],
+        fg=colortext(**kwargs),
+        bg=background(**kwargs)).grid(
+        row=row,column=column,
+        sticky=alignment(**kwargs),
+        padx=padx(**kwargs),
+        pady=pady(**kwargs))
   
 def entryfield(identifier,**kwargs):
     memory[identifier] = tk.Entry(root)
-    memory[identifier].grid(row=kwargs["row"],
-                            column=kwargs["column"],sticky=alignment(**kwargs),
-                            padx=padx(**kwargs),pady=pady(**kwargs))
+    memory[identifier].grid(
+        row=kwargs["row"],
+        column=kwargs["column"],
+        sticky=alignment(**kwargs),
+        padx=padx(**kwargs),
+        pady=pady(**kwargs))
     
 def entryinsert(identifier,text,colortext):
     memory[identifier].insert(0,text)
@@ -129,9 +131,12 @@ def entryinsert(identifier,text,colortext):
 def checkbox(identifier,text,**kwargs):
     memory[identifier] = tk.IntVar()
     memory[text] = tk.Checkbutton(root,text=text,variable=memory[identifier])
-    memory[text].grid(row=kwargs["row"],
-                      column=kwargs["column"],sticky=alignment(**kwargs),
-                      padx=padx(**kwargs),pady=pady(**kwargs))
+    memory[text].grid(
+        row=kwargs["row"],
+        column=kwargs["column"],
+        sticky=alignment(**kwargs),
+        padx=padx(**kwargs),
+        pady=pady(**kwargs))
 
 def radiobox(default,text,value,row,column):
     radioBox.set(default)    

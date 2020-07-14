@@ -115,7 +115,7 @@ def labels(**kwargs):
 
 def entryfield(identifier,row,column):
     memory[identifier] = tk.Entry(root)
-    memory[identifier].grid(row=row,column=column,sticky=alignment(**kwargs),padx=padx(**kwargs),pady=pady(**kwargs))
+    memory[identifier].grid(row=row,column=column,sticky=alignment(),padx=padx(),pady=pady())
     
 def entryinsert(identifier,text,colortext):
     memory[identifier].insert(0,text)
@@ -124,26 +124,26 @@ def entryinsert(identifier,text,colortext):
 def checkbox(identifier,text,row,column):
     memory[identifier] = tk.IntVar()
     memory[text] = tk.Checkbutton(root,text=text,variable=memory[identifier])
-    memory[text].grid(row=row,column=column,sticky=alignment(**kwargs),padx=padx(**kwargs),pady=pady(**kwargs))
+    memory[text].grid(row=row,column=column,sticky=alignment(),padx=padx(),pady=pady())
 
 def radiobox(default,text,value,row,column):
     radioBox.set(default)    
     radiob = tk.Radiobutton(root, text=text, variable=radioBox, value=value)
-    radiob.grid(row=row,column=column,sticky=alignment(**kwargs),padx=padx(**kwargs),pady=pady(**kwargs))
+    radiob.grid(row=row,column=column,sticky=alignment(),padx=padx(),pady=pady())
 
 def dropdownlist(choices,variable,default,row,column):
     memory[variable] = tk.StringVar(root)
     popupmenu = tk.OptionMenu(root, memory[variable], *choices)
     memory[variable].set(default) # default value
-    popupmenu.grid(row=row,column=column,sticky=alignment(**kwargs),padx=padx(**kwargs),pady=pady(**kwargs))
+    popupmenu.grid(row=row,column=column,sticky=alignment(),padx=padx(),pady=pady())
 
 def textarea(identifier,row,column):
     memory[identifier] = tk.Text(root,height=10, width=30,background="grey95")
-    memory[identifier].grid(row=row,column=column,sticky=alignment(**kwargs),padx=padx(**kwargs),pady=pady(**kwargs))
+    memory[identifier].grid(row=row,column=column,sticky=alignment(),padx=padx(),pady=pady())
 
 def textareascroll(identifier,row,column):
     memory[identifier] = scrolledtext.ScrolledText(root,wrap = tk.WORD,height=10, width=30,background="grey95")
-    memory[identifier].grid(row=row,column=column,sticky=alignment(**kwargs),padx=padx(**kwargs),pady=pady(**kwargs))
+    memory[identifier].grid(row=row,column=column,sticky=alignment(),padx=padx(),pady=pady())
 
 def instertextarea(identifier,text,color):    
     memory[identifier].insert(1.0,text)

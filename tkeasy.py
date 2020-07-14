@@ -65,6 +65,19 @@ def selectfile():
 def selectfolder():
     memory["filename"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
                                             title = "Select folder")   
+def colortext(**kwargs):
+    try:
+        colortext = kwargs["colortext"]
+    except KeyError:
+        colortext = "black"
+    return colortext
+
+def background(**kwargs):
+    try:
+        background = kwargs["background"]
+    except KeyError:
+        background = "white"
+    return background
 
 def buttons(**kwargs):
     sticky = alignment(**kwargs)
@@ -74,21 +87,13 @@ def buttons(**kwargs):
     column = kwargs["column"]
     tk.Button(root, text=text,command=command).grid(
         row=row,column=column,sticky=sticky,padx=2,pady=2)
-
-def colortext(**kwargs):
-    try:
-        colortext = kwargs["colortext"]
-    except KeyError:
-        colortext = "black"
-    return colortext
-    
+   
 def labels(**kwargs):
-    background = kwargs["background"]
     row = kwargs["row"]
     column = kwargs["column"]
     
-    tk.Label(root, text=kwargs["text"],fg=colortext(**kwargs),bg=background).grid(
-        row=row,column=column,sticky=alignment(**kwargs),padx=2,pady=2)
+    tk.Label(root, text=kwargs["text"],fg=colortext(**kwargs),
+             bg=background(**kwargs)).grid(row=row,column=column,sticky=alignment(**kwargs),padx=2,pady=2)
 
 def entryfield(identifier,row,column):
     memory[identifier] = tk.Entry(root)

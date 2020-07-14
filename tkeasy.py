@@ -139,7 +139,13 @@ def checkbox(identifier,text,**kwargs):
         pady=pady(**kwargs))
 
 def radiobox(**kwargs):
-    radioBox.set(kwargs["default"])    
+    #it's give way not use default var in next times
+    try:
+        memory["default"] = kwargs["default"]
+    except:
+        pass
+
+    radioBox.set(memory["default"])    
     radiob = tk.Radiobutton(root, 
         text=kwargs["text"], 
         variable=radioBox, 

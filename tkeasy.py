@@ -85,6 +85,13 @@ def padx(**kwargs):
         padx = 2
     return padx
 
+def pady(**kwargs):
+    try:
+        pady = kwargs["pady"]
+    except KeyError:
+        pady = 2
+    return pady
+
 def buttons(**kwargs):
     sticky = alignment(**kwargs)
     text = kwargs["text"]
@@ -94,7 +101,7 @@ def buttons(**kwargs):
     tk.Button(root, text=text,command=command).grid(
         row=row,column=column,
         sticky=alignment(**kwargs),
-        padx=padx(**kwargs),pady=2)
+        padx=padx(**kwargs),pady=pady(**kwargs))
    
 def labels(**kwargs):
     row = kwargs["row"]

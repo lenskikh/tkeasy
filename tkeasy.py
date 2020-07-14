@@ -46,16 +46,18 @@ def new_window(identifier):
 def alignment(**kwargs):
     try:
         sticky = kwargs["sticky"]
+        print(sticky) 
+        if sticky == "right":
+            sticky = tk.E
+        elif sticky == "left":
+            sticky = tk.W
+        elif sticky == "center":
+            sticky = tk.EW        
     except KeyError:
         sticky = tk.EW
 
-    print(sticky)    
-    if sticky == "right":
-        sticky = tk.E
-    elif sticky == "left":
-        sticky = tk.W
-    elif sticky == "center":
-        sticky = tk.EW
+       
+
     return sticky
     
 def selectfile():
@@ -116,7 +118,9 @@ def labels(**kwargs):
   
 def entryfield(identifier,**kwargs):
     memory[identifier] = tk.Entry(root)
-    memory[identifier].grid(row=kwargs["row"],column=kwargs["column"],sticky=alignment(**kwargs),padx=padx(**kwargs),pady=pady(**kwargs))
+    memory[identifier].grid(row=kwargs["row"],
+                            column=kwargs["column"],sticky=alignment(**kwargs),
+                            padx=padx(**kwargs),pady=pady(**kwargs))
     
 def entryinsert(identifier,text,colortext):
     memory[identifier].insert(0,text)
@@ -125,7 +129,9 @@ def entryinsert(identifier,text,colortext):
 def checkbox(identifier,text,**kwargs):
     memory[identifier] = tk.IntVar()
     memory[text] = tk.Checkbutton(root,text=text,variable=memory[identifier])
-    memory[text].grid(row=kwargs["row"],column=kwargs["column"],sticky=alignment(),padx=padx(),pady=pady())
+    memory[text].grid(row=kwargs["row"],
+                      column=kwargs["column"],sticky=alignment(**kwargs),
+                      padx=padx(**kwargs),pady=pady(**kwargs))
 
 def radiobox(default,text,value,row,column):
     radioBox.set(default)    

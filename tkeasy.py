@@ -83,12 +83,11 @@ def colortext(**kwargs):
     return colortext
     
 def labels(**kwargs):
-    text = kwargs["text"]
     background = kwargs["background"]
     row = kwargs["row"]
     column = kwargs["column"]
     
-    tk.Label(root, text=text,fg=colortext(**kwargs),bg=background).grid(
+    tk.Label(root, text=kwargs["text"],fg=colortext(**kwargs),bg=background).grid(
         row=row,column=column,sticky=alignment(**kwargs),padx=2,pady=2)
 
 def entryfield(identifier,row,column):

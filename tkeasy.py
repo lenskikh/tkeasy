@@ -85,7 +85,9 @@ def buttons(**kwargs):
     row = kwargs["row"]
     column = kwargs["column"]
     tk.Button(root, text=text,command=command).grid(
-        row=row,column=column,sticky=sticky,padx=2,pady=2)
+        row=row,column=column,
+        sticky=alignment(**kwargs),
+        padx=2,pady=2)
    
 def labels(**kwargs):
     row = kwargs["row"]

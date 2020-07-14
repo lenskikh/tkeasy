@@ -48,7 +48,8 @@ def alignment(**kwargs):
         sticky = kwargs["sticky"]
     except KeyError:
         sticky = tk.EW
-        
+
+    print(sticky)    
     if sticky == "right":
         sticky = tk.E
     elif sticky == "left":
@@ -112,19 +113,19 @@ def labels(**kwargs):
                  row=row,column=column,
                  sticky=alignment(**kwargs),
                  padx=padx(**kwargs),pady=pady(**kwargs))
-
-def entryfield(identifier,row,column):
+  
+def entryfield(identifier,**kwargs):
     memory[identifier] = tk.Entry(root)
-    memory[identifier].grid(row=row,column=column,sticky=alignment(),padx=padx(),pady=pady())
+    memory[identifier].grid(row=kwargs["row"],column=kwargs["column"],sticky=alignment(**kwargs),padx=padx(**kwargs),pady=pady(**kwargs))
     
 def entryinsert(identifier,text,colortext):
     memory[identifier].insert(0,text)
     memory[identifier].config(fg=colortext)
 
-def checkbox(identifier,text,row,column):
+def checkbox(identifier,text,**kwargs):
     memory[identifier] = tk.IntVar()
     memory[text] = tk.Checkbutton(root,text=text,variable=memory[identifier])
-    memory[text].grid(row=row,column=column,sticky=alignment(),padx=padx(),pady=pady())
+    memory[text].grid(row=kwargs["row"],column=kwargs["column"],sticky=alignment(),padx=padx(),pady=pady())
 
 def radiobox(default,text,value,row,column):
     radioBox.set(default)    

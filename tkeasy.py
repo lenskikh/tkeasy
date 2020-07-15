@@ -145,6 +145,7 @@ def radiobox(**kwargs):
     except:
         pass
 
+    #if value is used
     if kwargs.get("value"):
         value = kwargs["value"] 
     else:
@@ -162,11 +163,16 @@ def radiobox(**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))    
 
-def dropdownlist(choices,variable,default,row,column):
+def dropdownlist(variable,choices,default,**kwargs):
     memory[variable] = tk.StringVar(root)
     popupmenu = tk.OptionMenu(root, memory[variable], *choices)
     memory[variable].set(default) # default value
-    popupmenu.grid(row=row,column=column,sticky=alignment(),padx=padx(),pady=pady())
+    popupmenu.grid(
+        row = kwargs["row"],
+        column = kwargs["column"],
+        sticky = alignment(**kwargs),
+        padx = padx(**kwargs),
+        pady = pady(**kwargs))    
 
 def textarea(identifier,row,column):
     memory[identifier] = tk.Text(root,height=10, width=30,background="grey95")

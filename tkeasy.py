@@ -174,9 +174,17 @@ def dropdownlist(variable,choices,default,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))    
 
-def textarea(identifier,row,column):
-    memory[identifier] = tk.Text(root,height=10, width=30,background="grey95")
-    memory[identifier].grid(row=row,column=column,sticky=alignment(),padx=padx(),pady=pady())
+def textarea(identifier,**kwargs):
+    memory[identifier] = tk.Text(root,
+        height=10, 
+        width=30,
+        background="grey95")
+    memory[identifier].grid(
+        row = kwargs["row"],
+        column = kwargs["column"],
+        sticky = alignment(**kwargs),
+        padx = padx(**kwargs),
+        pady = pady(**kwargs))
 
 def textareascroll(identifier,row,column):
     memory[identifier] = scrolledtext.ScrolledText(root,wrap = tk.WORD,height=10, width=30,background="grey95")

@@ -30,7 +30,7 @@ def clearbyclick(event):
             pass
         else:
             root.focus_get().delete(0, tk.END)
-            memory["key TAB"]+=memoryForClear
+            memory["key TAB"]+= memoryForClear
     except:
         pass
 
@@ -94,33 +94,33 @@ def pady(**kwargs):
 
 def buttons(**kwargs):   
     tk.Button(root, 
-        text=kwargs["text"],
-        command=kwargs["command"]).grid(
-        row=kwargs["row"],
-        column=kwargs["column"],
-        sticky=alignment(**kwargs),
-        padx=padx(**kwargs),
-        pady=pady(**kwargs))
+        text = kwargs["text"],
+        command = kwargs["command"]).grid(
+        row = kwargs["row"],
+        column = kwargs["column"],
+        sticky = alignment(**kwargs),
+        padx = padx(**kwargs),
+        pady = pady(**kwargs))
    
 def labels(**kwargs):   
     tk.Label(root, 
-        text=kwargs["text"],
-        fg=colortext(**kwargs),
-        bg=background(**kwargs)).grid(
-        row=kwargs["row"],
-        column=kwargs["column"],
-        sticky=alignment(**kwargs),
-        padx=padx(**kwargs),
-        pady=pady(**kwargs))
+        text = kwargs["text"],
+        fg = colortext(**kwargs),
+        bg = background(**kwargs)).grid(
+        row = kwargs["row"],
+        column = kwargs["column"],
+        sticky = alignment(**kwargs),
+        padx = padx(**kwargs),
+        pady = pady(**kwargs))
   
 def entryfield(identifier,**kwargs):
     memory[identifier] = tk.Entry(root)
     memory[identifier].grid(
-        row=kwargs["row"],
-        column=kwargs["column"],
-        sticky=alignment(**kwargs),
-        padx=padx(**kwargs),
-        pady=pady(**kwargs))
+        row = kwargs["row"],
+        column = kwargs["column"],
+        sticky = alignment(**kwargs),
+        padx = padx(**kwargs),
+        pady = pady(**kwargs))
     
 def entryinsert(identifier,text,colortext):
     memory[identifier].insert(0,text)
@@ -129,14 +129,14 @@ def entryinsert(identifier,text,colortext):
 def checkbox(identifier,text,**kwargs):
     memory[identifier] = tk.IntVar()
     memory[text] = tk.Checkbutton(root,
-        text=text,
-        variable=memory[identifier])
+        text = text,
+        variable = memory[identifier])
     memory[text].grid(
-        row=kwargs["row"],
-        column=kwargs["column"],
-        sticky=alignment(**kwargs),
-        padx=padx(**kwargs),
-        pady=pady(**kwargs))
+        row = kwargs["row"],
+        column = kwargs["column"],
+        sticky = alignment(**kwargs),
+        padx = padx(**kwargs),
+        pady = pady(**kwargs))
 
 def radiobox(**kwargs):
     #it's give way not use default var in next times
@@ -145,17 +145,22 @@ def radiobox(**kwargs):
     except:
         pass
 
+    if kwargs.get("value"):
+        value = kwargs["value"] 
+    else:
+        value = kwargs["text"]
+
     radioBox.set(memory["default"])    
     radiob = tk.Radiobutton(root, 
-        text=kwargs["text"], 
-        variable=radioBox, 
-        value=kwargs["text"])
+        text = kwargs["text"], 
+        variable = radioBox, 
+        value = value)
     radiob.grid(
-        row=kwargs["row"],
-        column=kwargs["column"],
-        sticky=alignment(**kwargs),
-        padx=padx(**kwargs),
-        pady=pady(**kwargs))    
+        row = kwargs["row"],
+        column = kwargs["column"],
+        sticky = alignment(**kwargs),
+        padx = padx(**kwargs),
+        pady = pady(**kwargs))    
 
 def dropdownlist(choices,variable,default,row,column):
     memory[variable] = tk.StringVar(root)

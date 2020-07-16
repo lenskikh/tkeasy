@@ -155,7 +155,9 @@ def radiobox(**kwargs):
     else:
         value = kwargs["text"]
 
+    #set universal var for all radioboxes
     radioBox.set(memory["default"])    
+    
     radiob = tk.Radiobutton(root, 
         text = kwargs["text"], 
         variable = radioBox, 

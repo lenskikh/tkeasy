@@ -157,7 +157,7 @@ def radiobox(**kwargs):
 
     #set universal var for all radioboxes
     radioBox.set(memory["default"])    
-    
+
     radiob = tk.Radiobutton(root, 
         text = kwargs["text"], 
         variable = radioBox, 
@@ -180,6 +180,8 @@ def dropdownlist(variable,choices,default,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))    
 
+#text in text area looks ugly with scroll in macos
+#you can use textarea without scroll
 def textarea(identifier,**kwargs):
     memory[identifier] = tk.Text(root,
         wrap = tk.WORD,

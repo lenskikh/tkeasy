@@ -195,7 +195,7 @@ def textarea(identifier,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
 
-#Works slowly on big text (in macos)
+#Works slowly at big text (in macos)
 def textareascroll(identifier,**kwargs):
     memory[identifier] = scrolledtext.ScrolledText(root,
         wrap = tk.WORD,
@@ -209,6 +209,7 @@ def textareascroll(identifier,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
 
+#for change text in text area
 def instertextarea(identifier,text,color):    
     memory[identifier].insert(1.0,text)
     memory[identifier].config(fg=color)

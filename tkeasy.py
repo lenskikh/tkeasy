@@ -217,6 +217,7 @@ def instertextarea(identifier,text,color):
 def msgbox(title,message): 
     msgbox = tk.messagebox.showinfo(title=title, message=message)
 
+#alarm icon in message box
 def msgboxwarning(title,message): 
     msgbox = tk.messagebox.showwarning(title=title, message=message)
 

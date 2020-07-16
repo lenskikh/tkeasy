@@ -74,6 +74,7 @@ def colortext(**kwargs):
         colortext = "black"
     return colortext
 
+#for label
 def background(**kwargs):
     try:
         background = kwargs["background"]

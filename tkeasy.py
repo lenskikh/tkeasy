@@ -195,6 +195,7 @@ def textarea(identifier,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
 
+#Works slowly on big text (in macos)
 def textareascroll(identifier,**kwargs):
     memory[identifier] = scrolledtext.ScrolledText(root,
         wrap = tk.WORD,

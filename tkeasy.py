@@ -65,6 +65,8 @@ def selectfile():
 def selectfolder():
     memory["filename"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
                                             title = "Select folder")   
+
+#for label                                            
 def colortext(**kwargs):
     try:
         colortext = kwargs["colortext"]

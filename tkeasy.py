@@ -40,6 +40,7 @@ def key(event):
     if char == '\t':
         memory["key TAB"]+="TAB"
 
+#new window
 def new_window(identifier):
     memory[identifier] = tk.Toplevel(root)
     
@@ -176,9 +177,10 @@ def dropdownlist(variable,choices,default,**kwargs):
 
 def textarea(identifier,**kwargs):
     memory[identifier] = tk.Text(root,
-        height=10, 
-        width=30,
-        background="grey95")
+        wrap = tk.WORD,
+        height = 10, 
+        width = 30,
+        background = "grey95")
     memory[identifier].grid(
         row = kwargs["row"],
         column = kwargs["column"],
@@ -186,9 +188,18 @@ def textarea(identifier,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
 
-def textareascroll(identifier,row,column):
-    memory[identifier] = scrolledtext.ScrolledText(root,wrap = tk.WORD,height=10, width=30,background="grey95")
-    memory[identifier].grid(row=row,column=column,sticky=alignment(),padx=padx(),pady=pady())
+def textareascroll(identifier,**kwargs):
+    memory[identifier] = scrolledtext.ScrolledText(root,
+        wrap = tk.WORD,
+        height = 10, 
+        width = 30,
+        background = "grey95")
+    memory[identifier].grid(
+        row = kwargs["row"],
+        column = kwargs["column"],
+        sticky = alignment(**kwargs),
+        padx = padx(**kwargs),
+        pady = pady(**kwargs))
 
 def instertextarea(identifier,text,color):    
     memory[identifier].insert(1.0,text)

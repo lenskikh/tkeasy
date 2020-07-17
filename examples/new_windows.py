@@ -5,4 +5,4 @@ def windows():
     new_window("new_window2")
    
     
-buttons("Click me",windows,0,0,"center")
+buttons(text="Click me",command=windows,row=0,column=0)

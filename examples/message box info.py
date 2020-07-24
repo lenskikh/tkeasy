@@ -1,7 +1,6 @@
 from tkeasy import *
 
-title_size("Message box","")
+#root is default var
+root.title("Message box")
 
 msgbox("Message box","test")
-
-root.mainloop()

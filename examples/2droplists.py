@@ -1,7 +1,5 @@
 from tkeasy import *
 
-title_size(title="2 droplists",size="270x150")
-
 def info():
     text1 = memory["entry 1"].get()
     labels(text=text1,colortext="white",font="16",

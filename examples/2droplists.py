@@ -1,5 +1,8 @@
 from tkeasy import *
 
+#root is default var
+root.title("2 droplist")
+
 def info():
     text1 = memory["entry 1"].get()
     labels(text=text1,colortext="white",font="16",

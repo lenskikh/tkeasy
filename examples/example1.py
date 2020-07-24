@@ -3,12 +3,13 @@ from tkeasy import *
 
 def info():
     text = memory["The first entry"].get()
-    labels(text,"white","16","red",3,0,"center")
+    labels(text=text,colortext="white",
+           background="red",row=3,
+           column=0,sticky="center")
 
-labels("Entry field","black","14","white",0,0,"center")
+labels(text="Entry field",colortext="black",
+       background="white",row=0,column=0)
 
-entryfield("The first entry",1,0)
+entryfield("The first entry",row=1,column=0)
 
-buttons("Get info",info,2,0,"right")
-
-root.mainloop()
+buttons(text="Get info",command=info,row=2,column=0,sticky="right")

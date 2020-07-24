@@ -1,6 +1,7 @@
 from tkeasy import *
 
-title_size(title="LABEL + ONE ENTRY",size="")
+#root is default var
+root.title("Entry and label")
 
 def info():
     text = memory["The first entry"].get()
@@ -16,4 +17,4 @@ entryfield(identifier="The first entry",
 buttons(text="Get info",command=info,row=2,
         column=0,sticky="right")
 
-root.mainloop()
+

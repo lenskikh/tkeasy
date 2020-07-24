@@ -2,7 +2,7 @@ from tkeasy import *
 
 #root is default var of Tk
 root.title("Three entries")
-root.geometry("200x100")
+root.geometry("200x300")
 
 def info():
     text1 = memory["entry 1"].get()
@@ -33,5 +33,3 @@ buttons(text="Get info",command=info,
 #clear text when click in entry field
 root.bind("<Button-1>", clearbyclick)
 root.bind("<Key>", key)
-
-root.mainloop()

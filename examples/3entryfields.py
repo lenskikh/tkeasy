@@ -1,6 +1,8 @@
 from tkeasy import *
 
-title_size(title="3 entries")
+#root is default var of Tk
+root.title("Three entries")
+root.geometry("200x100")
 
 def info():
     text1 = memory["entry 1"].get()

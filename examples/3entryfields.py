@@ -27,7 +27,7 @@ entryinsert(identifier="entry 2",text="Second name",colortext="grey")
 entryfield(identifier="entry 3",row=2,column=0)
 entryinsert(identifier="entry 3",text="County",colortext="black")
 
-buttons(text="Get info",command=info,
+button(text="Get info",command=info,
         row=3,column=0,sticky="right")
 
 #clear text when click in entry field

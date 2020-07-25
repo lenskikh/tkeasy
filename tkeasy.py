@@ -85,7 +85,7 @@ def pady(**kwargs):
         pady = 2
     return pady
 
-def buttons(**kwargs):   
+def button(**kwargs):   
     tk.Button(root, 
         text = kwargs["text"],
         command = kwargs["command"]).grid(

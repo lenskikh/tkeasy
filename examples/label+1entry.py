@@ -14,7 +14,7 @@ labels(text="Entry field",colortext="black",font="14",
 entryfield(identifier="The first entry",
            row=1,column=0)
 
-buttons(text="Get info",command=info,row=2,
+button(text="Get info",command=info,row=2,
         column=0,sticky="right")
 
 

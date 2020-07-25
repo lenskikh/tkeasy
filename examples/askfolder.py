@@ -10,6 +10,6 @@ def readname():
 
 labels(text="ASK FOLDER",background="green",row=0,column=0)
 
-buttons(text='FOLDER BROWSER',command=selectfolder,row=2,column=0,sticky="center")
+button(text='FOLDER BROWSER',command=selectfolder,row=2,column=0,sticky="center")
 
-buttons(text="Print Name Of Folder",command=readname,row=3,column=0,sticky="center")
+button(text="Print Name Of Folder",command=readname,row=3,column=0,sticky="center")

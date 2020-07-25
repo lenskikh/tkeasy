@@ -34,11 +34,9 @@ age = ["01-06","7-14","15-23","24-31","31-40","41-55","56-70","71-85","86-105"]
 dropdownlist(choices=age,variable="age var",
              default="Age",row=3,column=0)
 
-buttons(text="Get info",command=info,
+button(text="Get info",command=info,
         row=4,column=1,sticky="right")
 
 #clear text when click in entry field
 root.bind("<Button-1>", clearbyclick)
 root.bind("<Key>", key)
-
-root.mainloop()

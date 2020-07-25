@@ -10,8 +10,8 @@ def readname():
 labels(text="ASK FILE",colortext="white",
        background="BLUE",row=0,column=0)
 
-buttons(text='FILE BROWSER',command=selectfile,
+button(text='FILE BROWSER',command=selectfile,
         row=2,column=0)
 
-buttons(text="Print Name Of File",command=readname,
+button(text="Print Name Of File",command=readname,
         row=3,column=0)

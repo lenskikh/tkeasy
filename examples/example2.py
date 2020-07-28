@@ -5,17 +5,17 @@ root.title("Three entries")
 
 def info():
     text1 = memory["entry 1"].get()
-    labels(text=text1,colortext="white",
+    label(text=text1,colortext="white",
            background="blue",row=4,
            column=0,sticky="center")
 
     text2 = memory["entry 2"].get()
-    labels(text=text2,colortext="white",
+    label(text=text2,colortext="white",
            background="blue",row=5,
            column=0,sticky="center")
 
     text3 = memory["entry 3"].get()
-    labels(text=text3,colortext="white",
+    label(text=text3,colortext="white",
            background="blue",row=6,
            column=0,sticky="center")
     

@@ -5,19 +5,19 @@ root.title("2 droplist")
 
 def info():
     text1 = memory["entry 1"].get()
-    labels(text=text1,colortext="white",font="16",
+    label(text=text1,colortext="white",font="16",
            background="grey",row=0,column=1,sticky="center")
 
     text2 = memory["entry 2"].get()
-    labels(text=text2,colortext="white",font="16",
+    label(text=text2,colortext="white",font="16",
            background="grey",row=1,column=1,sticky="center")
 
     gender = memory["gender var"].get()
-    labels(text=gender,colortext="white",font="16",
+    label(text=gender,colortext="white",font="16",
            background="grey",row=2,column=1,sticky="center")
 
     age = memory["age var"].get()
-    labels(text=age,colortext="white",font="16",
+    label(text=age,colortext="white",font="16",
            background="grey",row=3,column=1,sticky="center")     
 
 entryfield(identifier="entry 1",row=0,column=0)

@@ -30,8 +30,9 @@ def key(event):
         memory["key TAB"]+="TAB"
 
 #new window
-def new_window(identifier):
-    memory[identifier] = tk.Toplevel(root)
+def new_window():
+    new = tk.Toplevel(root)
+    return new_window
     
 def alignment(**kwargs):
     try:
@@ -95,7 +96,7 @@ def button(**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
    
-def labels(**kwargs):   
+def label(**kwargs):   
     tk.Label(root, 
         text = kwargs["text"],
         fg = colortext(**kwargs),

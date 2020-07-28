@@ -8,7 +8,7 @@ root.geometry("150x80")
 def readname():
     print (memory["filename"])
 
-labels(text="ASK FOLDER",background="green",row=0,column=0)
+label(text="ASK FOLDER",background="green",row=0,column=0)
 
 button(text='FOLDER BROWSER',command=selectfolder,row=2,column=0,sticky="center")
 

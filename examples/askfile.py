@@ -7,7 +7,7 @@ root.geometry("130x80")
 def readname():
     print (memory["filename"])
 
-labels(text="ASK FILE",colortext="white",
+label(text="ASK FILE",colortext="white",
        background="BLUE",row=0,column=0)
 
 button(text='FILE BROWSER',command=selectfile,

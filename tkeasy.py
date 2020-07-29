@@ -4,21 +4,20 @@ from tkinter import filedialog
 from tkinter import scrolledtext
 import tkinter.messagebox
 
-root = tk.Tk()
 memory = {"filename":"", "key TAB":""}
-radioBox = tk.StringVar()
+#radioBox = tk.StringVar()
 
 #clear entry if text inside field used as prompting
 #when you click in entry field, a text inside text will be cleared
 def clearbyclick(event):    
     try: #if user click outside field we'll get error message
-        memoryForClear = str(root.focus_get())
+        memoryForClear = str(memory[window].focus_get())
         if memoryForClear in memory["key TAB"]:
             pass #entry field was cleared
         elif "TAB" in memory["key TAB"]:
             pass
         else:
-            root.focus_get().delete(0, tk.END)
+            memory[window].focus_get().delete(0, tk.END)
             memory["key TAB"]+= memoryForClear
     except:
         pass
@@ -30,10 +29,18 @@ def key(event):
         memory["key TAB"]+="TAB"
 
 #new window
-def new_window():
-    new = tk.Toplevel(root)
-    return new_window
-    
+def new_window(window):
+    if window not in memory:
+        memory[window] = tk.Tk()
+
+def title(window,text):
+    new_window(window)
+    memory[window].title(text)
+
+def geometry(window,size):
+    new_window(window)
+    memory[window].geometry(size)    
+
 def alignment(**kwargs):
     try:
         sticky = kwargs["sticky"]
@@ -47,14 +54,6 @@ def alignment(**kwargs):
         sticky = tk.EW       
 
     return sticky
-    
-def selectfile():
-    memory["filename"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
-                                            title = "Select file")
-
-def selectfolder():
-    memory["filename"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
-                                            title = "Select folder")   
 
 #for label                                            
 def colortext(**kwargs):
@@ -86,32 +85,43 @@ def pady(**kwargs):
         pady = 2
     return pady
 
-def button(**kwargs):   
-    tk.Button(root, 
-        text = kwargs["text"],
-        command = kwargs["command"]).grid(
-        row = kwargs["row"],
-        column = kwargs["column"],
+def selectfile():
+    memory["filename"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
+                                            title = "Select file")
+
+def selectfolder():
+    memory["filename"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
+                                            title = "Select folder")   
+
+def button(window,text,command,row,column,**kwargs):  
+    new_window(window) 
+    tk.Button(memory[window], 
+        text = text,
+        command = command).grid(
+        row = row,
+        column = column,
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))
    
-def label(**kwargs):   
-    tk.Label(root, 
-        text = kwargs["text"],
+def label(window,text,row,column,**kwargs):   
+    new_window(window)
+    tk.Label(memory[window], 
+        text = text,
         fg = colortext(**kwargs),
         bg = background(**kwargs)).grid(
-        row = kwargs["row"],
-        column = kwargs["column"],
+        row = row,
+        column = column,
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))
   
-def entryfield(identifier,**kwargs):
-    memory[identifier] = tk.Entry(root)
-    memory[identifier].grid(
-        row = kwargs["row"],
-        column = kwargs["column"],
+def entryfield(window,name,row,column,**kwargs):
+    new_window(window)
+    memory[name] = tk.Entry(memory[window])
+    memory[name].grid(
+        row = row,
+        column = column,
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))
@@ -121,18 +131,20 @@ def entryinsert(identifier,text,colortext):
     memory[identifier].config(fg=colortext)
 
 def checkbox(identifier,text,**kwargs):
+    new_window(window)
     memory[identifier] = tk.IntVar()
-    memory[text] = tk.Checkbutton(root,
+    memory[text] = tk.Checkbutton(memory[window],
         text = text,
         variable = memory[identifier])
     memory[text].grid(
-        row = kwargs["row"],
-        column = kwargs["column"],
+        row = row,
+        column = column,
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))
 
 def radiobox(**kwargs):
+    new_window(window)
     #it's give way not use default var in next times
     try:
         memory["default"] = kwargs["default"]
@@ -148,24 +160,25 @@ def radiobox(**kwargs):
     #set universal var for all radioboxes
     radioBox.set(memory["default"])    
 
-    radiob = tk.Radiobutton(root, 
+    radiob = tk.Radiobutton(memory[window], 
         text = kwargs["text"], 
         variable = radioBox, 
         value = value)
     radiob.grid(
-        row = kwargs["row"],
-        column = kwargs["column"],
+        row = row,
+        column = column,
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))    
 
 def dropdownlist(variable,choices,default,**kwargs):
-    memory[variable] = tk.StringVar(root)
-    popupmenu = tk.OptionMenu(root, memory[variable], *choices)
+    new_window(window)
+    memory[variable] = tk.StringVar(memory[window])
+    popupmenu = tk.OptionMenu(memory[window], memory[variable], *choices)
     memory[variable].set(default) # default value
     popupmenu.grid(
-        row = kwargs["row"],
-        column = kwargs["column"],
+        row = row,
+        column = column,
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))    
@@ -173,28 +186,30 @@ def dropdownlist(variable,choices,default,**kwargs):
 #text in text area looks ugly with scroll in macos
 #you can use textarea without scroll
 def textarea(identifier,**kwargs):
-    memory[identifier] = tk.Text(root,
+    new_window(window)
+    memory[identifier] = tk.Text(memory[window],
         wrap = tk.WORD,
         height = 10, 
         width = 30,
         background = "grey95")
     memory[identifier].grid(
-        row = kwargs["row"],
-        column = kwargs["column"],
+        row = row,
+        column = column,
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))
 
 #Works slowly at big text (in macos)
 def textareascroll(identifier,**kwargs):
-    memory[identifier] = scrolledtext.ScrolledText(root,
+    new_window(window)
+    memory[identifier] = scrolledtext.ScrolledText(memory[window],
         wrap = tk.WORD,
         height = 10, 
         width = 30,
         background = "grey95")
     memory[identifier].grid(
-        row = kwargs["row"],
-        column = kwargs["column"],
+        row = row,
+        column = column,
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))

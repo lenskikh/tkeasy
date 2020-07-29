@@ -126,9 +126,9 @@ def entryfield(window,name,row,column,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
     
-def entryinsert(identifier,text,colortext):
-    memory[identifier].insert(0,text)
-    memory[identifier].config(fg=colortext)
+def entryinsert(name,text,colortext):
+    memory[name].insert(0,text)
+    memory[name].config(fg=colortext)
 
 def checkbox(identifier,text,**kwargs):
     new_window(window)

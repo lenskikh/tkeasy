@@ -171,7 +171,7 @@ def radiobox(**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))    
 
-def dropdownlist(variable,choices,default,**kwargs):
+def dropdownlist(window,variable,choices,default,row,column,**kwargs):
     new_window(window)
     memory[variable] = tk.StringVar(memory[window])
     popupmenu = tk.OptionMenu(memory[window], memory[variable], *choices)

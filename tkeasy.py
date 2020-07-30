@@ -157,7 +157,6 @@ def radiobox(window,text,row,column,**kwargs):
         #if value not provided, use text as value
         value = text
 
-
     radiob = tk.Radiobutton(memory[window], 
         text = text, 
         variable = memory["radioBox"], 
@@ -183,14 +182,14 @@ def dropdownlist(window,variable,choices,default,row,column,**kwargs):
 
 #text in text area looks ugly with scroll in macos
 #you can use textarea without scroll
-def textarea(identifier,**kwargs):
+def textarea(window,name,row,column,**kwargs):
     new_window(window)
-    memory[identifier] = tk.Text(memory[window],
+    memory[name] = tk.Text(memory[window],
         wrap = tk.WORD,
         height = 10, 
         width = 30,
         background = "grey95")
-    memory[identifier].grid(
+    memory[name].grid(
         row = row,
         column = column,
         sticky = alignment(**kwargs),
@@ -198,14 +197,14 @@ def textarea(identifier,**kwargs):
         pady = pady(**kwargs))
 
 #Works slowly at big text (in macos)
-def textareascroll(identifier,**kwargs):
+def textareascroll(window,name,row,column,**kwargs):
     new_window(window)
-    memory[identifier] = scrolledtext.ScrolledText(memory[window],
+    memory[name] = scrolledtext.ScrolledText(memory[window],
         wrap = tk.WORD,
         height = 10, 
         width = 30,
         background = "grey95")
-    memory[identifier].grid(
+    memory[name].grid(
         row = row,
         column = column,
         sticky = alignment(**kwargs),

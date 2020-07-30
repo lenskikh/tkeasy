@@ -143,26 +143,24 @@ def checkbox(window,name,text,row,column,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
 
-def radiobox(**kwargs):
+def radiobox(window,text,row,column,**kwargs):
     new_window(window)
-    #it's give way not use default var in next times
-    try:
-        memory["default"] = kwargs["default"]
-    except:
-        pass
+    if "radioBox" not in memory:
+        memory["radioBox"] = tk.StringVar()
 
-    #if value is used
+    #No radio boxes are selected
+    memory["radioBox"].set(None)
+
     if kwargs.get("value"):
         value = kwargs["value"] 
     else:
-        value = kwargs["text"]
+        #if value not provided, use text as value
+        value = text
 
-    #set universal var for all radioboxes
-    radioBox.set(memory["default"])    
 
     radiob = tk.Radiobutton(memory[window], 
-        text = kwargs["text"], 
-        variable = radioBox, 
+        text = text, 
+        variable = memory["radioBox"], 
         value = value)
     radiob.grid(
         row = row,

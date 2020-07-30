@@ -130,12 +130,12 @@ def entryinsert(name,text,colortext):
     memory[name].insert(0,text)
     memory[name].config(fg=colortext)
 
-def checkbox(identifier,text,**kwargs):
+def checkbox(window,name,text,row,column,**kwargs):
     new_window(window)
-    memory[identifier] = tk.IntVar()
+    memory[name] = tk.IntVar()
     memory[text] = tk.Checkbutton(memory[window],
         text = text,
-        variable = memory[identifier])
+        variable = memory[name])
     memory[text].grid(
         row = row,
         column = column,

@@ -212,9 +212,9 @@ def textareascroll(window,name,row,column,**kwargs):
         pady = pady(**kwargs))
 
 #for change text in text area
-def instertextarea(identifier,text,color):    
-    memory[identifier].insert(1.0,text)
-    memory[identifier].config(fg=color)
+def instertextarea(name,text,color):    
+    memory[name].insert(1.0,text)
+    memory[name].config(fg=color)
 
 def msgbox(title,message): 
     msgbox = tk.messagebox.showinfo(title=title, message=message)
@@ -223,5 +223,5 @@ def msgbox(title,message):
 def msgboxwarning(title,message): 
     msgbox = tk.messagebox.showwarning(title=title, message=message)
 
-def msgboxask(identifier,title,message): 
-    memory[identifier] = tk.messagebox.askyesnocancel(title=title, message=message)
+def msgboxask(name,title,message): 
+    memory[name] = tk.messagebox.askyesnocancel(title=title, message=message)

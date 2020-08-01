@@ -6,7 +6,7 @@ title(window="main",text="Ask Folder")
 geometry(window="main",size="150x80")
 
 def readname():
-    print (memory["filename"])
+    print(getinfo("folder"))
 
 label(window="main",text="ASK FOLDER",colortext="white",
       background="green",row=0,column=0)

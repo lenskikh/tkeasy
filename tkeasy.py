@@ -41,7 +41,10 @@ def geometry(window,size):
     memory[window].geometry(size)    
 
 def getinfo(name):
-    return memory[name].get()
+    if name == "file" or name == "folder":
+        return memory[name]
+    else:
+        return memory[name].get()
 
 def alignment(**kwargs):
     try:

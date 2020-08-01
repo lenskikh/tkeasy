@@ -4,7 +4,7 @@ from tkeasy import *
 title(window="main",text="Ask file")
 
 def readname():
-    print (memory["filename"])
+    print (getinfo("file"))
 
 label(window="main",text="ASK FILE",colortext="white",
       background="BLUE",row=0,column=0)

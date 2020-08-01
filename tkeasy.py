@@ -40,7 +40,7 @@ def geometry(window,size):
     new_window(window)
     memory[window].geometry(size)    
 
-def getinfo(name):
+def get_info(name):
     try:
         #text area 
         return memory[name].get("1.0", 'end')
@@ -96,11 +96,11 @@ def pady(**kwargs):
         pady = 2
     return pady
 
-def selectfile():
+def select_file():
     memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
                                             title = "Select file")
 
-def selectfolder():
+def select_folder():
     memory["folder"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
                                             title = "Select folder")   
 
@@ -137,7 +137,7 @@ def entry(window,name,row,column,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
     
-def entryinsert(name,text,colortext):
+def entry_insert(name,text,colortext):
     memory[name].insert(0,text)
     memory[name].config(fg=colortext)
 
@@ -179,7 +179,7 @@ def radiobox(window,text,row,column,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))    
 
-def dropdownlist(window,variable,choices,default,row,column,**kwargs):
+def dropdown_list(window,variable,choices,default,row,column,**kwargs):
     new_window(window)
     memory[variable] = tk.StringVar(memory[window])
     popupmenu = tk.OptionMenu(memory[window], memory[variable], *choices)
@@ -193,7 +193,7 @@ def dropdownlist(window,variable,choices,default,row,column,**kwargs):
 
 #text in text area looks ugly with scroll in macos
 #you can use textarea without scroll
-def textarea(window,name,row,column,**kwargs):
+def text_area(window,name,row,column,**kwargs):
     new_window(window)
     memory[name] = tk.Text(memory[window],
         wrap = tk.WORD,
@@ -208,7 +208,7 @@ def textarea(window,name,row,column,**kwargs):
         pady = pady(**kwargs))
 
 #Works slowly at big text (in macos)
-def textareascroll(window,name,row,column,**kwargs):
+def text_area_scroll(window,name,row,column,**kwargs):
     new_window(window)
     memory[name] = scrolledtext.ScrolledText(memory[window],
         wrap = tk.WORD,
@@ -223,16 +223,16 @@ def textareascroll(window,name,row,column,**kwargs):
         pady = pady(**kwargs))
 
 #for change text in text area
-def instertextarea(name,text,color):    
+def insert_text_area(name,text,color):    
     memory[name].insert(1.0,text)
     memory[name].config(fg=color)
 
-def msgbox(title,message): 
+def msg_box(title,message): 
     msgbox = tk.messagebox.showinfo(title=title, message=message)
 
 #alarm icon in message box
-def msgboxwarning(title,message): 
+def msg_box_warning(title,message): 
     msgbox = tk.messagebox.showwarning(title=title, message=message)
 
-def msgboxask(name,title,message): 
+def msg_box_ask(name,title,message): 
     memory[name] = tk.messagebox.askyesnocancel(title=title, message=message)

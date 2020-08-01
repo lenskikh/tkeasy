@@ -5,7 +5,6 @@ from tkinter import scrolledtext
 import tkinter.messagebox
 
 memory = {"filename":"", "key TAB":""}
-#radioBox = tk.StringVar()
 
 #clear entry if text inside field used as prompting
 #when you click in entry field, a text inside text will be cleared
@@ -40,6 +39,9 @@ def title(window,text):
 def geometry(window,size):
     new_window(window)
     memory[window].geometry(size)    
+
+def getinfo(name):
+    return memory[name].get()
 
 def alignment(**kwargs):
     try:
@@ -86,11 +88,11 @@ def pady(**kwargs):
     return pady
 
 def selectfile():
-    memory["filename"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
+    memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
                                             title = "Select file")
 
 def selectfolder():
-    memory["filename"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
+    memory["folder"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
                                             title = "Select folder")   
 
 def button(window,text,command,row,column,**kwargs):  

@@ -1,8 +1,8 @@
 from tkeasy import *
 
 def info():
-    print(getinfo("checkbox 1"))
-    print(getinfo("checkbox 2"))
+    print(get_info("checkbox 1"))
+    print(get_info("checkbox 2"))
 
 label(window="main",text="What a fruit do you like?",row=0,column=0)
 

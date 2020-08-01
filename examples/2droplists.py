@@ -6,11 +6,11 @@ def info():
     title(window="second",text="Info")
     label(window="second",text="Gender",
       background="green",colortext="white",row=0,column=0)
-    label(window="second",text=memory["gender var"].get(),
+    label(window="second",text=getinfo("gender var"),
       background="grey90",row=0,column=1)
     label(window="second",text="Age",
       background="green",colortext="white",row=1,column=0)    
-    label(window="second",text=memory["age var"].get(),
+    label(window="second",text=getinfo("age var"),
       background="grey90",row=1,column=1)    
 
 choices = ["=","Female","Male"]

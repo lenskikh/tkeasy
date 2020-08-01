@@ -1,10 +1,10 @@
 from tkeasy import *
 
 def info():
-    print(getinfo("entry 1"))
+    print(get_info("entry 1"))
 
 def info2():
-    print(getinfo("entry 2"))
+    print(get_info("entry 2"))
 
 #The first window
 title(window="main",text="First window")

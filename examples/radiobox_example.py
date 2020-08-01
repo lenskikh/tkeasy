@@ -1,11 +1,11 @@
 from tkeasy import *
 
 def show_info():
-    choice = getinfo("radioBox")
+    choice = get_info("radioBox")
     if choice == "None":
-        msgboxwarning("warning","Choose something, please")
+        msg_box_warning("warning","Choose something, please")
     else:
-        msgbox("Your choice",f'Your choice is {choice}')
+        msg_box("Your choice",f'Your choice is {choice}')
 
 radiobox(window="main",text="Apple",row=0,column=0)
 radiobox(window="main",text="Melon",row=1,column=0,value="weight = 2kg")

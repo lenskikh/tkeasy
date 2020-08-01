@@ -118,7 +118,7 @@ def label(window,text,row,column,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
   
-def entryfield(window,name,row,column,**kwargs):
+def entry(window,name,row,column,**kwargs):
     new_window(window)
     memory[name] = tk.Entry(memory[window])
     memory[name].grid(

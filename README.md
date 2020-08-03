@@ -1,5 +1,6 @@
 # tkeasy
 ## Wrapper for tkinter giving an easier way to build a gui interface. GUI Development does not have to be difficult nor painful.</br>
+Author - Mikhail Lenskikh</br>
 ![Screenshot](/screenshots/droplist.png)
 
 ## Installation

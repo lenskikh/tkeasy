@@ -8,16 +8,16 @@ Run any file with name "example"
 
 <h1>Your fisrt program</h1>
 <code>
-from tkeasy import *
+from tkeasy import *</br>
 title(window="first window",text="The first window")
 
-label(window="first window",text="The first window",
-      background="green",colortext="white",
+label(window="first window",text="The first window",</br>
+      background="green",colortext="white",</br>
       row=0,column=0)
 
 title(window="second window",text="The second window")
 
-label(window="second window",text="The second window",
-      background="red",colortext="white",
+label(window="second window",text="The second window",</br>
+      background="red",colortext="white",</br>
       row=0,column=0)
 </code>

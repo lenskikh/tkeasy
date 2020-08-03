@@ -10,12 +10,8 @@ Run any file with name "example"
 <code>from tkeasy import *</code>
 <code>title(window="first window",text="The first window")</code>
 
-<code>label(window="first window",text="The first window",</code>
-      <code>background="green",colortext="white",</code>
-      <code>row=0,column=0)</code>
+<code>label(window="first window",text="The first window",background="green",colortext="white",row=0,column=0)</code>
 
 <code>title(window="second window",text="The second window")</code>
 
-<code>label(window="second window",text="The second window",</code>
-      <code>background="red",colortext="white",</code>
-      <code>row=0,column=0)</code>
+<code>label(window="second window",text="The second window",background="red",colortext="white",row=0,column=0)</code>

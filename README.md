@@ -38,13 +38,16 @@ button(window="main",text="Show Info",command=show_info,row=3,column=0)
 
 * title
 * geometry
-* get_info
+* return values (get_info)
 * label
 * checkboxes
-* radio Buttons
-* file Browse
-* folder Browse
-* multi-line Text Input
-* scroll-able Output
-* multiple Windows - unlimited number of windows can be open at the same time
+* radio buttons
+* dropdown list
+* file browse
+* folder browse
+* one-line text input
+* multi-line text input
+* insert text in input field
+* scroll-able output
+* multiple windows - unlimited number of windows can be open at the same time
 * clickable text

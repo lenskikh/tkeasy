@@ -33,3 +33,18 @@ radiobox(window="main",text="Lemon",row=2,column=0)
 button(window="main",text="Show Info",command=show_info,row=3,column=0)
 ```
 ![Screenshot](/screenshots/radiobox.png)
+
+## Features of tkeasy include:
+
+* title
+* geometry
+* get_info
+* label
+* checkboxes
+* radio Buttons
+* file Browse
+* folder Browse
+* multi-line Text Input
+* scroll-able Output
+* multiple Windows - unlimited number of windows can be open at the same time
+* clickable text

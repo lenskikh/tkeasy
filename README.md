@@ -1,4 +1,5 @@
 # tkeasy
+![Screenshot](/screenshots/2 droplist.png)
 Wrapper for tkinter giving an easier way to build a gui interface.
 
 # Installation
@@ -9,7 +10,7 @@ Run any file with name "example"
 # Your fisrt GUI program
 ```python
 from tkeasy import *
-title(window="first window",text="The first window")</code>
+title(window="first window",text="The first window")
 label(window="first window",text="The first window",row=0,column=0)
 ```
 ![Screenshot](/screenshots/thefirst.png)

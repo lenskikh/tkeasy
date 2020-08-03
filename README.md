@@ -7,17 +7,15 @@ Type in terminal or cmd</br>
 Run any file with name "example"
 
 <h1>Your fisrt program</h1>
-<code>
-from tkeasy import *</br>
-title(window="first window",text="The first window")
+<code>from tkeasy import *</code>
+<code>title(window="first window",text="The first window")</code>
 
-label(window="first window",text="The first window",</br>
-      background="green",colortext="white",</br>
-      row=0,column=0)
+<code>label(window="first window",text="The first window",</code>
+      <code>background="green",colortext="white",</code>
+      <code>row=0,column=0)</code>
 
-title(window="second window",text="The second window")
+<code>title(window="second window",text="The second window")</code>
 
-label(window="second window",text="The second window",</br>
-      background="red",colortext="white",</br>
-      row=0,column=0)
-</code>
+<code>label(window="second window",text="The second window",</code>
+      <code>background="red",colortext="white",</code>
+      <code>row=0,column=0)</code>

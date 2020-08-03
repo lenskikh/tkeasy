@@ -1,6 +1,6 @@
 # tkeasy
 Wrapper for tkinter giving an easier way to build a gui interface.
-![Screenshot](/screenshots/2 droplist.png)
+![Screenshot](/screenshots/droplist.png)
 
 # Installation
 Type in terminal or cmd</br>

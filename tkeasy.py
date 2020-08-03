@@ -115,13 +115,13 @@ def button(window,text,command,row,column,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
    
-def label(window,name,text,row,column,**kwargs):   
+def label(window,text,row,column,**kwargs):   
     new_window(window)
-    memory[name] = tk.Label(memory[window], 
+    Label = tk.Label(memory[window], 
         text = text,
         fg = colortext(**kwargs),
         bg = background(**kwargs))
-    memory[name].grid(
+    Label.grid(
         row = row,
         column = column,
         sticky = alignment(**kwargs),

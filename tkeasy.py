@@ -131,8 +131,11 @@ def label(window,text,row,column,**kwargs):
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))  
-    link = kwargs["link"]
-    Label.bind("<Button-1>",lambda url: open_url(link))
+    try:
+        link = kwargs["link"]
+        Label.bind("<Button-1>",lambda url: open_url(link))
+    except:
+        pass
   
 def entry(window,name,row,column,**kwargs):
     new_window(window)

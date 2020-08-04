@@ -16,17 +16,17 @@ def commit(text):
     process = subprocess.Popen(["git", "commit","-m "+ text], stdout=subprocess.PIPE)
     output = process.communicate()[0]
     print(output)
-
-def info():
-    text = get_info("commit")
-    print(text)
-    commit(text)
+    push()
 
 def push():
     process = subprocess.Popen(["git", "push"], stdout=subprocess.PIPE)
     output = process.communicate()[0]
-    print(output)    
-
+    print(output)
+    
+def info():
+    text = get_info("commit")
+    print(text)
+    commit(text)
     
 choices = ["Minor changes","Added comments",
            "Some names have been changed"]
@@ -37,6 +37,6 @@ dropdown_list(window="main",variable="commit",choices=choices,
 button(window="main",text="Get Info",
        command=info,row=2,column=0)
 
-push()
+
 
 

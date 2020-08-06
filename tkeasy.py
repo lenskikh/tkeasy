@@ -120,15 +120,6 @@ def button(text,command,row,column,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
 
-
-
-def open_link(**kwargs):
-    try:
-        link = kwargs["link"]
-        memory["label"].bind("<Button-1>",lambda url: open_url(link))       
-    except:
-        pass
-
 def label(text,row,column,**kwargs):   
     window = new_window(**kwargs)
     memory["label"] = tk.Label(memory[window], 
@@ -141,6 +132,9 @@ def label(text,row,column,**kwargs):
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))  
+
+def label_click():
+    return memory["label"]
   
 def entry(name,row,column,**kwargs):
     window = new_window(**kwargs)

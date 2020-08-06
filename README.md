@@ -11,8 +11,8 @@ Run any file with name "example"
 ## Your fisrt GUI program
 ```python
 from tkeasy import *
-title(window="first window",text="The first window")
-label(window="first window",text="The first window",row=0,column=0)
+title("The first window")
+label(text="The first window",row=0,column=0)
 ```
 ![Screenshot](/screenshots/thefirst.png)
 

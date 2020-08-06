@@ -3,6 +3,8 @@ import webbrowser
 
 def open_url(link):
     webbrowser.open_new_tab(link)
+
+title("Open links")
     
 label(text="Python official website",
       colortext="blue",row=0,column=0,

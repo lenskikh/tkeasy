@@ -42,8 +42,8 @@ def title(text,**kwargs):
     window = new_window(**kwargs)
     memory[window].title(text)
 
-def geometry(window,size):
-    new_window(window)
+def geometry(size,**kwargs):
+    window = new_window(**kwargs)
     memory[window].geometry(size)    
 
 def get_info(name):
@@ -110,8 +110,8 @@ def select_folder():
     memory["folder"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
                                             title = "Select folder")   
 
-def button(window,text,command,row,column,**kwargs):  
-    new_window(window) 
+def button(text,command,row,column,**kwargs):  
+    window = new_window(**kwargs) 
     tk.Button(memory[window], 
         text = text,
         command = command).grid(
@@ -124,8 +124,8 @@ def button(window,text,command,row,column,**kwargs):
 def open_url(link):
     webbrowser.open_new_tab(link)
 
-def label(window,text,row,column,**kwargs):   
-    new_window(window)
+def label(text,row,column,**kwargs):   
+    window = new_window(**kwargs)
     Label = tk.Label(memory[window], 
         text = text,
         fg = colortext(**kwargs),
@@ -139,8 +139,8 @@ def label(window,text,row,column,**kwargs):
     link = kwargs["link"]
     Label.bind("<Button-1>",lambda url: open_url(link))
   
-def entry(window,name,row,column,**kwargs):
-    new_window(window)
+def entry(name,row,column,**kwargs):
+    window = new_window(**kwargs)
     memory[name] = tk.Entry(memory[window])
     memory[name].grid(
         row = row,
@@ -153,8 +153,8 @@ def entry_insert(name,text,colortext):
     memory[name].insert(0,text)
     memory[name].config(fg=colortext)
 
-def checkbox(window,name,text,row,column,**kwargs):
-    new_window(window)
+def checkbox(name,text,row,column,**kwargs):
+    window = new_window(**kwargs)
     memory[name] = tk.IntVar()
     memory[text] = tk.Checkbutton(memory[window],
         text = text,
@@ -166,8 +166,8 @@ def checkbox(window,name,text,row,column,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
 
-def radiobox(window,text,row,column,**kwargs):
-    new_window(window)
+def radiobox(text,row,column,**kwargs):
+    window = new_window(**kwargs)
     if "radioBox" not in memory:
         memory["radioBox"] = tk.StringVar()
 
@@ -191,8 +191,8 @@ def radiobox(window,text,row,column,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))    
 
-def dropdown_list(window,variable,choices,default,row,column,**kwargs):
-    new_window(window)
+def dropdown_list(variable,choices,default,row,column,**kwargs):
+    window = new_window(**kwargs)
     memory[variable] = tk.StringVar(memory[window])
     popupmenu = tk.OptionMenu(memory[window], memory[variable], *choices)
     memory[variable].set(default) # default value
@@ -205,8 +205,8 @@ def dropdown_list(window,variable,choices,default,row,column,**kwargs):
 
 #text in text area looks ugly with scroll in macos
 #you can use textarea without scroll
-def text_area(window,name,row,column,**kwargs):
-    new_window(window)
+def text_area(name,row,column,**kwargs):
+    window = new_window(**kwargs)
     memory[name] = tk.Text(memory[window],
         wrap = tk.WORD,
         height = 10, 
@@ -220,8 +220,8 @@ def text_area(window,name,row,column,**kwargs):
         pady = pady(**kwargs))
 
 #Works slowly at big text (in macos)
-def text_area_scroll(window,name,row,column,**kwargs):
-    new_window(window)
+def text_area_scroll(name,row,column,**kwargs):
+    window = new_window(**kwargs)
     memory[name] = scrolledtext.ScrolledText(memory[window],
         wrap = tk.WORD,
         height = 10, 
@@ -248,3 +248,8 @@ def msg_box_warning(title,message):
 
 def msg_box_ask(name,title,message): 
     memory[name] = tk.messagebox.askyesnocancel(title=title, message=message)
+
+def loop(**kwargs):
+    window = new_window(**kwargs)
+    memory[window].mainloop()
+

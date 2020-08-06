@@ -3,7 +3,6 @@ import tkinter as tk
 from tkinter import filedialog
 from tkinter import scrolledtext
 import tkinter.messagebox
-import webbrowser
 
 memory = {"filename":"", "key TAB":""}
 
@@ -121,23 +120,27 @@ def button(text,command,row,column,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
 
-def open_url(link):
-    webbrowser.open_new_tab(link)
+
+
+def open_link(**kwargs):
+    try:
+        link = kwargs["link"]
+        memory["label"].bind("<Button-1>",lambda url: open_url(link))       
+    except:
+        pass
 
 def label(text,row,column,**kwargs):   
     window = new_window(**kwargs)
-    Label = tk.Label(memory[window], 
+    memory["label"] = tk.Label(memory[window], 
         text = text,
         fg = colortext(**kwargs),
         bg = background(**kwargs))
-    Label.grid(
+    memory["label"].grid(
         row = row,
         column = column,
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))  
-    #link = kwargs["link"]
-    #Label.bind("<Button-1>",lambda url: open_url(link))
   
 def entry(name,row,column,**kwargs):
     window = new_window(**kwargs)

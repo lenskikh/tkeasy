@@ -29,12 +29,17 @@ def key(event):
         memory["key TAB"]+="TAB"
 
 #new window
-def new_window(window):
+def new_window(**kwargs):
+    try:
+        window = kwargs["window"]
+    except:
+        window = "root"        
     if window not in memory:
         memory[window] = tk.Tk()
+    return window        
 
-def title(window,text):
-    new_window(window)
+def title(text,**kwargs):
+    window = new_window(**kwargs)
     memory[window].title(text)
 
 def geometry(window,size):

@@ -1,9 +1,11 @@
 from tkeasy import *
 
-title(window="main",text="Text area")
+title(text="Text area")
 
 def show_info():
-    print(get_info("area"))
+    print(get_info("area").strip())
     
-text_area(window="main",name="area",row=0,column=0)
-button(window="main",text="Show Info",command=show_info,row=1,column=0)
+text_area(name="area",row=0,column=0)
+button(text="Show Info",command=show_info,row=1,column=0)
+
+app_loop()

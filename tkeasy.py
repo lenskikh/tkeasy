@@ -246,7 +246,7 @@ def msg_box_warning(title,message):
 def msg_box_ask(name,title,message): 
     memory[name] = tk.messagebox.askyesnocancel(title=title, message=message)
 
-def loop(**kwargs):
+def app_loop(**kwargs):
     window = new_window(**kwargs)
     memory[window].mainloop()
 

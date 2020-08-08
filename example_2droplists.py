@@ -1,6 +1,6 @@
 from tkeasy import *
 
-title(window="main",text="The first window")
+title(text="The first window")
 
 def info():
     title(window="second",text="Info")
@@ -14,12 +14,15 @@ def info():
       background="grey90",row=1,column=1)    
 
 choices = ["=","Female","Male"]
-dropdown_list(window="main",variable="gender var",choices=choices,
+dropdown_list(variable="gender var",choices=choices,
              default="Gender",row=0,column=0)
 
 age = ["01-06","7-14","15-23","24-31","31-40","41-55","56-70","71-85","86-105"]
-dropdown_list(window="main",variable="age var",choices=age,
+dropdown_list(variable="age var",choices=age,
              default="Age",row=1,column=0)
 
-button(window="main",text="Get Info",
+button(text="Get Info",
        command=info,row=2,column=0)
+
+#you need use if run code in vsc
+app_loop()

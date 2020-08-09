@@ -101,6 +101,13 @@ def pady(**kwargs):
         pady = 2
     return pady
 
+def width_entry(**kwargs):
+    try:
+        width = kwargs["width"]
+    except:
+        width = 20
+    return width
+
 def select_file():
     memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
                                             title = "Select file")
@@ -143,7 +150,8 @@ def label_click():
   
 def entry(name,row,column,**kwargs):
     window = new_window(**kwargs)
-    memory[name] = tk.Entry(memory[window])
+    memory[name] = tk.Entry(memory[window],
+        width = width_entry(**kwargs))
     memory[name].grid(
         row = row,
         column = column,

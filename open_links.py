@@ -19,4 +19,4 @@ label(text="Gmail website",
       colortext="blue",row=2,column=0)
 label_click().bind("<Button-1>",lambda url:open_url("https://www.gmail.com"))
 
-loop()
+app_loop()

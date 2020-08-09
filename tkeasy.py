@@ -155,7 +155,16 @@ def label(text,row,column,**kwargs):
 
 def label_click():
     return memory["label"]
-  
+
+def photo(file,row,column,**kwargs):
+    window = new_window(**kwargs) 
+    photo = tk.PhotoImage(file=file)
+    picture = tk.Label(memory[window],image=photo)
+    picture.photo = photo
+    picture.grid(
+        row = row,
+        column = column)
+
 def entry(name,row,column,**kwargs):
     window = new_window(**kwargs)
     memory[name] = tk.Entry(memory[window],

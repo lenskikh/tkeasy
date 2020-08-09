@@ -25,3 +25,5 @@ entry(window="second",name="entry 2",
            row=1,column=0)
 button(window="second",text="Get Info",
        command=info2,row=2,column=0)
+
+app_loop(window="main")

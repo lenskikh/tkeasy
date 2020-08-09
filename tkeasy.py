@@ -108,6 +108,13 @@ def width_entry(**kwargs):
         width = 20
     return width
 
+def label_font(**kwargs):
+    try:
+        font = kwargs["font"]
+    except:
+        font = "Helvetica", 13
+    return font
+
 def select_file():
     memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
                                             title = "Select file")
@@ -137,7 +144,8 @@ def label(text,row,column,**kwargs):
     memory["label"] = tk.Label(memory[window], 
         text = text,
         fg = colortext(**kwargs),
-        bg = background(**kwargs))
+        bg = background(**kwargs),
+        font = label_font(**kwargs))
     memory["label"].grid(
         row = row,
         column = column,

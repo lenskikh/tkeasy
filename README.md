@@ -55,4 +55,4 @@ app_loop()
 * clickable text
 * images
 * clickable images
-* scale (horizontal by default) 
+* scale/slider (horizontal by default) 

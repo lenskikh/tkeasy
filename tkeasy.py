@@ -115,6 +115,15 @@ def label_font(**kwargs):
         font = "Helvetica", 13
     return font
 
+def scale_oriental(**kwargs):
+    try:
+        kwargs["pos"]
+        orient = "vertical"
+    except:
+        orient = "horizontal"
+    return orient
+
+
 def select_file():
     memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
                                             title = "Select file")
@@ -195,7 +204,9 @@ def checkbox(name,text,row,column,**kwargs):
 
 def scale(name,row,column,**kwargs):
     window = new_window(**kwargs)
-    memory[name] = tk.Scale(memory[window],from_= 0, to = 100)
+    memory[name] = tk.Scale(memory[window],
+        from_= 0, to = 100, orient=scale_oriental(**kwargs))
+
     memory[name].grid(
         row = row,
         column = column,

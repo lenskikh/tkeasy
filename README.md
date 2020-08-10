@@ -53,4 +53,6 @@ app_loop()
 * scroll-able output
 * multiple windows - unlimited number of windows can be open at the same time
 * clickable text
-* use images
+* images
+* clickable images
+* scale (horizontal by defualt) 

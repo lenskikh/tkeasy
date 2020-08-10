@@ -132,10 +132,11 @@ def select_folder():
     memory["folder"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
                                             title = "Select folder")   
 
-def separator(row,column,**kwargs):
+def separator(column_length,**kwargs):
     window = new_window(**kwargs) 
     separator = tk.Frame(memory[window],height=2, bd=1, relief="sunken")
-    separator.grid(row=row,column=column, sticky="EW",padx=5, pady=5)
+    separator.grid(columnspan=column_length, sticky="EW",
+        padx=padx(**kwargs), pady=pady(**kwargs))
 
 def button(text,command,row,column,**kwargs):  
     window = new_window(**kwargs) 

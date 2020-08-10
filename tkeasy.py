@@ -193,6 +193,16 @@ def checkbox(name,text,row,column,**kwargs):
         padx = padx(**kwargs),
         pady = pady(**kwargs))
 
+def scale(name,row,column,**kwargs):
+    window = new_window(**kwargs)
+    memory[name] = tk.Scale(memory[window],from_= 0, to = 100)
+    memory[name].grid(
+        row = row,
+        column = column,
+        sticky = alignment(**kwargs),
+        padx = padx(**kwargs),
+        pady = pady(**kwargs))        
+
 def radiobox(text,row,column,**kwargs):
     window = new_window(**kwargs)
     if "radioBox" not in memory:

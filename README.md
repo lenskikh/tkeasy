@@ -57,7 +57,8 @@ app_loop()
     > window (*optional*) = "name",<br/>
     > text="text",<br/>
     > colortext (*optional*) = "red" (You can use hex color instead)<br/>
-    > background (*optional*) = "#241e14" (You can use hex color)
+    > background (*optional*) = "#241e14" (You can use hex color)<br/>
+    > font (*optional*) = "Times", 13 (font in quotation marks, size of font after comma)
 * checkboxes
 * radio buttons
 * dropdown list

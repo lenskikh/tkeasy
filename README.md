@@ -55,8 +55,9 @@ app_loop()
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)
 * label
     > window (*optional*) = "name",<br/>
-    > text="text",
-    > colortext (*optional*) = "red" (You can use hex color)
+    > text="text",<br/>
+    > colortext (*optional*) = "red" (You can use hex color instead)<br/>
+    > background (*optional*) = "#241e14" (You can use hex color)
 * checkboxes
 * radio buttons
 * dropdown list

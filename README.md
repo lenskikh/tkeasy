@@ -42,6 +42,8 @@ app_loop()
     > text = "New Title",<br/>
     > window (*optional*) = "name" 
 * geometry
+    > size = "300x300",<br/>
+    > window (*optional*) = "name" 
 * return values (get_info)
 * label
 * checkboxes

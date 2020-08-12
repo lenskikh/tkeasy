@@ -44,7 +44,10 @@ app_loop()
 * geometry
     > size = "300x300",<br/>
     > window (*optional*) = "name" 
-* return values (get_info)
+* button
+    > window (*optional*) = "name"
+    > text="text",<br/>
+    > command=somedef (Without brackets and quotation marks. Link to local def. See examples in code),<br/>
 * label
 * checkboxes
 * radio buttons
@@ -60,3 +63,4 @@ app_loop()
 * images
 * clickable images
 * scale/slider (horizontal by default) 
+* return values (get_info)

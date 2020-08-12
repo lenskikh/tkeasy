@@ -56,6 +56,7 @@ app_loop()
 * label
     > window (*optional*) = "name",<br/>
     > text="text",
+    > colortext (*optional*) = "red" (You can use hex color)
 * checkboxes
 * radio buttons
 * dropdown list

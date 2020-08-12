@@ -45,7 +45,7 @@ app_loop()
     > size = "300x300",<br/>
     > window (*optional*) = "name" 
 * button
-    > window (*optional*) = "name"
+    > window (*optional*) = "name",<br/>
     > text="text",<br/>
     > command=somedef (Without brackets and quotation marks. Link to local def. See examples in code),<br/>
 * label

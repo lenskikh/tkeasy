@@ -54,6 +54,8 @@ app_loop()
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*),<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)
 * label
+    > window (*optional*) = "name",<br/>
+    > text="text",
 * checkboxes
 * radio buttons
 * dropdown list

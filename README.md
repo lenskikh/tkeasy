@@ -49,7 +49,8 @@ app_loop()
     > text="text",<br/>
     > command=somedef (*Without brackets and quotation marks. Link to local def. See examples in code*),<br/>
     > row = 0 (*Number. Without brackets and quotation marks*),<br/>
-    > column = 0 (*Number. Without brackets and quotation marks*),
+    > column = 0 (*Number. Without brackets and quotation marks*),<br/>
+    > sticky (*optional*) = "left" or "right" or "center" Сhoose one
 * label
 * checkboxes
 * radio buttons

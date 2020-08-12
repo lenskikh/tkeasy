@@ -39,6 +39,8 @@ app_loop()
 ## Features of tkeasy include:
 
 * title
+    > text = "New Title" 
+    > window (*optional*) = "name" 
 * geometry
 * return values (get_info)
 * label

@@ -60,7 +60,7 @@ app_loop()
     > background (*optional*) = "#241e14" (You can use hex color)<br/>
     > font (*optional*) = "Times", 13 (font in quotation marks, size of font after comma)<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
-    > column = 0 (*Number. Without brackets and quotation marks*)<br/>   
+    > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    

@@ -47,7 +47,7 @@ app_loop()
 * button
     > window (*optional*) = "name",<br/>
     > text="text" - text of button<br/>
-    > command=somedef - appeal to function in your code (*Without brackets and quotation marksSee examples in code*)<br/>
+    > command=somedef - appeal to function in your code (*Without brackets and quotation marks. See examples in code*)<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/>

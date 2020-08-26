@@ -66,8 +66,13 @@ app_loop()
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
 * checkboxes
     > window (*optional*) = "name",<br/>
-    > name = "name" - name of checkbox
-    > text = "text" - text of checkbox
+    > name = "name" - name of checkbox<br/>
+    > text = "text" - text of checkbox<br/>
+    > row = 0 (*Number. Without brackets and quotation marks*),<br/>
+    > column = 0 (*Number. Without brackets and quotation marks*),<br/>   
+    > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
+    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*),<br/>
+    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*) 
 * radio buttons
 * dropdown list
 * file browse

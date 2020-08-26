@@ -48,10 +48,10 @@ app_loop()
     > window (*optional*) = "name",<br/>
     > text="text",<br/>
     > command=somedef (*Without brackets and quotation marks. Link to local def. See examples in code*),<br/>
-    > row = 0 (*Number. Without brackets and quotation marks*),<br/>
-    > column = 0 (*Number. Without brackets and quotation marks*),<br/>
+    > row = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/>
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*),<br/>
+    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)
 * label
     > window (*optional*) = "name",<br/>
@@ -59,19 +59,19 @@ app_loop()
     > colortext (*optional*) = "red" (You can use hex color instead)<br/>
     > background (*optional*) = "#241e14" (You can use hex color)<br/>
     > font (*optional*) = "Times", 13 (font in quotation marks, size of font after commaw)
-    > row = 0 (*Number. Without brackets and quotation marks*),<br/>
-    > column = 0 (*Number. Without brackets and quotation marks*),<br/>   
+    > row = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > column = 0 (*Number. Without brackets and quotation marks*)<br/>   
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*),<br/>
+    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
 * checkboxes
     > window (*optional*) = "name",<br/>
     > name = "name" - name of checkbox<br/>
     > text = "text" - text of checkbox<br/>
-    > row = 0 (*Number. Without brackets and quotation marks*),<br/>
-    > column = 0 (*Number. Without brackets and quotation marks*),<br/>   
+    > row = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > column = 0 (*Number. Without brackets and quotation marks*)
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*),<br/>
+    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*) 
 * radio buttons
 * dropdown list

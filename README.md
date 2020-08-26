@@ -45,7 +45,7 @@ app_loop()
     > size = "300x300",<br/>
     > window (*optional*) = "name" 
 * button
-    > window (*optional*) = "name",<br/>
+    > window (*optional*) = "name"<br/>
     > text="text" - text of button<br/>
     > command=somedef - appeal to function in your code (*Without brackets and quotation marks. See examples in code*)<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
@@ -54,7 +54,7 @@ app_loop()
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)
 * label
-    > window (*optional*) = "name",<br/>
+    > window (*optional*) = "name"<br/>
     > text="text" - text of label<br/>
     > colortext (*optional*) = "red" (You can use hex color instead)<br/>
     > background (*optional*) = "#241e14" (You can use hex color)<br/>
@@ -65,7 +65,7 @@ app_loop()
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
 * checkboxes
-    > window (*optional*) = "name",<br/>
+    > window (*optional*) = "name"<br/>
     > name = "name" - name of checkbox<br/>
     > text = "text" - text of checkbox<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
@@ -73,7 +73,16 @@ app_loop()
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*) 
-* radio buttons
+* radiobox
+    Radiobox by default is not selected
+    > window (*optional*) = "name"<br/>
+    > text = "text" - text for radiobox<br/>
+    > value (*optional*) = "value"<br />
+    > row = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > column = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
+    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)     
 * dropdown list
 * file browse
 * folder browse

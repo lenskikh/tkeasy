@@ -46,7 +46,7 @@ app_loop()
     > window (*optional*) = "name" 
 * button
     > window (*optional*) = "name",<br/>
-    > text="text",<br/>
+    > text="text" - text of button<br/>
     > command=somedef (*Without brackets and quotation marks. Link to local def. See examples in code*),<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
@@ -55,7 +55,7 @@ app_loop()
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)
 * label
     > window (*optional*) = "name",<br/>
-    > text="text",<br/>
+    > text="text" - text of label<br/>
     > colortext (*optional*) = "red" (You can use hex color instead)<br/>
     > background (*optional*) = "#241e14" (You can use hex color)<br/>
     > font (*optional*) = "Times", 13 (font in quotation marks, size of font after comma)<br/>

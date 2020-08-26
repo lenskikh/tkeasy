@@ -1,7 +1,7 @@
 from tkeasy import *
 
 def show_info():
-    choice = get_info("radioBox")
+    choice = get_info("radiobox")
     if choice == "None":
         msg_box_warning("warning","Choose something, please")
     else:

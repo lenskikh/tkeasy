@@ -74,7 +74,7 @@ app_loop()
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*) 
 * radiobox
-    > Radiobox by default is not selected
+    > Radiobox by default is not selected<br/>
     > window (*optional*) = "name"<br/>
     > text = "text" - text for radiobox<br/>
     > value (*optional*) = "value". If value in not set then text of radiobox is default value<br />

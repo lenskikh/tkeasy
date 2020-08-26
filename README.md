@@ -66,7 +66,8 @@ app_loop()
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
 * checkboxes
     > window (*optional*) = "name",<br/>
-    > name="name" - name of checkbox
+    > name = "name" - name of checkbox
+    > text = "text" - text of checkbox
 * radio buttons
 * dropdown list
 * file browse

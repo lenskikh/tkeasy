@@ -217,11 +217,11 @@ def scale(name,row,column,**kwargs):
 
 def radiobox(text,row,column,**kwargs):
     window = new_window(**kwargs)
-    if "radioBox" not in memory:
-        memory["radioBox"] = tk.StringVar()
+    if "radiobox" not in memory:
+        memory["radiobox"] = tk.StringVar()
 
     #No radio boxes are selected
-    memory["radioBox"].set(None)
+    memory["radiobox"].set(None)
 
     if kwargs.get("value"):
         value = kwargs["value"] 
@@ -231,7 +231,7 @@ def radiobox(text,row,column,**kwargs):
 
     radiob = tk.Radiobutton(memory[window], 
         text = text, 
-        variable = memory["radioBox"], 
+        variable = memory["radiobox"], 
         value = value)
     radiob.grid(
         row = row,

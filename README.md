@@ -1,6 +1,5 @@
 # tkeasy
 ## Wrapper for tkinter giving an easier way to build a gui interface. GUI Development does not have to be difficult nor painful.</br>
-Author - Mikhail Lenskikh</br>
 ![Screenshot](/screenshots/droplist.png)
 
 ## Installation
@@ -173,6 +172,9 @@ app_loop()
     ```
 * insert text in input field
     > method insert_text_area()<br />
+    > name = "name" - name of text area that you are used before<br/>
+    > text = "text" which you want to insert in a text area<br/>
+    > color = "#323648" color of text
 * scroll-able output
 * multiple windows - unlimited number of windows can be open at the same time
 * clickable text

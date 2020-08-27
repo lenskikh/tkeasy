@@ -144,6 +144,15 @@ app_loop()
 * one-line text input
     > method entry()<br/>
     > window (*optional*) = "name"<br/>
+    > name = "name" - name of entry<br/>   
+    > row = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > column = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
+    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*) 
+    ```python   
+    entry(name="entry 1",row=0,column=0)
+    ```  
 * multi-line text input
 * insert text in input field
 * scroll-able output

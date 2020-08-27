@@ -144,7 +144,7 @@ app_loop()
 * one-line text input
     > method entry()<br/>
     > window (*optional*) = "name"<br/>
-    > name = "name" - name of entry<br/>   
+    > name = "name" - name of entry<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
@@ -154,6 +154,9 @@ app_loop()
     entry(name="entry 1",row=0,column=0)
     ```  
 * multi-line text input
+    > method text_area()<br/>
+    > method text_area_scroll()<br/>
+    > scroll looks ugly on some OS, use text_area() if text is short.<br/>
 * insert text in input field
 * scroll-able output
 * multiple windows - unlimited number of windows can be open at the same time

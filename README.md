@@ -88,6 +88,10 @@ app_loop()
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*) 
+    ```python
+    checkbox(name="checkbox 1", text="Apple",row=0,column=0,sticky = "left")
+    checkbox(name="checkbox 2", text="Banan",row=0,column=0,sticky = "left")
+    ```
 * radiobox
     > Radiobox by default is not selected<br/>
     > window (*optional*) = "name"<br/>

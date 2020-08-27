@@ -76,6 +76,9 @@ app_loop()
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
+    ```python
+    label(text="Label text",row=0,column=0)
+    ```
 * checkboxes
     > window (*optional*) = "name"<br/>
     > name = "name" - name of checkbox<br/>

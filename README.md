@@ -87,13 +87,18 @@ app_loop()
     > window (*optional*) = "name"<br/>
     > variable = "variable"<br /> 
     > choices = list should assign in your code. For example: choices = ("One","Two","Three")<br/>
-    > default = "default" - Setting the default value. For example "One" from you list choices<br/>
+    > default = "default" - Setting the default value. For example "One" from your list choices<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)     
 * file browse
+    > command=select_file<br/>
+    > Use button and in the command point out select_file
+    ```python
+    button(text="FILE BROWSER", command=select_file,row=1,column=0)
+    ```
 * folder browse
 * one-line text input
 * multi-line text input

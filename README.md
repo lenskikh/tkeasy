@@ -39,8 +39,11 @@ app_loop()
 ## Features of tkeasy include:
 
 * title
-    > text = "New Title",<br/>
-    > window (*optional*) = "name" 
+    > text = "New Title"<br/>
+    > window (*optional*) = "name"<br/>
+    ```python
+    title(text="Title")
+    ``` 
 * geometry
     > size = "300x300",<br/>
     > window (*optional*) = "name" 

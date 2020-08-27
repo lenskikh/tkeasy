@@ -102,6 +102,10 @@ app_loop()
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)     
+    ```python
+    radiobox(text="Apple",row=0,column=0)
+    radiobox(text="Melon",row=1,column=0,value="weight = 2kg")
+    ```
 * dropdown list
     > window (*optional*) = "name"<br/>
     > variable = "variable"<br /> 
@@ -112,6 +116,10 @@ app_loop()
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)     
+    ```python
+    fruits = ["Apple","Pear","Banana","Kiwi"]
+    dropdown_list(variable="fruits var",choices=age,default="Chose fruit",row=0,column=0)
+    ```
 * file browse
     > command=select_file<br/>
     > Use button method and in the command point out select_file

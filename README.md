@@ -45,8 +45,14 @@ app_loop()
     title(text="Title")
     ``` 
 * geometry
-    > size = "300x300",<br/>
-    > window (*optional*) = "name" 
+    > size = "300x300"<br/>
+    > window (*optional*) = "name"<br/>
+    ```python
+    geometry(size="300x300")
+    or
+    geometry('200x150 + 400 + 300') 
+    ```
+    > 400 shifted on X-axis and 300 shifted on Y-axis
 * button
     > window (*optional*) = "name"<br/>
     > text="text" - text of button<br/>

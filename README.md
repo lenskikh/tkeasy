@@ -39,12 +39,14 @@ app_loop()
 ## Features of tkeasy include:
 
 * title
+    > method title()<br/>
     > text = "New Title"<br/>
     > window (*optional*) = "name"<br/>
     ```python
     title(text="Title")
     ``` 
 * geometry
+    > method geometry()<br/>
     > size = "300x300"<br/>
     > window (*optional*) = "name"<br/>
     ```python
@@ -54,6 +56,7 @@ app_loop()
     ```
     > 400 shifted on X-axis and 300 shifted on Y-axis
 * button
+    > method button()<br/>
     > window (*optional*) = "name"<br/>
     > text="text" - text of button<br/>
     > command=somedef - appeal to function in your code (*Without brackets and quotation marks. See examples in code*)<br/>
@@ -66,6 +69,7 @@ app_loop()
     button(text="Show Info",command=show_info,row=0,column=0)
     ```
 * label
+    > method label()<br/>
     > window (*optional*) = "name"<br/>
     > text="text" - text of label<br/>
     > colortext (*optional*) = "red" (You can use hex color instead)<br/>
@@ -80,6 +84,7 @@ app_loop()
     label(text="Label text",row=0,column=0)
     ```
 * checkboxes
+    > method checkbox()<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of checkbox<br/>
     > text = "text" - text of checkbox<br/>
@@ -93,6 +98,7 @@ app_loop()
     checkbox(name="checkbox 2", text="Banan",row=0,column=0,sticky = "left")
     ```
 * radiobox
+    > method radiobox()<br/>
     > Radiobox by default is not selected<br/>
     > window (*optional*) = "name"<br/>
     > text = "text" - text for radiobox<br/>
@@ -107,6 +113,7 @@ app_loop()
     radiobox(text="Melon",row=1,column=0,value="weight = 2kg")
     ```
 * dropdown list
+    > method dropdown_list()<br/>
     > window (*optional*) = "name"<br/>
     > variable = "variable"<br /> 
     > choices = list should assign in your code. For example: choices = ("One","Two","Three")<br/>
@@ -121,18 +128,22 @@ app_loop()
     dropdown_list(variable="fruits var",choices=age,default="Chose fruit",row=0,column=0)
     ```
 * file browse
+    > method select_file<br/>
     > command=select_file<br/>
     > Use button method and in the command point out select_file
     ```python
     button(text="FILE BROWSER", command=select_file,row=0,column=0)
     ```
 * folder browse
+    > method select_folder<br/>
     > command=select_folder
     > Use button method and in the command point out select_folder
     ```python
     button(text='FOLDER BROWSER',command=select_folder,row=0,column=0,sticky="center")
     ```
 * one-line text input
+    > method entry()<br/>
+    > window (*optional*) = "name"<br/>
 * multi-line text input
 * insert text in input field
 * scroll-able output

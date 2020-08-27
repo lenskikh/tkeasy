@@ -62,6 +62,9 @@ app_loop()
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/>
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)
+    ```python
+    button(text="Show Info",command=show_info,row=0,column=0)
+    ```
 * label
     > window (*optional*) = "name"<br/>
     > text="text" - text of label<br/>

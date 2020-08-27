@@ -84,6 +84,15 @@ app_loop()
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)     
 * dropdown list
+    > window (*optional*) = "name"<br/>
+    > variable = "variable"<br /> 
+    > choices = list should assign in your code. For example: choices = ("One","Two","Three")<br/>
+    > default = "default" - Setting the default value. For example "One" from you list choices<br/>
+    > row = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > column = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
+    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)     
 * file browse
 * folder browse
 * one-line text input

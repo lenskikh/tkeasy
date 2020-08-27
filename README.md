@@ -157,6 +157,7 @@ app_loop()
     > method text_area()<br/>
     > method text_area_scroll()<br/>
     > scroll looks ugly on some OS, use text_area() if text is short.<br/>
+    > window (*optional*) = "name"<br/>    
     > name = "name" - name of text area<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
@@ -166,11 +167,12 @@ app_loop()
     ```python 
     text_area(name="area",row=0,column=0)
     ```
-    or<br />
+    or
     ```python 
     text_area_scroll(name="area",row=0,column=0)
     ```
 * insert text in input field
+    > method insert_text_area()<br />
 * scroll-able output
 * multiple windows - unlimited number of windows can be open at the same time
 * clickable text

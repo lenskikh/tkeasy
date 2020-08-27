@@ -95,11 +95,16 @@ app_loop()
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)     
 * file browse
     > command=select_file<br/>
-    > Use button and in the command point out select_file
+    > Use button method and in the command point out select_file
     ```python
-    button(text="FILE BROWSER", command=select_file,row=1,column=0)
+    button(text="FILE BROWSER", command=select_file,row=0,column=0)
     ```
 * folder browse
+    > command=select_folder
+    > Use button method and in the command point out select_folder
+    ```python
+    button(text='FOLDER BROWSER',command=select_folder,row=0,column=0,sticky="center")
+    ```
 * one-line text input
 * multi-line text input
 * insert text in input field

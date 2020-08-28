@@ -169,11 +169,14 @@ def label_click():
 def photo(file,row,column,**kwargs):
     window = new_window(**kwargs) 
     photo = tk.PhotoImage(file=file)
-    picture = tk.Label(memory[window],image=photo)
-    picture.photo = photo
-    picture.grid(
+    memory["picture"] = tk.Label(memory[window],image=photo)
+    memory["picture"].photo = photo
+    memory["picture"].grid(
         row = row,
         column = column)
+
+def photo_click():
+    return memory["picture"]
 
 def entry(name,row,column,**kwargs):
     window = new_window(**kwargs)

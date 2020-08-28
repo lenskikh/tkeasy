@@ -7,8 +7,7 @@ def open_url(link):
 title("Open links")
     
 label(text="Python official website",
-      colortext="blue",row=0,column=0,
-      link="https://www.python.org/")
+      colortext="blue",row=0,column=0)
 label_click().bind("<Button-1>",lambda url:open_url("https://www.python.org/"))
 
 label(text="Google official website",

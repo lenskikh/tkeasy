@@ -183,7 +183,7 @@ app_loop()
     insert_text_area(name="area output",text="some text",color = "black")
     ```     
 * multiple windows - unlimited number of windows can be open at the same time
-    > add "window" in the start of any method
+    add "window" in the start of any method
     ```python
     title(window="main",text="The first window")
     label(window="main",text="The first window",row=0,column=0)
@@ -192,6 +192,14 @@ app_loop()
     label(window="second",text="The second window",row=0,column=0)
     ```
 * clickable text
+    > method label_click()
+    ```python
+    label(text="Link 1",row=0,column=0)
+    label_click().bind("<Button-1>",lambda url:msg_box("Clicked","Link 1"))
+
+    label(text="Link 2",row=1,column=0)
+    label_click().bind("<Button-1>",lambda url:msg_box("Clicked","Link 2"))
+    ```
 * images
 * clickable images
 * scale/slider (horizontal by default) 

@@ -209,6 +209,7 @@ app_loop()
     photo("3.png",0,1)
     photo("4.png",1,1)
     ```
+    ![Screenshot](/screenshots/photo.png)
 * clickable images
 * scale/slider (horizontal by default) 
 * return values (get_info)

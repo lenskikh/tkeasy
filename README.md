@@ -200,7 +200,7 @@ app_loop()
     label(text="Link 2",row=1,column=0)
     label_click().bind("<Button-1>",lambda url:msg_box("Clicked","Link 2"))
     ```
-* images
+* images<br />
     Use png format for good quality <br />
     > method photo()
     ```python

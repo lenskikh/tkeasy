@@ -175,7 +175,13 @@ app_loop()
     > name = "name" - name of text area that you are used before<br/>
     > text = "text" which you want to insert in a text area<br/>
     > color = "#323648" color of text
-* scroll-able output
+* scroll-able output<br/>
+    Use two methods for scroll-able output<br/>
+    > method text_area_scroll() and method insert_text_area()
+    ```python 
+    text_area_scroll(name="area output",row=0,column=0)
+    insert_text_area(name="area output",text="some text",color = "black")
+    ```      
 * multiple windows - unlimited number of windows can be open at the same time
 * clickable text
 * images

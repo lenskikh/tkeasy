@@ -181,8 +181,16 @@ app_loop()
     ```python 
     text_area_scroll(name="area output",row=0,column=0)
     insert_text_area(name="area output",text="some text",color = "black")
-    ```      
+    ```     
 * multiple windows - unlimited number of windows can be open at the same time
+    > add "window" in the start of any method
+    ```python
+    title(window="main",text="The first window")
+    label(window="main",text="The first window",row=0,column=0)
+
+    title(window="second",text="The second window")
+    label(window="second",text="The second window",row=0,column=0)
+    ```
 * clickable text
 * images
 * clickable images

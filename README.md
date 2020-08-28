@@ -201,6 +201,14 @@ app_loop()
     label_click().bind("<Button-1>",lambda url:msg_box("Clicked","Link 2"))
     ```
 * images
+    Use png format for good quality <br />
+    > method photo()
+    ```python
+    photo("1.png",0,0)
+    photo("2.png",1,0)
+    photo("3.png",0,1)
+    photo("4.png",1,1)
+    ```
 * clickable images
 * scale/slider (horizontal by default) 
 * return values (get_info)

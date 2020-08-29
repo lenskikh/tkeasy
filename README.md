@@ -211,5 +211,10 @@ app_loop()
     ```
     ![Screenshot](/screenshots/photo.png)
 * clickable images
+    ```python
+    photo(file="1.png",row=0,column=0)
+    photo_click().bind("<Button-1>",lambda url:
+                    msg_box(title="Clicked",message="Picture 1"))
+    ```
 * scale/slider (horizontal by default) 
 * return values (get_info)

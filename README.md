@@ -38,14 +38,14 @@ app_loop()
 ## Features of tkeasy include:
 
 * title
-    > title()<br/>
+    > title(window,text)<br/>
     > text = "New Title"<br/>
     > window (*optional*) = "name"<br/>
     ```python
     title(text="Title")
     ``` 
 * geometry
-    > geometry()<br/>
+    > geometry(window,size)<br/>
     > size = "300x300"<br/>
     > window (*optional*) = "name"<br/>
     ```python
@@ -55,7 +55,7 @@ app_loop()
     ```
     > 400 shifted on X-axis and 300 shifted on Y-axis
 * button
-    > button()<br/>
+    > button(window,text,command,sticky,padx,pady,row,column)<br/>
     > window (*optional*) = "name"<br/>
     > text="text" - text of button<br/>
     > command=somedef - appeal to function in your code (*Without brackets and quotation marks. See examples in code*)<br/>
@@ -202,7 +202,7 @@ app_loop()
     ```
 * images<br />
     Use png format for good quality <br />
-    > photo()
+    > photo(file,row,column)
     ```python
     photo("1.png",0,0)
     photo("2.png",1,0)

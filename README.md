@@ -38,14 +38,14 @@ app_loop()
 ## Features of tkeasy include:
 
 * title
-    > method title()<br/>
+    > title()<br/>
     > text = "New Title"<br/>
     > window (*optional*) = "name"<br/>
     ```python
     title(text="Title")
     ``` 
 * geometry
-    > method geometry()<br/>
+    > geometry()<br/>
     > size = "300x300"<br/>
     > window (*optional*) = "name"<br/>
     ```python
@@ -55,7 +55,7 @@ app_loop()
     ```
     > 400 shifted on X-axis and 300 shifted on Y-axis
 * button
-    > method button()<br/>
+    > button()<br/>
     > window (*optional*) = "name"<br/>
     > text="text" - text of button<br/>
     > command=somedef - appeal to function in your code (*Without brackets and quotation marks. See examples in code*)<br/>
@@ -68,7 +68,7 @@ app_loop()
     button(text="Show Info",command=show_info,row=0,column=0)
     ```
 * label
-    > method label()<br/>
+    > label()<br/>
     > window (*optional*) = "name"<br/>
     > text="text" - text of label<br/>
     > colortext (*optional*) = "red" (You can use hex color instead)<br/>
@@ -83,7 +83,7 @@ app_loop()
     label(text="Label text",row=0,column=0)
     ```
 * checkboxes
-    > method checkbox()<br/>
+    > checkbox()<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of checkbox<br/>
     > text = "text" - text of checkbox<br/>
@@ -97,7 +97,7 @@ app_loop()
     checkbox(name="checkbox 2", text="Banan",row=0,column=0,sticky = "left")
     ```
 * radiobox
-    > method radiobox()<br/>
+    > radiobox()<br/>
     > Radiobox by default is not selected<br/>
     > window (*optional*) = "name"<br/>
     > text = "text" - text for radiobox<br/>
@@ -112,7 +112,7 @@ app_loop()
     radiobox(text="Melon",row=1,column=0,value="weight = 2kg")
     ```
 * dropdown list
-    > method dropdown_list()<br/>
+    > dropdown_list()<br/>
     > window (*optional*) = "name"<br/>
     > variable = "variable"<br /> 
     > choices = list should assign in your code. For example: choices = ("One","Two","Three")<br/>
@@ -127,21 +127,21 @@ app_loop()
     dropdown_list(variable="fruits var",choices=age,default="Chose fruit",row=0,column=0)
     ```
 * file browse
-    > method select_file<br/>
+    > select_file<br/>
     > command=select_file<br/>
     > Use button method and in the command point out select_file
     ```python
     button(text="FILE BROWSER", command=select_file,row=0,column=0)
     ```
 * folder browse
-    > method select_folder<br/>
+    > select_folder<br/>
     > command=select_folder
     > Use button method and in the command point out select_folder
     ```python
     button(text='FOLDER BROWSER',command=select_folder,row=0,column=0,sticky="center")
     ```
 * one-line text input
-    > method entry()<br/>
+    > entry()<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of entry<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
@@ -153,8 +153,8 @@ app_loop()
     entry(name="entry 1",row=0,column=0)
     ```  
 * multi-line text input
-    > method text_area()<br/>
-    > method text_area_scroll()<br/>
+    > text_area()<br/>
+    > text_area_scroll()<br/>
     > scroll looks ugly on some OS, use text_area() if text is short.<br/>
     > window (*optional*) = "name"<br/>    
     > name = "name" - name of text area<br/>
@@ -171,7 +171,7 @@ app_loop()
     text_area_scroll(name="area",row=0,column=0)
     ```
 * insert text in input field
-    > method insert_text_area()<br />
+    > insert_text_area()<br />
     > name = "name" - name of text area that you are used before<br/>
     > text = "text" which you want to insert in a text area<br/>
     > color = "#323648" color of text
@@ -192,7 +192,7 @@ app_loop()
     label(window="second",text="The second window",row=0,column=0)
     ```
 * clickable text
-    > method label_click()
+    > label_click()
     ```python
     label(text="Link 1",row=0,column=0)
     label_click().bind("<Button-1>",lambda url:msg_box("Clicked","Link 1"))
@@ -202,7 +202,7 @@ app_loop()
     ```
 * images<br />
     Use png format for good quality <br />
-    > method photo()
+    > photo()
     ```python
     photo("1.png",0,0)
     photo("2.png",1,0)
@@ -210,7 +210,8 @@ app_loop()
     photo("4.png",1,1)
     ```
     ![Screenshot](/screenshots/photo.png)
-* clickable images
+* clickable images<br />
+    > photo_click()
     ```python
     photo(file="1.png",row=0,column=0)
     photo_click().bind("<Button-1>",lambda url:

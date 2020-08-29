@@ -55,7 +55,7 @@ app_loop()
     ```
     > 400 shifted on X-axis and 300 shifted on Y-axis
 * button
-    > button(window,text,command,alignment,padx,pady,row,column)<br/>
+    > button(window,text,command,sticky,padx,pady,row,column)<br/>
     > window (*optional*) = "name"<br/>
     > text="text" - text of button<br/>
     > command=somedef - appeal to function in your code (*Without brackets and quotation marks. See examples in code*)<br/>
@@ -68,7 +68,7 @@ app_loop()
     button(text="Show Info",command=show_info,row=0,column=0)
     ```
 * label
-    > label(window,text,colortext,background,label_font,row,column,alignment,padx,pady)<br/>
+    > label(window,text,colortext,background,label_font,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > text="text" - text of label<br/>
     > colortext (*optional*) = "red" (You can use hex color instead)<br/>
@@ -83,7 +83,7 @@ app_loop()
     label(text="Label text",row=0,column=0)
     ```
 * checkboxes
-    > checkbox()<br/>
+    > checkbox(window,name,text,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of checkbox<br/>
     > text = "text" - text of checkbox<br/>

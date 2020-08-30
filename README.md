@@ -141,7 +141,7 @@ app_loop()
     button(text='FOLDER BROWSER',command=select_folder,row=0,column=0,sticky="center")
     ```
 * one-line text input
-    > entry()<br/>
+    > entry(name,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of entry<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>

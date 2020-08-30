@@ -171,7 +171,7 @@ app_loop()
     text_area_scroll(name="area",row=0,column=0)
     ```
 * insert text in input field
-    > insert_text_area()<br />
+    > insert_text_area(name,text,color)<br />
     > name = "name" - name of text area that you are used before<br/>
     > text = "text" which you want to insert in a text area<br/>
     > color = "#323648" color of text

@@ -153,8 +153,8 @@ app_loop()
     entry(name="entry 1",row=0,column=0)
     ```  
 * multi-line text input
-    > text_area()<br/>
-    > text_area_scroll()<br/>
+    > text_area(name,row,column,sticky,padx,pady)<br/>
+    > text_area_scroll(name,row,column,sticky,padx,pady)<br/>
     > scroll looks ugly on some OS, use text_area() if text is short.<br/>
     > window (*optional*) = "name"<br/>    
     > name = "name" - name of text area<br/>

@@ -97,7 +97,7 @@ app_loop()
     checkbox(name="checkbox 2", text="Banan",row=0,column=0,sticky = "left")
     ```
 * radiobox
-    > radiobox()<br/>
+    > radiobox(window,text,value,row,column,sticky,padx,pady)<br/>
     > Radiobox by default is not selected<br/>
     > window (*optional*) = "name"<br/>
     > text = "text" - text for radiobox<br/>
@@ -112,7 +112,7 @@ app_loop()
     radiobox(text="Melon",row=1,column=0,value="weight = 2kg")
     ```
 * dropdown list
-    > dropdown_list()<br/>
+    > dropdown_list(window,variable,choices,default,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > variable = "variable"<br /> 
     > choices = list should assign in your code. For example: choices = ("One","Two","Three")<br/>

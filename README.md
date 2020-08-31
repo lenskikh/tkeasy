@@ -218,6 +218,6 @@ app_loop()
                     msg_box(title="Clicked",message="Picture 1"))
     ```
 * sliders (horizontal by default) 
-    > scale(window,name,row,column,sticky,padx,pady)
+    > scale(window,name,row,column,sticky,padx,pady)<br />
     ![Screenshot](/screenshots/sliders.png)
 * return values (get_info)

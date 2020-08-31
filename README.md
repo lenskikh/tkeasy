@@ -219,5 +219,5 @@ app_loop()
     ```
 * sliders (horizontal by default) 
     > scale(window,name,row,column,sticky,padx,pady)
-
+    ![Screenshot](/screenshots/sliders.png)
 * return values (get_info)

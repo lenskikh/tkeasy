@@ -217,6 +217,7 @@ app_loop()
     photo_click().bind("<Button-1>",lambda url:
                     msg_box(title="Clicked",message="Picture 1"))
     ```
-* scale/slider (horizontal by default) 
+* sliders (horizontal by default) 
     > scale(window,name,row,column,sticky,padx,pady)
+
 * return values (get_info)

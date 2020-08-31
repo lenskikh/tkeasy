@@ -219,7 +219,12 @@ app_loop()
     ```
 * sliders (horizontal by default) 
     > scale(window,name,row,column,sticky,padx,pady)<br />
-    > window (*optional*) = "name"<br/>   
+    > window (*optional*) = "name"<br/>
     > name = "name" - name of slider<br/>
+    > row = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > column = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/>
+    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
     ![Screenshot](/screenshots/sliders.png)
 * return values (get_info)

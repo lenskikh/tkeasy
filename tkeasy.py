@@ -173,7 +173,10 @@ def photo(file,row,column,**kwargs):
     memory["picture"].photo = photo
     memory["picture"].grid(
         row = row,
-        column = column)
+        column = column,
+        sticky = alignment(**kwargs),
+        padx = padx(**kwargs),
+        pady = pady(**kwargs))
 
 def photo_click():
     return memory["picture"]

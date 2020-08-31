@@ -228,7 +228,7 @@ app_loop()
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
     ![Screenshot](/screenshots/sliders.png)
-* separator(window,column_length,padx,pady)
+* separator(window,column_length,padx,pady)<br/>
     separator line<br/>
     > window (*optional*) = "name"<br/>
     > column_length = 1<br/>

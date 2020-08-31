@@ -202,7 +202,7 @@ app_loop()
     ```
 * images<br />
     Use png format for good quality <br />
-    > photo(file,row,column)
+    > photo(window,file,row,column)
     ```python
     photo("1.png",0,0)
     photo("2.png",1,0)

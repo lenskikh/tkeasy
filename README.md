@@ -141,7 +141,7 @@ app_loop()
     button(text='FOLDER BROWSER',command=select_folder,row=0,column=0,sticky="center")
     ```
 * one-line text input
-    > entry(name,row,column,sticky,padx,pady)<br/>
+    > entry(window,name,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of entry<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
@@ -210,7 +210,7 @@ app_loop()
     photo("4.png",1,1)
     ```
     ![Screenshot](/screenshots/photo.png)
-* clickable images<br />
+* clickable images
     > photo_click()
     ```python
     photo(file="1.png",row=0,column=0)
@@ -218,4 +218,5 @@ app_loop()
                     msg_box(title="Clicked",message="Picture 1"))
     ```
 * scale/slider (horizontal by default) 
+    > scale(window,name,row,column,sticky,padx,pady)
 * return values (get_info)

@@ -218,7 +218,7 @@ app_loop()
                     msg_box(title="Clicked",message="Picture 1"))
     ```
 * sliders (horizontal by default) 
-    > scale(window,name,pos,row,column,sticky,padx,pady)<br />
+    > slider(window,name,pos,row,column,sticky,padx,pady)<br />
     > window (*optional*) = "name"<br/>
     > name = "name" - name of slider<br/>
     > pos = "vertical" if want to change position of a slider<br/>

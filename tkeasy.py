@@ -2,6 +2,7 @@ import os
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import scrolledtext
+from tkinter import Listbox
 import tkinter.messagebox
 
 memory = {"filename":"", "key TAB":""}
@@ -213,7 +214,6 @@ def slider(name,row,column,**kwargs):
     window = new_window(**kwargs)
     memory[name] = tk.Scale(memory[window],
         from_= 0, to = 100, orient=scale_oriental(**kwargs))
-
     memory[name].grid(
         row = row,
         column = column,
@@ -288,6 +288,16 @@ def text_area_scroll(name,row,column,**kwargs):
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))
+
+def listbox(name,row,column,**kwargs):
+    window = new_window(**kwargs)
+    memory[name] = Listbox(memory[window])
+    memory[name].grid(
+        row = row,
+        column = column)   
+
+def insert_listbox(name,text,**kwargs):
+    memory[name].insert("end", text)
 
 #for change text in text area
 def insert_text_area(name,text,color):    

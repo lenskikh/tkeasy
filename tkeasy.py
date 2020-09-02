@@ -291,7 +291,12 @@ def text_area_scroll(name,row,column,**kwargs):
 
 def listbox(name,row,column,**kwargs):
     window = new_window(**kwargs)
-    memory[name] = Listbox(memory[window])
+    try:
+        height = kwargs["height"]
+    except:
+        height = 10
+
+    memory[name] = Listbox(memory[window],height = height)
     memory[name].grid(
         row = row,
         column = column)   
@@ -304,6 +309,11 @@ def listbox(name,row,column,**kwargs):
 def listbox_insert(name,text):
     for x in text:
         memory[name].insert("end", x)    
+
+def listbox_item_selected(name):
+    #print(memory[name].curselection())
+    print(memory[name].get("active"))
+
 
 #for change text in text area
 def insert_text_area(name,text,color):    

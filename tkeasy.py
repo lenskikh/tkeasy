@@ -295,8 +295,15 @@ def listbox(name,row,column,**kwargs):
     memory[name].grid(
         row = row,
         column = column)   
+    try: 
+        text = kwargs["text"]
+        listbox_insert(name,text)
+        #print(text)
+    except:
+        pass
 
-def listbox_insert(name,text,**kwargs):
+def listbox_insert(name,text):
+    print(text)
     for x in text:
         memory[name].insert("end", x)    
 

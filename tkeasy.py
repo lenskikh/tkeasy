@@ -296,8 +296,9 @@ def listbox(name,row,column,**kwargs):
         row = row,
         column = column)   
 
-def insert_listbox(name,text,**kwargs):
-    memory[name].insert("end", text)
+def listbox_insert(name,text,**kwargs):
+    for x in text:
+        memory[name].insert("end", x)    
 
 #for change text in text area
 def insert_text_area(name,text,color):    

@@ -30,14 +30,18 @@ def search():
     
     cursor.execute(discover, [(info)])
     #strict search
-    check = cursor.fetchone()
+    check = cursor.fetchall()
     if check==None:
         #red text if can't find anything
         label(text="NO INFO",colortext="white",
               background="red",row=2,column=0)
     else:
-        label(text=check,colortext="black",
-              background="lightblue",row=2,column=0)
+        #output multiply lines from db 
+        rownumber = 2
+        for rowinfo in check:          
+            label(text=rowinfo,colortext="black",
+                  background="lightblue",row=rownumber,column=0)
+            rownumber+=1
 
 entry(name="entry 1",row=1,column=0)
 

@@ -276,7 +276,6 @@ app_loop()
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
 * **return values** <br />
-    (get_info)<br />
     > get_info(name)<br />
     Any name should be unique.<br />
     How do I get information from a text field? Give the field a unique name that will not be repeated in other widgets. For example "text area 01". Therefore, if you want to get information from this field, use get_info("text area 01"). The only exception applies only to the radio box. The radio box always has a name "radiobox" get_info("radiobox")

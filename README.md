@@ -96,6 +96,8 @@ app_loop()
     label(text="Label text",row=0,column=0)
     app_loop()
     ```
+    ![Screenshot](/screenshots/label.png)
+
 * **checkboxes**
     > checkbox(window,name,text,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>

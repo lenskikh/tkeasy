@@ -37,7 +37,7 @@ app_loop()
 
 ## Features of tkeasy include:
 
-* title
+* **title**
     > title(window,text)<br/>
     > text = "New Title"<br/>
     > window (*optional*) = "name"<br/>
@@ -46,7 +46,7 @@ app_loop()
     title(text="Title")
     app_loop()
     ``` 
-* geometry
+* **geometry**
     > geometry(window,size)<br/>
     > size = "300x300"<br/>
     > window (*optional*) = "name"<br/>
@@ -132,7 +132,7 @@ app_loop()
     app_loop()
     ```
     ![Screenshot](/screenshots/checkbox.png)
-    
+
 * radiobox
     > radiobox(window,text,value,row,column,sticky,padx,pady)<br/>
     > Radiobox by default is not selected<br/>

@@ -131,6 +131,8 @@ app_loop()
 
     app_loop()
     ```
+    ![Screenshot](/screenshots/checkbox.png)
+    
 * radiobox
     > radiobox(window,text,value,row,column,sticky,padx,pady)<br/>
     > Radiobox by default is not selected<br/>

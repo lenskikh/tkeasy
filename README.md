@@ -55,8 +55,8 @@ app_loop()
     geometry(size="300x300")
     app_loop()
     ```
-    or
-    ```
+    OR
+    ```python
     from tkeasy import *
     geometry('200x150+400+300')
     app_loop()
@@ -73,7 +73,11 @@ app_loop()
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)
     ```python
+    from tkeasy import *
+    def show_info():
+        print("button pressed")
     button(text="Show Info",command=show_info,row=0,column=0)
+    app_loop()
     ```
 * label
     > label(window,text,colortext,background,label_font,row,column,sticky,padx,pady)<br/>

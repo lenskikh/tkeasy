@@ -54,7 +54,9 @@ app_loop()
     from tkeasy import *
     geometry(size="300x300")
     app_loop()
+    ```
     or
+    ```
     from tkeasy import *
     geometry('200x150+400+300')
     app_loop()

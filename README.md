@@ -212,7 +212,18 @@ app_loop()
     > command=select_file<br/>
     > Use button method and in the command point out select_file
     ```python
-    button(text="FILE BROWSER", command=select_file,row=0,column=0)
+    from tkeasy import *
+
+    def readname():
+        print (get_info("file"))
+
+    button(text="FILE BROWSER",
+        command=select_file,row=1,column=0)
+
+    button(text="Print Name Of File",
+        command=readname,row=2,column=0)
+
+    app_loop()
     ```
 * **folder browse**
     > select_folder<br/>

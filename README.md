@@ -92,7 +92,9 @@ app_loop()
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
     ```python
+    from tkeasy import *
     label(text="Label text",row=0,column=0)
+    app_loop()
     ```
 * checkboxes
     > checkbox(window,name,text,row,column,sticky,padx,pady)<br/>

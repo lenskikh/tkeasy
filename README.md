@@ -42,7 +42,9 @@ app_loop()
     > text = "New Title"<br/>
     > window (*optional*) = "name"<br/>
     ```python
+    from tkeasy import *
     title(text="Title")
+    app_loop()
     ``` 
 * geometry
     > geometry(window,size)<br/>

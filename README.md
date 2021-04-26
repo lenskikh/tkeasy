@@ -188,6 +188,25 @@ app_loop()
     fruits = ["Apple","Pear","Banana","Kiwi"]
     dropdown_list(variable="fruits var",choices=age,default="Chose fruit",row=0,column=0)
     ```
+
+    The whole example
+    ```python
+    from tkeasy import *
+
+    def info():  
+        print(get_info("age var"))
+        
+    age = ["24-31","31-40","41-55","56-70","71-85"]
+    dropdown_list(variable="age var",choices=age,
+                default="Age",row=1,column=0)
+
+    button(text="Get Info",
+        command=info,row=2,column=0)
+
+    app_loop()
+    ```    
+    ![Screenshot](/screenshots/droplist.jpg)
+
 * **file browse**
     > select_file<br/>
     > command=select_file<br/>

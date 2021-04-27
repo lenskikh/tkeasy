@@ -342,12 +342,17 @@ app_loop()
     unlimited number of windows can be open at the same time<br/>
     add "window" in the start of any method
     ```python
+    from tkeasy import *
+        
     title(window="main",text="The first window")
     label(window="main",text="The first window",row=0,column=0)
 
     title(window="second",text="The second window")
     label(window="second",text="The second window",row=0,column=0)
+
+    #app_loop()
     ```
+    Do not use app_loop() It's give you the third window.
 * **clickable text**
     > label_click()
     ```python

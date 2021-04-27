@@ -353,7 +353,7 @@ app_loop()
     app_loop()
     ```
     ![Screenshot](/screenshots/w.png)
-    
+
 * **clickable text**
     > label_click()
     ```python
@@ -363,6 +363,8 @@ app_loop()
     label(text="Link 2",row=1,column=0)
     label_click().bind("<Button-1>",lambda url:msg_box("Clicked","Link 2"))
     ```
+    ![Screenshot](/screenshots/labelclick.png)
+
 * **images**<br />
     Use png format for good quality <br />
     > photo(window,file,row,column)

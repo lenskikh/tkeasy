@@ -214,14 +214,14 @@ app_loop()
     ```python
     from tkeasy import *
 
-    def readname():
-        print (get_info("file"))
+    def show_info():
+        choice = get_info("radiobox")
+        print(choice)
 
-    button(text="FILE BROWSER",
-        command=select_file,row=1,column=0)
-
-    button(text="Print Name Of File",
-        command=readname,row=2,column=0)
+    radiobox(text="Apple",row=0,column=0)
+    radiobox(text="Melon",row=1,column=0,value="weight = 2kg")
+    radiobox(text="Lemon",row=2,column=0)
+    button(text="Show Info",command=show_info,row=3,column=0)
 
     app_loop()
     ```

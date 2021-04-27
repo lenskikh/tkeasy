@@ -311,13 +311,12 @@ def listbox_insert(name,text):
         memory[name].insert("end", x)    
 
 def listbox_item_selected(name):
-    #print(memory[name].curselection())
     print(memory[name].get("active"))
 
 
 #for change text in text area
-def insert_text_area(name,text,color):    
-    memory[name].insert(1.0,text)
+def insert_text(name,text,color):    
+    memory[name].insert(0,text)
     memory[name].config(fg=color)
 
 def msg_box(title,message): 

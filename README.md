@@ -235,10 +235,10 @@ app_loop()
         print(get_info("folder"))
 
     button(text='FOLDER BROWSER',command=select_folder,
-        row=1,column=0,sticky="center")
+        row=0,column=0,sticky="center")
 
     button(text="Print Name Of Folder",
-        command=readname,row=3,column=0,
+        command=readname,row=1,column=0,
         sticky="center")
 
     app_loop()
@@ -255,7 +255,17 @@ app_loop()
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*) 
     ```python   
+    from tkeasy import *
+
+    def frominput():
+        print(get_info("entry 1"))
+
     entry(name="entry 1",row=0,column=0)
+
+    button(text='from input',command=frominput,
+        row=1,column=0,sticky="center")
+
+    app_loop()
     ```  
 * **multi-line text input**
     > text_area(name,row,column,sticky,padx,pady)<br/>

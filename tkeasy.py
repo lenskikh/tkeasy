@@ -192,10 +192,6 @@ def entry(name,row,column,**kwargs):
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))
-    
-def entry_insert(name,text,colortext):
-    memory[name].insert(0,text)
-    memory[name].config(fg=colortext)
 
 def checkbox(name,text,row,column,**kwargs):
     window = new_window(**kwargs)
@@ -317,6 +313,10 @@ def listbox_item_selected(name):
 #for change text in text area
 def insert_text(name,text,color):    
     memory[name].insert(0,text)
+    memory[name].config(fg=color)
+
+def insert_text_area(name,text,color):
+    memory[name].insert(1.0,text)
     memory[name].config(fg=color)
 
 def msg_box(title,message): 

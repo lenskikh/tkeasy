@@ -225,6 +225,8 @@ app_loop()
 
     app_loop()
     ```
+    ![Screenshot](/screenshots/file.jpg)
+
 * **folder browse**
     > select_folder<br/>
     > command=select_folder

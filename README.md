@@ -299,7 +299,10 @@ app_loop()
     ```python 
     text_area_scroll(name="area",row=0,column=0)
     ```
-* **insert text in input field**
+    Adds a scroll to the right. Use it if the text is long.
+
+* **insert text in input field**<br />
+    Adds text to a text field. Can be used as hints for the user.
     > insert_text_area(name,text,color)<br />
     > name = "name" - name of text area that you are used before<br/>
     > text = "text" which you want to insert in a text area<br/>

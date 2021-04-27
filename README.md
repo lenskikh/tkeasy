@@ -267,6 +267,8 @@ app_loop()
 
     app_loop()
     ```  
+    ![Screenshot](/screenshots/inputline.png)
+
 * **multi-line text input**
     > text_area(name,row,column,sticky,padx,pady)<br/>
     > text_area_scroll(name,row,column,sticky,padx,pady)<br/>

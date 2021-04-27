@@ -350,9 +350,10 @@ app_loop()
     title(window="second",text="The second window")
     label(window="second",text="The second window",row=0,column=0)
 
-    #app_loop()
+    app_loop()
     ```
-    Do not use app_loop() It's give you the third window.
+    ![Screenshot](/screenshots/w.png)
+    
 * **clickable text**
     > label_click()
     ```python

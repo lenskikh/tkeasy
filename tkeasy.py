@@ -88,6 +88,14 @@ def background(**kwargs):
         background = "white"
     return background
 
+#wrap for label
+def label_length(**kwargs):
+    try:
+        wrap = kwargs["wrap"]
+    except KeyError:
+        wrap = 600
+    return wrap    
+
 def padx(**kwargs):
     try:
         padx = kwargs["padx"]
@@ -156,7 +164,8 @@ def label(text,row,column,**kwargs):
         text = text,
         fg = colortext(**kwargs),
         bg = background(**kwargs),
-        font = label_font(**kwargs))
+        font = label_font(**kwargs),
+        wrap = label_length(**kwargs))
     memory["label"].grid(
         row = row,
         column = column,

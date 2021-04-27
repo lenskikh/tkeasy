@@ -281,8 +281,20 @@ app_loop()
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*) 
     ```python 
+    from tkeasy import *
+
+    title(text="Text area")
+
+    def show_info():
+        print(get_info("area").strip())
+        
     text_area(name="area",row=0,column=0)
+    button(text="Show Info",command=show_info,row=1,column=0)
+
+    app_loop()
     ```
+    ![Screenshot](/screenshots/area.png)
+
     or
     ```python 
     text_area_scroll(name="area",row=0,column=0)

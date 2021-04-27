@@ -320,6 +320,17 @@ app_loop()
     ```
     ![Screenshot](/screenshots/insert.png)
 
+* **insert text in text area field**<br />
+    ```python 
+    from tkeasy import *
+    
+    text_area(name="area",row=0,column=0)
+    insert_text_area(name="area",text="Second name",color = "gray")
+
+    app_loop()
+    ```
+    ![Screenshot](/screenshots/insert2.png)
+
 * **scroll-able output**<br/>
     Use two methods for scroll-able output<br/>
     > method text_area_scroll() and method insert_text_area()

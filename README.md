@@ -303,10 +303,22 @@ app_loop()
 
 * **insert text in input field**<br />
     Adds text to a text field. Can be used as hints for the user.
-    > insert_text_area(name,text,color)<br />
+    > insert_text(name,text,color)<br />
     > name = "name" - name of text area that you are used before<br/>
     > text = "text" which you want to insert in a text area<br/>
     > color = "#323648" color of text
+    ```python 
+    from tkeasy import *
+
+    entry(name="firstname",row=0,column=0)
+    insert_text(name="firstname",text="First name",color = "gray")
+
+    entry(name="secondname",row=1,column=0)
+    insert_text(name="secondname",text="Second name",color = "gray")
+
+    app_loop()
+    ```
+    ![Screenshot](/screenshots/insert.png)
 
 * **scroll-able output**<br/>
     Use two methods for scroll-able output<br/>

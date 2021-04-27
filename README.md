@@ -229,8 +229,22 @@ app_loop()
     > command=select_folder
     > Use button method and in the command point out select_folder
     ```python
-    button(text='FOLDER BROWSER',command=select_folder,row=0,column=0,sticky="center")
+    from tkeasy import *
+
+    def readname():
+        print(get_info("folder"))
+
+    button(text='FOLDER BROWSER',command=select_folder,
+        row=1,column=0,sticky="center")
+
+    button(text="Print Name Of Folder",
+        command=readname,row=3,column=0,
+        sticky="center")
+
+    app_loop()
     ```
+    ![Screenshot](/screenshots/folder.png)
+
 * **one-line text input**
     > entry(window,name,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>

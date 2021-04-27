@@ -267,7 +267,7 @@ app_loop()
 
     app_loop()
     ```  
-    ![Screenshot](/screenshots/inputline.png)
+    ![Screenshot](/screenshots/inputline.PNG)
 
 * **multi-line text input**
     > text_area(name,row,column,sticky,padx,pady)<br/>

@@ -403,9 +403,10 @@ app_loop()
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
     ```python
     from tkeasy import *
-    separator(column_length=1,row=0,column=0)
+    separator(column_length=1)
     app_loop()
     ```
+    ![Screenshot](/screenshots/separator.png)
 * **return values** <br />
     > get_info(name)<br />
     Any name should be unique.<br />

@@ -88,6 +88,8 @@ app_loop()
     > colortext (*optional*) = "red" (You can use hex color instead)<br/>
     > background (*optional*) = "#241e14" (You can use hex color)<br/>
     > font (*optional*) = "Times", 13 (font in quotation marks, size of font after comma)<br/>
+    > justify (*optional*) = alignment for text in label, "center" by default<br/>
+    > wrap (*optional*) =  wrap for text, 600 by default<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 

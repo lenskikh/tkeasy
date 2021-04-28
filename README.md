@@ -345,15 +345,22 @@ app_loop()
     add "window" in the start of any method
     ```python
     from tkeasy import *
-        
-    title(window="main",text="The first window")
-    label(window="main",text="The first window",row=0,column=0)
+    import random
 
-    title(window="second",text="The second window")
-    label(window="second",text="The second window",row=0,column=0)
+    def show_info():
+            win=str(random.random())
+            title(window=win,text="The second window")
+            label(window=win,text="The second window",row=0,column=0)
+            entry(window=win,name="entry2",row=1,column=0)
+            insert_text(window=win,name="entry2",text="entry",color="gray")
+            text_area(window=win,name="textarea",row=2,column=0)
+            insert_text_area(window=win,name="textarea",text="text area",color="gray")
+              
+    button(text="Show Info",command=show_info,row=0,column=0)
 
     app_loop()
     ```
+    Here, random is used as a temporary solution to reopen the window.<br/>
     ![Screenshot](/screenshots/w.png)
 
 * **clickable text**

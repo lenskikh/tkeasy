@@ -328,11 +328,13 @@ def listbox_item_selected(name):
 
 
 #for change text in text area
-def insert_text(name,text,color):    
+def insert_text(name,text,color,**kwargs):  
+    window = new_window(**kwargs)  
     memory[name].insert(0,text)
     memory[name].config(fg=color)
 
-def insert_text_area(name,text,color):
+def insert_text_area(name,text,color,**kwargs):
+    window = new_window(**kwargs) 
     memory[name].insert(1.0,text)
     memory[name].config(fg=color)
 

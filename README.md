@@ -348,6 +348,7 @@ app_loop()
     import random
 
     def show_info():
+            #Here, random is used as a temporary solution to reopen the window.
             win=str(random.random())
             title(window=win,text="The second window")
             label(window=win,text="The second window",row=0,column=0)
@@ -357,10 +358,8 @@ app_loop()
             insert_text_area(window=win,name="textarea",text="text area",color="gray")
               
     button(text="Show Info",command=show_info,row=0,column=0)
-
     app_loop()
     ```
-    Here, random is used as a temporary solution to reopen the window.<br/>
     ![Screenshot](/screenshots/w.png)
 
 * **clickable text**

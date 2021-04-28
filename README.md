@@ -401,6 +401,11 @@ app_loop()
     > column_length = 1<br/>
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
+    ```python
+    from tkeasy import *
+    separator(column_length=1,row=0,column=0)
+    app_loop()
+    ```
 * **return values** <br />
     > get_info(name)<br />
     Any name should be unique.<br />

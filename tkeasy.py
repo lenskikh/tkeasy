@@ -96,6 +96,13 @@ def label_length(**kwargs):
         wrap = 600
     return wrap    
 
+def justification(**kwargs):
+    try:
+        justify = kwargs["justify"]
+    except KeyError:
+        justification = "center"
+    return justify 
+
 def padx(**kwargs):
     try:
         padx = kwargs["padx"]
@@ -165,7 +172,8 @@ def label(text,row,column,**kwargs):
         fg = colortext(**kwargs),
         bg = background(**kwargs),
         font = label_font(**kwargs),
-        wrap = label_length(**kwargs))
+        wrap = label_length(**kwargs),
+        justify = justification(**kwargs))
     memory["label"].grid(
         row = row,
         column = column,

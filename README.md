@@ -348,7 +348,7 @@ app_loop()
     import random
 
     def show_info():
-            #Here, random is used as a temporary solution to reopen the window.
+            #Random is used as a temporary solution to reopen the window.
             win=str(random.random())
             title(window=win,text="The second window")
             label(window=win,text="The second window",row=0,column=0)

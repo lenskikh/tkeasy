@@ -7,14 +7,11 @@ def info2():
     print(get_info("entry 2"))
 
 #The first window
-title(window="main",text="First window")
-geometry(window="main",size="196x100")
-label(window="main",text="Provide your info",
-      background="grey90",row=0,column=0)
-entry(window="main",name="entry 1",
-           row=1,column=0)
-button(window="main",text="Get Info",
-       command=info,row=2,column=0)
+title(text="First window")
+geometry(size="196x100")
+label(text="Provide your info", background="grey90",row=0,column=0)
+entry(name="entry 1", row=1,column=0)
+button(text="Get Info", command=info,row=2,column=0)
 
 #The second window
 title(window="second",text="Second window")
@@ -26,4 +23,4 @@ entry(window="second",name="entry 2",
 button(window="second",text="Get Info",
        command=info2,row=2,column=0)
 
-app_loop(window="main")
+app_loop()

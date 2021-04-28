@@ -100,7 +100,7 @@ def justification(**kwargs):
     try:
         justify = kwargs["justify"]
     except KeyError:
-        justification = "center"
+        justify = "center"
     return justify 
 
 def padx(**kwargs):
@@ -171,9 +171,9 @@ def label(text,row,column,**kwargs):
         text = text,
         fg = colortext(**kwargs),
         bg = background(**kwargs),
+        justify = justification(**kwargs),
         font = label_font(**kwargs),
         wrap = label_length(**kwargs))
-        #justify = justification(**kwargs))
     memory["label"].grid(
         row = row,
         column = column,

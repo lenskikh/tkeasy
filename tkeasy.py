@@ -172,8 +172,8 @@ def label(text,row,column,**kwargs):
         fg = colortext(**kwargs),
         bg = background(**kwargs),
         font = label_font(**kwargs),
-        wrap = label_length(**kwargs),
-        justify = justification(**kwargs))
+        wrap = label_length(**kwargs))
+        #justify = justification(**kwargs))
     memory["label"].grid(
         row = row,
         column = column,

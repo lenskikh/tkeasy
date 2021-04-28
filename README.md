@@ -342,7 +342,7 @@ app_loop()
     ```     
 * **multiple windows** <br/>
     Unlimited number of windows can be open at the same time<br/>
-    Add "window" in the start of any method
+    Add "window" in the second and third window. The first window should be without window="the first window". See example example_two_windows_entry.py Otherwise, you will get three windows.
     ```python
     from tkeasy import *
     import random
@@ -360,7 +360,6 @@ app_loop()
     button(text="Show Info",command=show_info,row=0,column=0)
     app_loop()
     ```
-    The first window should be without window="the first window". See example example_two_windows_entry.py Otherwise, you will get three windows.
     ![Screenshot](/screenshots/w.png)
 
 * **clickable text**

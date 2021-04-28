@@ -341,14 +341,14 @@ app_loop()
     insert_text_area(name="area output",text="some text",color = "black")
     ```     
 * **multiple windows** <br/>
-    unlimited number of windows can be open at the same time<br/>
-    add "window" in the start of any method
+    Unlimited number of windows can be open at the same time<br/>
+    Add "window" in the start of any method
     ```python
     from tkeasy import *
     import random
 
     def show_info():
-            #Random is used as a temporary solution to reopen the window.
+            #Random is used as a solution to reopen the window.
             win=str(random.random())
             title(window=win,text="The second window")
             label(window=win,text="The second window",row=0,column=0)
@@ -360,6 +360,7 @@ app_loop()
     button(text="Show Info",command=show_info,row=0,column=0)
     app_loop()
     ```
+    The first window should be without window="the first window". See example example_two_windows_entry.py Otherwise, you will get three windows.
     ![Screenshot](/screenshots/w.png)
 
 * **clickable text**

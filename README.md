@@ -374,7 +374,7 @@ app_loop()
     ![Screenshot](/screenshots/labelclick.png)
 
 * **images**<br />
-    Use png format for good quality <br />
+    Support format gif and png only. Use png format for good quality. Unfortunately, due to the way tkinter works, you can't use images in the second window or in the third window. <br />
     > photo(window,file,row,column)
     ```python
     photo("1.png",0,0)

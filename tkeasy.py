@@ -1,9 +1,6 @@
 import os
-import tkinter as tk
-from tkinter import filedialog
-from tkinter import scrolledtext
-from tkinter import Listbox
-import tkinter.messagebox
+from tkinter import *
+from tkinter import filedialog, scrolledtext, messagebox
 
 memory = {"filename":"", "key TAB":""}
 
@@ -17,7 +14,7 @@ def clearbyclick(event):
         elif "TAB" in memory["key TAB"]:
             pass
         else:
-            memory[window].focus_get().delete(0, tk.END)
+            memory[window].focus_get().delete(0, END)
             memory["key TAB"]+= memoryForClear
     except:
         pass
@@ -35,7 +32,7 @@ def new_window(**kwargs):
     except:
         window = "root"        
     if window not in memory:
-        memory[window] = tk.Tk()
+        memory[window] = Tk()
     return window        
 
 def title(text,**kwargs):
@@ -62,13 +59,13 @@ def alignment(**kwargs):
     try:
         sticky = kwargs["sticky"]
         if sticky == "right":
-            sticky = tk.E
+            sticky = E
         elif sticky == "left":
-            sticky = tk.W
+            sticky = W
         elif sticky == "center":
-            sticky = tk.EW        
+            sticky = EW        
     except KeyError:
-        sticky = tk.EW       
+        sticky = EW       
 
     return sticky
 
@@ -150,13 +147,13 @@ def select_folder():
 
 def separator(column_length,**kwargs):
     window = new_window(**kwargs) 
-    separator = tk.Frame(memory[window],height=2, bd=1, relief="sunken")
+    separator = Frame(memory[window],height=2, bd=1, relief="sunken")
     separator.grid(columnspan=column_length, sticky="EW",
         padx=padx(**kwargs), pady=pady(**kwargs))
 
 def button(text,command,row,column,**kwargs):  
     window = new_window(**kwargs) 
-    tk.Button(memory[window], 
+    Button(memory[window], 
         text = text,
         command = command).grid(
         row = row,
@@ -167,7 +164,7 @@ def button(text,command,row,column,**kwargs):
 
 def label(text,row,column,**kwargs):   
     window = new_window(**kwargs)
-    memory["label"] = tk.Label(memory[window], 
+    memory["label"] = Label(memory[window], 
         text = text,
         fg = colortext(**kwargs),
         bg = background(**kwargs),
@@ -186,8 +183,8 @@ def label_click():
 
 def photo(file,row,column,**kwargs):
     window = new_window(**kwargs) 
-    photo = tk.PhotoImage(file=file)
-    memory["picture"] = tk.Label(memory[window],image=photo)
+    photo = PhotoImage(file=file)
+    memory["picture"] = Label(memory[window],image=photo)
     memory["picture"].photo = photo
     memory["picture"].grid(
         row = row,
@@ -195,13 +192,13 @@ def photo(file,row,column,**kwargs):
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))
-
+ 
 def photo_click():
     return memory["picture"]
 
 def entry(name,row,column,**kwargs):
     window = new_window(**kwargs)
-    memory[name] = tk.Entry(memory[window],
+    memory[name] = Entry(memory[window],
         width = width_entry(**kwargs))
     memory[name].grid(
         row = row,
@@ -212,8 +209,8 @@ def entry(name,row,column,**kwargs):
 
 def checkbox(name,text,row,column,**kwargs):
     window = new_window(**kwargs)
-    memory[name] = tk.IntVar()
-    memory[text] = tk.Checkbutton(memory[window],
+    memory[name] = IntVar()
+    memory[text] = Checkbutton(memory[window],
         text = text,
         variable = memory[name])
     memory[text].grid(
@@ -225,7 +222,7 @@ def checkbox(name,text,row,column,**kwargs):
 
 def slider(name,row,column,**kwargs):
     window = new_window(**kwargs)
-    memory[name] = tk.Scale(memory[window],
+    memory[name] = Scale(memory[window],
         from_= 0, to = 100, orient=scale_oriental(**kwargs))
     memory[name].grid(
         row = row,
@@ -237,7 +234,7 @@ def slider(name,row,column,**kwargs):
 def radiobox(text,row,column,**kwargs):
     window = new_window(**kwargs)
     if "radiobox" not in memory:
-        memory["radiobox"] = tk.StringVar()
+        memory["radiobox"] = StringVar()
 
     #No radio boxes are selected
     memory["radiobox"].set(None)
@@ -248,7 +245,7 @@ def radiobox(text,row,column,**kwargs):
         #if value not provided, use text as value
         value = text
 
-    radiob = tk.Radiobutton(memory[window], 
+    radiob = Radiobutton(memory[window], 
         text = text, 
         variable = memory["radiobox"], 
         value = value)
@@ -261,8 +258,8 @@ def radiobox(text,row,column,**kwargs):
 
 def dropdown_list(variable,choices,default,row,column,**kwargs):
     window = new_window(**kwargs)
-    memory[variable] = tk.StringVar(memory[window])
-    popupmenu = tk.OptionMenu(memory[window], memory[variable], *choices)
+    memory[variable] = StringVar(memory[window])
+    popupmenu = OptionMenu(memory[window], memory[variable], *choices)
     memory[variable].set(default) # default value
     popupmenu.grid(
         row = row,
@@ -275,8 +272,8 @@ def dropdown_list(variable,choices,default,row,column,**kwargs):
 #you can use textarea without scroll
 def text_area(name,row,column,**kwargs):
     window = new_window(**kwargs)
-    memory[name] = tk.Text(memory[window],
-        wrap = tk.WORD,
+    memory[name] = Text(memory[window],
+        wrap = WORD,
         height = 10, 
         width = 30,
         background = "grey95")
@@ -291,7 +288,7 @@ def text_area(name,row,column,**kwargs):
 def text_area_scroll(name,row,column,**kwargs):
     window = new_window(**kwargs)
     memory[name] = scrolledtext.ScrolledText(memory[window],
-        wrap = tk.WORD,
+        wrap = WORD,
         height = 10, 
         width = 30,
         background = "grey95")
@@ -339,14 +336,14 @@ def insert_text_area(name,text,color,**kwargs):
     memory[name].config(fg=color)
 
 def msg_box(title,message): 
-    msgbox = tk.messagebox.showinfo(title=title, message=message)
+    msgbox = messagebox.showinfo(title=title, message=message)
 
 #alarm icon in message box
 def msg_box_warning(title,message): 
-    msgbox = tk.messagebox.showwarning(title=title, message=message)
+    msgbox = messagebox.showwarning(title=title, message=message)
 
 def msg_box_ask(name,title,message): 
-    memory[name] = tk.messagebox.askyesnocancel(title=title, message=message)
+    memory[name] = messagebox.askyesnocancel(title=title, message=message)
 
 def app_loop(**kwargs):
     window = new_window(**kwargs)

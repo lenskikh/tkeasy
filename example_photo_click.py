@@ -18,3 +18,4 @@ photo(file="4.png",row=1,column=1)
 photo_click().bind("<Button-1>",lambda url:
                    msg_box(title="Clicked",message="Picture 4"))
 
+app_loop()

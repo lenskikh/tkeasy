@@ -56,6 +56,11 @@ def config(**kwargs):
         memory[window].overrideredirect(1)
     except:
         pass
+    try:
+        icon = kwargs["icon"]
+        memory[window].iconbitmap(icon)
+    except:
+        pass
     
 def get_info(name):
     try:

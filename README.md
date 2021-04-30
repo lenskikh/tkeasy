@@ -38,7 +38,7 @@ app_loop()
 ## Features of tkeasy include:
 
 * **title**
-    > title(window,text)<br/>
+    title(window,text)<br/>
     > text = "New Title"<br/>
     > window (*optional*) = "name"<br/>
     ```python
@@ -47,7 +47,7 @@ app_loop()
     app_loop()
     ``` 
 * **size of window and background color**
-    > config(window,size,bgcolor)<br/>
+    config(window,size,bgcolor,border)<br/>
     > size (*optional*) = "500x500"<br/>
     > window (*optional*) = "name"<br/>
     > bgcolor(*optional*) = "color"<br/>
@@ -65,7 +65,7 @@ app_loop()
     ```
     > 400 shifted on X-axis and 300 shifted on Y-axis
 * **button**
-    > button(window,text,command,sticky,padx,pady,row,column)<br/>
+    button(window,text,command,sticky,padx,pady,row,column)<br/>
     > window (*optional*) = "name"<br/>
     > text="text" - text of button<br/>
     > command=somedef - appeal to function in your code (*Without brackets and quotation marks. See examples in code*)<br/>
@@ -84,7 +84,7 @@ app_loop()
     ![Screenshot](/screenshots/button.png)
 
 * **label**
-    > label(window,text,colortext,background,label_font,row,column,sticky,padx,pady)<br/>
+    label(window,text,colortext,background,label_font,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > text="text" - text of label<br/>
     > colortext (*optional*) = "red" (You can use hex color instead)<br/>
@@ -105,7 +105,7 @@ app_loop()
     ![Screenshot](/screenshots/label.png)
 
 * **checkboxes**
-    > checkbox(window,name,text,row,column,sticky,padx,pady)<br/>
+    checkbox(window,name,text,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of checkbox<br/>
     > text = "text" - text of checkbox<br/>
@@ -142,7 +142,7 @@ app_loop()
     ![Screenshot](/screenshots/checkbox.png)
 
 * **radiobox**
-    > radiobox(window,text,value,row,column,sticky,padx,pady)<br/>
+    radiobox(window,text,value,row,column,sticky,padx,pady)<br/>
     > Radiobox by default is not selected<br/>
     > window (*optional*) = "name"<br/>
     > text = "text" - text for radiobox<br/>
@@ -175,7 +175,7 @@ app_loop()
     ![Screenshot](/screenshots/radio.png)
 
 * **dropdown list**
-    > dropdown_list(window,variable,choices,default,row,column,sticky,padx,pady)<br/>
+    dropdown_list(window,variable,choices,default,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > variable = "variable"<br /> 
     > choices = list should assign in your code. For example: choices = ("One","Two","Three")<br/>
@@ -209,7 +209,7 @@ app_loop()
     ![Screenshot](/screenshots/droplist.jpg)
 
 * **file browse**
-    > select_file<br/>
+    select_file<br/>
     > command=select_file<br/>
     > Use button method and in the command point out select_file
     ```python
@@ -229,7 +229,7 @@ app_loop()
     ![Screenshot](/screenshots/file.jpg)
 
 * **folder browse**
-    > select_folder<br/>
+    select_folder<br/>
     > command=select_folder
     > Use button method and in the command point out select_folder
     ```python
@@ -250,7 +250,7 @@ app_loop()
     ![Screenshot](/screenshots/folder.png)
 
 * **one-line text input**
-    > entry(window,name,row,column,sticky,padx,pady)<br/>
+    entry(window,name,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of entry<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
@@ -274,7 +274,7 @@ app_loop()
     ![Screenshot](/screenshots/inputline.PNG)
 
 * **multi-line text input**
-    > text_area(name,row,column,sticky,padx,pady)<br/>
+    text_area(name,row,column,sticky,padx,pady)<br/>
     > text_area_scroll(name,row,column,sticky,padx,pady)<br/>
     > scroll looks ugly on some OS, use text_area() if text is short.<br/>
     > window (*optional*) = "name"<br/>    
@@ -307,7 +307,7 @@ app_loop()
 
 * **insert text in input field**<br />
     Adds text to a text field. Can be used as hints for the user.
-    > insert_text(name,text,color)<br />
+    insert_text(name,text,color)<br />
     > name = "name" - name of text area that you are used before<br/>
     > text = "text" which you want to insert in a text area<br/>
     > color = "#323648" color of text
@@ -337,7 +337,7 @@ app_loop()
 
 * **scroll-able output**<br/>
     Use two methods for scroll-able output<br/>
-    > method text_area_scroll() and method insert_text_area()
+    method text_area_scroll() and method insert_text_area()
     ```python 
     text_area_scroll(name="area output",row=0,column=0)
     insert_text_area(name="area output",text="some text",color = "black")
@@ -365,7 +365,7 @@ app_loop()
     ![Screenshot](/screenshots/w.png)
 
 * **clickable text**
-    > label_click()
+    label_click()
     ```python
     label(text="Link 1",row=0,column=0)
     label_click().bind("<Button-1>",lambda url:msg_box("Clicked","Link 1"))
@@ -384,7 +384,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/photo.png)
 * **clickable images**
-    > photo_click()
+    photo_click()
     ```python
     photo(file="1.png",row=0,column=0)
     photo_click().bind("<Button-1>",lambda url:
@@ -392,7 +392,7 @@ app_loop()
     ```
 * **sliders**<br />
     (horizontal by default) 
-    > slider(window,name,pos,row,column,sticky,padx,pady)<br />
+    slider(window,name,pos,row,column,sticky,padx,pady)<br />
     > window (*optional*) = "name"<br/>
     > name = "name" - name of slider<br/>
     > pos = "vertical" if want to change position of a slider<br/>
@@ -416,8 +416,8 @@ app_loop()
     ```
     ![Screenshot](/screenshots/separator.png)
 * **return values** <br />
-    > get_info(name)<br />
+    get_info("name")<br />
     Any name should be unique.<br />
     How do I get information from a text field? Give the field a unique name that will not be repeated in other widgets. For example "text area 01". Therefore, if you want to get information from this field, use get_info("text area 01"). The only exception applies only to the radio box. The radio box always has a name "radiobox" get_info("radiobox")
 * app_loop()
-    > add app_loop() at the end of an app. If the app is launched from VSC, it will immediately close without app_loop() 
+    Add app_loop() at the end of an app. If the app is launched from terminal, it will immediately close without app_loop() 

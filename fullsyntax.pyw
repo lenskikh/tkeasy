@@ -24,4 +24,6 @@ slider(name="scale",row=5,column=0,sticky="left",padx=5,pady=5)
 
 button(text="Button",command=info,row=6,column=0,sticky="left",padx=5,pady=5)
 
+app_loop()
+
 

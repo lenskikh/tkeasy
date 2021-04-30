@@ -39,9 +39,13 @@ def title(text,**kwargs):
     window = new_window(**kwargs)
     memory[window].title(text)
 
-def config(size,**kwargs):
+def config(**kwargs):
     window = new_window(**kwargs)
-    memory[window].geometry(size)  
+    try:
+        size = kwargs["size"]
+        memory[window].geometry(size)  
+    except:
+        pass
     try:
         bgcolor = kwargs["bgcolor"]
         memory[window].configure(background=bgcolor)  

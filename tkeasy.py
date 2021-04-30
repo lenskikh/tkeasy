@@ -39,10 +39,15 @@ def title(text,**kwargs):
     window = new_window(**kwargs)
     memory[window].title(text)
 
-def geometry(size,**kwargs):
+def config(size,**kwargs):
     window = new_window(**kwargs)
-    memory[window].geometry(size)    
-
+    memory[window].geometry(size)  
+    try:
+        bgcolor = kwargs["bgcolor"]
+        memory[window].configure(background=bgcolor)  
+    except:
+        pass
+    
 def get_info(name):
     try:
         #text area 

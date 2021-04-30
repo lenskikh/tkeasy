@@ -46,13 +46,14 @@ app_loop()
     title(text="Title")
     app_loop()
     ``` 
-* **geometry**
-    > geometry(window,size)<br/>
+* **geometry, background color**
+    > config(window,size,bgcolor)<br/>
     > size = "300x300"<br/>
     > window (*optional*) = "name"<br/>
+    > bgcolor(*optional*) = "color"<br/>
     ```python
     from tkeasy import *
-    geometry(size="300x300")
+    geometry(size="300x300",bgcolor="white")
     app_loop()
     ```
     OR
@@ -374,7 +375,7 @@ app_loop()
     ![Screenshot](/screenshots/labelclick.png)
 
 * **images**<br />
-    Support format gif and png only. Use png format for good quality. Unfortunately, due to the way tkinter works, you can't use images in the second window or in the third window. <br />
+    Support format gif and png only. Animated gif is not supported. Use png format for good quality. Unfortunately, due to the way tkinter works, you can't use images in the second window or in the third window. <br />
     > photo(window,file,row,column)
     ```python
     photo("1.png",0,0)

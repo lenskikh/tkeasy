@@ -51,6 +51,11 @@ def config(**kwargs):
         memory[window].configure(background=bgcolor)  
     except:
         pass
+    try:
+        border = kwargs["border"]
+        memory[window].overrideredirect(1)
+    except:
+        pass
     
 def get_info(name):
     try:

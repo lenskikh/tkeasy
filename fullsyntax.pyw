@@ -10,7 +10,7 @@ def info():
    print(get_info("scale")) #slider
    
 
-config(size="600x300+500+200", bgcolor="brown")
+config(size="600x300+500+200", bgcolor="brown",border="False")
 
 label(text="Fill the form",colortext="white",background="#34423f",justification="right",font=14,wrap="300",row=0,column=0,sticky="left",padx=5,pady=5)
 

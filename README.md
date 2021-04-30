@@ -51,6 +51,7 @@ app_loop()
     > size (*optional*) = "500x500"<br/>
     > window (*optional*) = "name"<br/>
     > bgcolor(*optional*) = "color"<br/>
+    > border(*optional*) = "False". "True" by default.<br/>
     ```python
     from tkeasy import *
     geometry(size="300x300",bgcolor="white")

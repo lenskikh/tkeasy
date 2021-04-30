@@ -46,9 +46,9 @@ app_loop()
     title(text="Title")
     app_loop()
     ``` 
-* **geometry, background color**
+* **size of window and background color**
     > config(window,size,bgcolor)<br/>
-    > size = "300x300"<br/>
+    > size (*optional*) = "500x500"<br/>
     > window (*optional*) = "name"<br/>
     > bgcolor(*optional*) = "color"<br/>
     ```python

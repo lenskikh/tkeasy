@@ -8,7 +8,7 @@ def info2():
 
 #The first window
 title(text="First window")
-geometry(size="196x100")
+config(size="196x100")
 label(text="Provide your info (1)", background="grey90",sticky="right",row=0,column=0)
 entry(name="entry 1",sticky="right",row=1,column=0)
 button(text="Get Info",command=info,sticky="right",row=2,column=0)

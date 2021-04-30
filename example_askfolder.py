@@ -3,7 +3,7 @@ from tkeasy import *
 
 #root is default var of Tk
 title(text="Ask Folder")
-geometry(size="140x90")
+config(size="140x90")
 
 def readname():
     print(get_info("folder"))

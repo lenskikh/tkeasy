@@ -50,7 +50,7 @@ app_loop()
     config(window,size,bgcolor,border)<br/>
     > size (*optional*) = "500x500"<br/>
     > window (*optional*) = "name"<br/>
-    > bgcolor(*optional*) = "color"<br/>
+    > background(*optional*) = "color"<br/>
     > border(*optional*) = "False". "True" by default.<br/>
     ```python
     from tkeasy import *

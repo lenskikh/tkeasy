@@ -46,16 +46,19 @@ def config(**kwargs):
         memory[window].geometry(size)  
     except:
         pass
+
     try:
-        bgcolor = kwargs["bgcolor"]
+        bgcolor = kwargs["background"]
         memory[window].configure(background=bgcolor)  
     except:
         pass
+
     try:
         border = kwargs["border"]
         memory[window].overrideredirect(1)
     except:
         pass
+
     try:
         icon = kwargs["icon"]
         memory[window].iconbitmap(icon)
@@ -231,7 +234,8 @@ def checkbox(name,text,row,column,**kwargs):
     memory[name] = IntVar()
     memory[text] = Checkbutton(memory[window],
         text = text,
-        variable = memory[name])
+        variable = memory[name],
+        bg = background(**kwargs))
     memory[text].grid(
         row = row,
         column = column,
@@ -242,7 +246,10 @@ def checkbox(name,text,row,column,**kwargs):
 def slider(name,row,column,**kwargs):
     window = new_window(**kwargs)
     memory[name] = Scale(memory[window],
-        from_= 0, to = 100, orient=scale_oriental(**kwargs))
+        from_= 0, 
+        to = 100, 
+        orient=scale_oriental(**kwargs),
+        bg = background(**kwargs))
     memory[name].grid(
         row = row,
         column = column,

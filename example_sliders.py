@@ -1,5 +1,7 @@
 from tkeasy import *
 
+config(background="white")
+
 def info():
     print("Velocity - " + str(get_info("scale 1")))
     print("Chrominance - " + str(get_info("scale 2")))

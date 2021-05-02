@@ -1,5 +1,7 @@
 from tkeasy import *
 
+config(background="white")
+
 def info():
     print(get_info("checkbox 1"))
     print(get_info("checkbox 2"))

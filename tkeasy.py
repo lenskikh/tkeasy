@@ -103,9 +103,9 @@ def colortext(**kwargs):
 def background(**kwargs):
     try:
         background = kwargs["background"]
-    except KeyError:
-        background = "white"
-    return background
+        return background
+    except:
+        pass   
 
 #wrap for label
 def label_length(**kwargs):
@@ -118,9 +118,9 @@ def label_length(**kwargs):
 def justification(**kwargs):
     try:
         justify = kwargs["justify"]
-    except KeyError:
-        justify = "center"
-    return justify 
+        return justify
+    except:
+        pass     
 
 def padx(**kwargs):
     try:
@@ -161,9 +161,10 @@ def scale_oriental(**kwargs):
 def activebg(**kwargs):
     try: 
         bgcolor = kwargs["bgcolor"]
+        return bgcolor
     except:
-        bgcolor = "white"
-    return bgcolor
+        pass
+    
 
 
 def select_file():
@@ -243,6 +244,7 @@ def checkbox(name,text,row,column,**kwargs):
         text = text,
         variable = memory[name],
         bg = background(**kwargs),
+        fg = colortext(**kwargs),
         activebackground = activebg(**kwargs))
     memory[text].grid(
         row = row,
@@ -284,6 +286,7 @@ def radiobox(text,row,column,**kwargs):
         variable = memory["radiobox"], 
         value = value,
         bg = background(**kwargs),
+        fg = colortext(**kwargs),
         activebackground = activebg(**kwargs))
     radiob.grid(
         row = row,

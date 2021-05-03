@@ -158,6 +158,13 @@ def scale_oriental(**kwargs):
         orient = "horizontal"
     return orient
 
+def activebg(**kwargs):
+    try: 
+        bgcolor = kwargs["bgcolor"]
+    except:
+        bgcolor = "white"
+    return bgcolor
+
 
 def select_file():
     memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
@@ -235,7 +242,8 @@ def checkbox(name,text,row,column,**kwargs):
     memory[text] = Checkbutton(memory[window],
         text = text,
         variable = memory[name],
-        bg = background(**kwargs))
+        bg = background(**kwargs),
+        activebackground = activebg(**kwargs))
     memory[text].grid(
         row = row,
         column = column,
@@ -274,7 +282,9 @@ def radiobox(text,row,column,**kwargs):
     radiob = Radiobutton(memory[window], 
         text = text, 
         variable = memory["radiobox"], 
-        value = value)
+        value = value,
+        bg = background(**kwargs),
+        activebackground = activebg(**kwargs))
     radiob.grid(
         row = row,
         column = column,

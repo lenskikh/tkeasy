@@ -11,7 +11,7 @@ def info():
    print(get_info("radiobox"))
 
 config(size="300x500+500+200",background="brown",icon="icon.ico")
-#config(size="600x300+500+200",background="brown",border="False")
+#config(size="600x300+500+200",background="brown",icon="icon.ico",border="False")
 
 label(text=" Fill the form ",colortext="black",background="lightblue",justification="left",font=14,wrap="300",row=0,column=0,sticky="left",padx=5,pady=5)
 

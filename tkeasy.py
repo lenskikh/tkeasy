@@ -95,18 +95,18 @@ def alignment(**kwargs):
 def colortext(**kwargs):
     try:
         colortext = kwargs["colortext"]
-    except KeyError:
-        colortext = "black"
-    return colortext
-
+        return colortext
+    except:
+        pass
+    
 #for label
 def background(**kwargs):
     try:
         background = kwargs["background"]
         return background
     except:
-        pass   
-
+        pass
+    
 #wrap for label
 def label_length(**kwargs):
     try:
@@ -118,9 +118,9 @@ def label_length(**kwargs):
 def justification(**kwargs):
     try:
         justify = kwargs["justify"]
-        return justify
-    except:
-        pass     
+    except KeyError:
+        justify = "center"
+    return justify 
 
 def padx(**kwargs):
     try:
@@ -244,7 +244,6 @@ def checkbox(name,text,row,column,**kwargs):
         text = text,
         variable = memory[name],
         bg = background(**kwargs),
-        fg = colortext(**kwargs),
         activebackground = activebg(**kwargs))
     memory[text].grid(
         row = row,
@@ -286,7 +285,6 @@ def radiobox(text,row,column,**kwargs):
         variable = memory["radiobox"], 
         value = value,
         bg = background(**kwargs),
-        fg = colortext(**kwargs),
         activebackground = activebg(**kwargs))
     radiob.grid(
         row = row,

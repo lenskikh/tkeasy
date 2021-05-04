@@ -160,8 +160,8 @@ def scale_oriental(**kwargs):
 
 def activebg(**kwargs):
     try: 
-        bgcolor = kwargs["bgcolor"]
-        return bgcolor
+        activebg = kwargs["activebg"]
+        return activebg
     except:
         pass
     
@@ -335,6 +335,9 @@ def text_area_scroll(name,row,column,**kwargs):
         sticky = alignment(**kwargs),
         padx = padx(**kwargs),
         pady = pady(**kwargs))
+
+def text_area_select(name):
+    return memory[name].selection_get()
 
 def listbox(name,row,column,**kwargs):
     window = new_window(**kwargs)

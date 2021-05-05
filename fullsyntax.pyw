@@ -12,8 +12,14 @@ def info():
    print(get_info("area 1"))
    print(text_area_select("area 1"))
 
+def open_in_menu():
+    select_file()
+    print(get_info("file"))
+
 config(size="300x600+500+200",background="lightblue",icon="icon.ico")
 #config(size="600x300+500+200",background="brown",icon="icon.ico",border="False")
+
+top_menu(openfile=open_in_menu)
 
 label(text=" Fill the form ",colortext="white",background="brown",justification="left",font=14,wrap="300",row=0,column=0,sticky="left",padx=5,pady=5)
 

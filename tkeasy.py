@@ -339,6 +339,9 @@ def text_area_scroll(name,row,column,**kwargs):
 def text_area_select(name):
     return memory[name].selection_get()
 
+def text_area_clear(name):
+    memory[name].delete('1.0', END)
+
 def listbox(name,row,column,**kwargs):
     window = new_window(**kwargs)
     try:
@@ -391,7 +394,13 @@ def top_menu(**kwargs):
     
     menubar = Menu(memory[window])
     filemenu = Menu(menubar, tearoff=0)
-    filemenu.add_command(label="New", command="False")
+
+    try:
+        new = kwargs["new"]
+        filemenu.add_command(label="New", command=new)
+    except:
+        pass
+
     try:
         openfile = kwargs["openfile"]
         filemenu.add_command(label="Open", command=openfile) 

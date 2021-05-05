@@ -19,7 +19,7 @@ def open_in_menu():
 config(size="300x600+500+200",background="lightblue",icon="icon.ico")
 #config(size="600x300+500+200",background="brown",icon="icon.ico",border="False")
 
-top_menu(new="False",openfile=open_in_menu)
+top_menu(new="False",openfile=open_in_menu,save="False")
 
 label(text=" Fill the form ",colortext="white",background="brown",justification="left",font=14,wrap="300",row=0,column=0,sticky="left",padx=5,pady=5)
 

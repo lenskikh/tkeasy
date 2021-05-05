@@ -71,7 +71,7 @@ def get_info(name):
         return memory[name].get("1.0", 'end')
     except:
         #ask file or folder
-        if name == "file" or name == "folder":
+        if name == "file" or name == "folder" or name == "save":
             return memory[name]
         else:
             #entry,checkbox,radiobox
@@ -168,12 +168,14 @@ def activebg(**kwargs):
 
 
 def select_file():
-    memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
-                                            title = "Select file")
+    memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",title = "Select file")
 
 def select_folder():
-    memory["folder"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
-                                            title = "Select folder")   
+    memory["folder"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",title = "Select folder")   
+
+def save_file():
+	memory["save"] = filedialog.asksaveasfilename(initialdir = os.getcwd()+"./",title = "Save file") 
+
 
 def separator(column_length,**kwargs):
     window = new_window(**kwargs) 
@@ -407,7 +409,13 @@ def top_menu(**kwargs):
     except:
         pass
     
-    filemenu.add_command(label="Save", command="False")
+    try:
+        save = kwargs["save"]
+        filemenu.add_command(label="Save", command=save)
+    except:
+        pass
+
+    
     filemenu.add_command(label="Save as...", command="False")
     filemenu.add_command(label="Close", command="False")
 

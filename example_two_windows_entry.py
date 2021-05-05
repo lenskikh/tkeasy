@@ -1,5 +1,7 @@
 from tkeasy import *
 
+top_menu_demo()
+
 def info():
     print(get_info("entry 1"))
 

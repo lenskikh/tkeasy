@@ -1,5 +1,7 @@
 from tkeasy import *
 
+top_menu_demo()
+
 def show_info():
     choice = get_info("radiobox")
     if choice == "None":

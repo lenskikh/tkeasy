@@ -14,7 +14,6 @@ def save():
     name_for_save = get_info("save")
     text_file = open(name_for_save, 'w')
     text_file.write(get_info("area 2"))
-	# Close the file
     text_file.close()
 
 top_menu(new=new_file,openfile=open_in_menu,save=save)

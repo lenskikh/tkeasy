@@ -1,5 +1,7 @@
 from tkeasy import *
+
 title(text="The first window")
+top_menu_demo()
 
 label(text="William Shakespeare was the son of",row=0,column=0)
 separator(column_length=1)

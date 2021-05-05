@@ -390,6 +390,41 @@ def msg_box_warning(title,message):
 def msg_box_ask(name,title,message): 
     memory[name] = messagebox.askyesnocancel(title=title, message=message)
 
+def top_menu_demo(**kwargs):
+    window = new_window(**kwargs)
+
+    menubar = Menu(memory[window])
+    filemenu = Menu(menubar, tearoff=0)
+    filemenu.add_command(label="New", command="False")
+    filemenu.add_command(label="Open", command="False")
+    filemenu.add_command(label="Save", command="False")
+    filemenu.add_command(label="Save as...", command="False")
+    filemenu.add_command(label="Close", command="False")
+
+    filemenu.add_separator()
+
+    filemenu.add_command(label="Exit", command="False")
+    menubar.add_cascade(label="File", menu=filemenu)
+    editmenu = Menu(menubar, tearoff=0)
+    editmenu.add_command(label="Undo", command="False")
+
+    editmenu.add_separator()
+
+    editmenu.add_command(label="Cut", command="False")
+    editmenu.add_command(label="Copy", command="False")
+    editmenu.add_command(label="Paste", command="False")
+    editmenu.add_command(label="Delete", command="False")
+    editmenu.add_command(label="Select All", command="False")
+
+    menubar.add_cascade(label="Edit", menu=editmenu)
+    helpmenu = Menu(menubar, tearoff=0)
+    helpmenu.add_command(label="Help Index", command="False")
+    helpmenu.add_command(label="About...", command="False")
+    menubar.add_cascade(label="Help", menu=helpmenu)
+
+    memory[window].config(menu=menubar)
+
+
 def top_menu(**kwargs):
 
     window = new_window(**kwargs)
@@ -415,22 +450,55 @@ def top_menu(**kwargs):
     except:
         pass
 
-    
-    filemenu.add_command(label="Save as...", command="False")
-    filemenu.add_command(label="Close", command="False")
+    try:
+        save_as = kwargs["save as"]
+        filemenu.add_command(label="Save as...", command=save_as)
+    except:
+        pass
+
+    try:
+        close = kwargs["close"]
+        filemenu.add_command(label="Close", command=close)
+    except:
+        pass
 
     filemenu.add_separator()
 
-    filemenu.add_command(label="Exit", command=memory[window].quit)
+    try:
+        menu_exit = kwargs["exit"]
+        filemenu.add_command(label="Exit", command=menu_exit)
+    except:
+        pass
+
     menubar.add_cascade(label="File", menu=filemenu)
     editmenu = Menu(menubar, tearoff=0)
-    editmenu.add_command(label="Undo", command="False")
+
+    try:
+        undo = kwargs["undo"]
+        editmenu.add_command(label="Undo", command=undo)
+    except:
+        pass
 
     editmenu.add_separator()
 
-    editmenu.add_command(label="Cut", command="False")
-    editmenu.add_command(label="Copy", command="False")
-    editmenu.add_command(label="Paste", command="False")
+    try:
+        cut = kwargs["cut"]
+        editmenu.add_command(label="Cut", command=cut)
+    except:
+        pass
+
+    try:
+        copy = kwargs["copy"]
+        editmenu.add_command(label="Copy", command=copy)
+    except:
+        pass
+
+    try:
+        paste = kwargs["paste"]
+        editmenu.add_command(label="Paste", command=paste)
+    except:
+        pass
+
     editmenu.add_command(label="Delete", command="False")
     editmenu.add_command(label="Select All", command="False")
 

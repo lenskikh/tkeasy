@@ -423,25 +423,7 @@ app_loop()
     ![Screenshot](/screenshots/separator.png)
 
 * **Top menu**<br/>
-    ```python
-    from tkeasy import *
-
-    def new():
-        print("new")
-
-    def save():
-        print("save")
-
-    def copy():
-        print("copy")
-
-    tabs = {"File":{"New":new,"Save":save,"---":"---","Exit":"False"}, 
-        "Edit":{"Copy":copy}}
-
-    top_menu(tabs)
-
-    app_loop()
-    ```
+    See example_topmenu.py If you need a code.
     ![Screenshot](/screenshots/topmenu.jpg)
 * app_loop()
     Add app_loop() at the end of an app. If the app is launched from terminal, it will immediately close without app_loop() 

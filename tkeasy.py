@@ -425,88 +425,24 @@ def top_menu_demo(**kwargs):
     memory[window].config(menu=menubar)
 
 
-def top_menu(**kwargs):
+def top_menu(tabs,**kwargs):
 
     window = new_window(**kwargs)
     
     menubar = Menu(memory[window])
-    filemenu = Menu(menubar, tearoff=0)
-
-    try:
-        new = kwargs["new"]
-        filemenu.add_command(label="New", command=new)
-    except:
-        pass
-
-    try:
-        openfile = kwargs["openfile"]
-        filemenu.add_command(label="Open", command=openfile) 
-    except:
-        pass
     
-    try:
-        save = kwargs["save"]
-        filemenu.add_command(label="Save", command=save)
-    except:
-        pass
+    for name_of_tab in tabs:
 
-    try:
-        save_as = kwargs["save as"]
-        filemenu.add_command(label="Save as...", command=save_as)
-    except:
-        pass
+        filemenu = Menu(menubar, tearoff=0)
+        menubar.add_cascade(label=name_of_tab, menu=filemenu)
 
-    try:
-        close = kwargs["close"]
-        filemenu.add_command(label="Close", command=close)
-    except:
-        pass
-
-    filemenu.add_separator()
-
-    try:
-        menu_exit = kwargs["exit"]
-        filemenu.add_command(label="Exit", command=menu_exit)
-    except:
-        pass
-
-    menubar.add_cascade(label="File", menu=filemenu)
-    editmenu = Menu(menubar, tearoff=0)
-
-    try:
-        undo = kwargs["undo"]
-        editmenu.add_command(label="Undo", command=undo)
-    except:
-        pass
-
-    editmenu.add_separator()
-
-    try:
-        cut = kwargs["cut"]
-        editmenu.add_command(label="Cut", command=cut)
-    except:
-        pass
-
-    try:
-        copy = kwargs["copy"]
-        editmenu.add_command(label="Copy", command=copy)
-    except:
-        pass
-
-    try:
-        paste = kwargs["paste"]
-        editmenu.add_command(label="Paste", command=paste)
-    except:
-        pass
-
-    editmenu.add_command(label="Delete", command="False")
-    editmenu.add_command(label="Select All", command="False")
-
-    menubar.add_cascade(label="Edit", menu=editmenu)
-    helpmenu = Menu(menubar, tearoff=0)
-    helpmenu.add_command(label="Help Index", command="False")
-    helpmenu.add_command(label="About...", command="False")
-    menubar.add_cascade(label="Help", menu=helpmenu)
+        for name_in_menu in tab[name_of_tab]:
+           
+            if name_in_menu == "---":
+                filemenu.add_separator()
+            else:
+                filemenu.add_command(label=name_in_menu, command=tab[name_of_tab][name_in_menu])
+                print(name_in_menu)
 
     memory[window].config(menu=menubar)
 

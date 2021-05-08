@@ -435,7 +435,8 @@ app_loop()
     def copy():
         print("copy")
 
-    tabs = {"File":{"New":new,"Save":save,"---":"---","Exit":"False"}, "Edit":{"Copy":copy}}
+    tabs = {"File":{"New":new,"Save":save,"---":"---","Exit":"False"}, 
+        "Edit":{"Copy":copy}}
 
     top_menu(tabs)
 

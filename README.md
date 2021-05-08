@@ -1,5 +1,5 @@
 # tkeasy
-## Wrapper for tkinter giving an easier way to build a gui interface. GUI Development does not have to be difficult nor painful.</br>
+### Wrapper for tkinter giving an easier way to build a gui interface. GUI Development does not have to be difficult nor painful.</br>
 ![Screenshot](/screenshots/droplist.png)
 
 ## Installation
@@ -64,6 +64,12 @@ app_loop()
     app_loop()
     ```
     > 400 shifted on X-axis and 300 shifted on Y-axis
+
+* **return values** <br />
+    get_info("name")<br />
+    Any name should be unique.<br />
+    How do I get information from a text field? Give the field a unique name that will not be repeated in other widgets. For example "text area 01". Therefore, if you want to get information from this field, use get_info("text area 01"). The only exception applies only to the radio box. The radio box always has a name "radiobox" get_info("radiobox")
+
 * **button**
     button(window,text,command,sticky,padx,pady,row,column)<br/>
     > window (*optional*) = "name"<br/>
@@ -391,7 +397,7 @@ app_loop()
                     msg_box(title="Clicked",message="Picture 1"))
     ```
 * **sliders**<br />
-    (horizontal by default) 
+    (horizontal by default) <br />
     slider(window,name,pos,row,column,sticky,padx,pady)<br />
     > window (*optional*) = "name"<br/>
     > name = "name" - name of slider<br/>
@@ -415,9 +421,8 @@ app_loop()
     app_loop()
     ```
     ![Screenshot](/screenshots/separator.png)
-* **return values** <br />
-    get_info("name")<br />
-    Any name should be unique.<br />
-    How do I get information from a text field? Give the field a unique name that will not be repeated in other widgets. For example "text area 01". Therefore, if you want to get information from this field, use get_info("text area 01"). The only exception applies only to the radio box. The radio box always has a name "radiobox" get_info("radiobox")
+
+* **Top menu**<br/>
+
 * app_loop()
     Add app_loop() at the end of an app. If the app is launched from terminal, it will immediately close without app_loop() 

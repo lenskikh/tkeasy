@@ -436,12 +436,12 @@ def top_menu(tabs,**kwargs):
         filemenu = Menu(menubar, tearoff=0)
         menubar.add_cascade(label=name_of_tab, menu=filemenu)
 
-        for name_in_menu in tab[name_of_tab]:
+        for name_in_menu in tabs[name_of_tab]:
            
             if name_in_menu == "---":
                 filemenu.add_separator()
             else:
-                filemenu.add_command(label=name_in_menu, command=tab[name_of_tab][name_in_menu])
+                filemenu.add_command(label=name_in_menu, command=tabs[name_of_tab][name_in_menu])
                 print(name_in_menu)
 
     memory[window].config(menu=menubar)

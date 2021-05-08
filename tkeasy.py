@@ -366,7 +366,7 @@ def listbox_insert(name,text):
         memory[name].insert("end", x)    
 
 def listbox_item_selected(name):
-    print(memory[name].get("active"))
+    return memory[name].get("active")
 
 
 #for change text in text area
@@ -442,11 +442,9 @@ def top_menu(tabs,**kwargs):
                 filemenu.add_separator()
             else:
                 filemenu.add_command(label=name_in_menu, command=tabs[name_of_tab][name_in_menu])
-                print(name_in_menu)
 
     memory[window].config(menu=menubar)
 
 def app_loop(**kwargs):
     window = new_window(**kwargs)
     memory[window].mainloop()
-

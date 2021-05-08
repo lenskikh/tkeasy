@@ -425,5 +425,6 @@ app_loop()
 * **Top menu**<br/>
     See example_topmenu.py If you need a code.
     ![Screenshot](/screenshots/topmenu.jpg)
-* app_loop()
+    
+* **app_loop()**<br/>
     Add app_loop() at the end of an app. If the app is launched from terminal, it will immediately close without app_loop() 

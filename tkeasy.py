@@ -445,6 +445,10 @@ def top_menu(tabs,**kwargs):
 
     memory[window].config(menu=menubar)
 
+def quit(**kwargs):
+    window = new_window(**kwargs)
+    memory[window].destroy()
+
 def app_loop(**kwargs):
     window = new_window(**kwargs)
     memory[window].mainloop()

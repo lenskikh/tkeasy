@@ -9,7 +9,7 @@ def save():
 def copy():
     print("copy")
 
-tabs = {"File":{"New":new,"Save":save,"---":"---","Exit":"False"},
+tabs = {"File":{"New":new,"Save":save,"---":"---","Exit":quit},
         "Edit":{"Copy":copy}}
 
 top_menu(tabs)

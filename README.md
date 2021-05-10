@@ -357,7 +357,15 @@ app_loop()
     ```python 
     text_area_scroll(name="area output",row=0,column=0)
     insert_text_area(name="area output",text="some text",color = "black")
-    ```     
+    ``` 
+
+* **Select text**<br />
+    text_area_select()<br />
+    Get data from selected text in text area
+
+* **Clear data in text area**<br />
+    text_area_clear()<br />
+
 * **multiple windows** <br/>
     Unlimited number of windows can be open at the same time<br/>
     Add "window" in the second and third window. The first window should be without window="the first window". See example example_two_windows_entry.py Otherwise, you will get three windows.
@@ -434,7 +442,7 @@ app_loop()
 
 * **Top menu**<br/>
     See example_topmenu.py If you need the whole code.<br />
-    ```python
+    ```json
     tabs = {"File":{"New":"False","Open":"False","Save":"False","Save as":"False","Close":"False","---":"---","Exit":quit},
     "Edit":{"Undo":"False","---":"---","Cut":"False","Copy":"False","Paste":"False","Delete":"False","Select All":"False"},
     "Help":{"Help Index":"False","About...":"False","Help":"False"}}

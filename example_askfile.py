@@ -3,8 +3,6 @@ from tkeasy import *
 
 title(text="Ask file")
 
-top_menu_demo()
-
 def readname():
     print (get_info("file"))
 

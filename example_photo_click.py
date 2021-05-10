@@ -2,8 +2,6 @@ from tkeasy import *
 
 title("Photo click")
 
-top_menu_demo()
-
 photo(file="1.png",row=0,column=0)
 photo_click().bind("<Button-1>",lambda url:
                    msg_box(title="Clicked",message="Picture 1"))

@@ -5,8 +5,6 @@ from tkeasy import *
 title(text="Ask Folder")
 config(size="140x90")
 
-top_menu_demo()
-
 def readname():
     print(get_info("folder"))
 

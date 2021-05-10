@@ -1,7 +1,6 @@
 from tkeasy import *
 
 config(background="white")
-top_menu_demo()
 
 def info():
     print("Velocity - " + str(get_info("scale 1")))

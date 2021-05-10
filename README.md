@@ -214,7 +214,7 @@ app_loop()
     ```    
     ![Screenshot](/screenshots/droplist.jpg)
 
-* **file browse**
+* **file browse dialog**
     select_file<br/>
     > command=select_file<br/>
     > Use button method and in the command point out select_file
@@ -234,7 +234,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/file.jpg)
 
-* **folder browse**
+* **folder browse dialog**
     select_folder<br/>
     > command=select_folder
     > Use button method and in the command point out select_folder
@@ -254,6 +254,16 @@ app_loop()
     app_loop()
     ```
     ![Screenshot](/screenshots/folder.png)
+
+* **Save file dialog**
+    save_file()
+    ```python
+    from tkeasy import *
+
+    save_file()
+    print(get_info("save")) 
+    app_loop()   
+    ```
 
 * **one-line text input**
     entry(window,name,row,column,sticky,padx,pady)<br/>
@@ -426,7 +436,7 @@ app_loop()
     See example_topmenu.py If you need a code.
     ![Screenshot](/screenshots/topmenu.jpg)
 
-* **quit**
+* **quit**<br/>
     For destroy window.
     ```python
     button(text='Quit',command=quit,

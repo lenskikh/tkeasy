@@ -2,8 +2,6 @@ from tkeasy import *
 
 config(background="white")
 
-top_menu_demo()
-
 def info():
     print(get_info("checkbox 1"))
     print(get_info("checkbox 2"))

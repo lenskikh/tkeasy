@@ -390,41 +390,6 @@ def msg_box_warning(title,message):
 def msg_box_ask(name,title,message): 
     memory[name] = messagebox.askyesnocancel(title=title, message=message)
 
-def top_menu_demo(**kwargs):
-    window = new_window(**kwargs)
-
-    menubar = Menu(memory[window])
-    filemenu = Menu(menubar, tearoff=0)
-    filemenu.add_command(label="New", command="False")
-    filemenu.add_command(label="Open", command="False")
-    filemenu.add_command(label="Save", command="False")
-    filemenu.add_command(label="Save as...", command="False")
-    filemenu.add_command(label="Close", command="False")
-
-    filemenu.add_separator()
-
-    filemenu.add_command(label="Exit", command="False")
-    menubar.add_cascade(label="File", menu=filemenu)
-    editmenu = Menu(menubar, tearoff=0)
-    editmenu.add_command(label="Undo", command="False")
-
-    editmenu.add_separator()
-
-    editmenu.add_command(label="Cut", command="False")
-    editmenu.add_command(label="Copy", command="False")
-    editmenu.add_command(label="Paste", command="False")
-    editmenu.add_command(label="Delete", command="False")
-    editmenu.add_command(label="Select All", command="False")
-
-    menubar.add_cascade(label="Edit", menu=editmenu)
-    helpmenu = Menu(menubar, tearoff=0)
-    helpmenu.add_command(label="Help Index", command="False")
-    helpmenu.add_command(label="About...", command="False")
-    menubar.add_cascade(label="Help", menu=helpmenu)
-
-    memory[window].config(menu=menubar)
-
-
 def top_menu(tabs,**kwargs):
 
     window = new_window(**kwargs)

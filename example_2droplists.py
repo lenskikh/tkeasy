@@ -2,8 +2,6 @@ from tkeasy import *
 
 title(text="The first window")
 
-top_menu_demo()
-
 def info():
     title(window="second",text="Info")
     label(window="second",text="Gender",

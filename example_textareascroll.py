@@ -2,8 +2,6 @@ from tkeasy import *
 
 title(text="Text area")
 
-top_menu_demo()
-
 def show_info():
     print(get_info("area"))
     

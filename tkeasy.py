@@ -165,7 +165,10 @@ def activebg(**kwargs):
     except:
         pass
     
-
+def clipboard_in(selected,**kwargs):
+    window = new_window(**kwargs) 
+    memory[window].clipboard_clear()
+    memory[window].clipboard_append(selected)
 
 def select_file():
     memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",title = "Select file")

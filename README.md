@@ -366,6 +366,13 @@ app_loop()
 * **Clear data in text area**<br />
     text_area_clear()<br />
 
+* **Clipboard_in**<br />
+    clipboard_in(selected)<br />
+    ```python
+    selected = text_area_select(name)#Get selected text from text_area
+    clipboard_in(selected) #Copy selected text to clipboard
+    ```
+
 * **multiple windows** <br/>
     Unlimited number of windows can be open at the same time<br/>
     Add "window" in the second and third window. The first window should be without window="the first window". See example example_two_windows_entry.py Otherwise, you will get three windows.

@@ -16,7 +16,11 @@ def save():
     text_file.write(get_info("area 2"))
     text_file.close()
 
-top_menu(new=new_file,openfile=open_in_menu,save=save)
+tabs = {"File":{"New":new_file,"Open":open_in_menu,"Save":save,"Save as":save,"Close":"False","---":"---","Exit":quit},
+"Edit":{"Undo":"False","---":"---","Cut":"False","Copy":"False","Paste":"False","Delete":"False","Select All":"False"},
+"Help":{"Help Index":"False","About...":"False","Help":"False"}}
+
+top_menu(tabs)
 
 text_area(name="area 2", row=0,column=0)
 

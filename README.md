@@ -407,6 +407,7 @@ app_loop()
     photo("2.png",1,0)
     ```
     ![Screenshot](/screenshots/photo.png)
+    
 * **clickable images**
     photo_click()
     ```python
@@ -426,6 +427,7 @@ app_loop()
     > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
     > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
     ![Screenshot](/screenshots/sliders.png)
+
 * **separator**<br/>
     separator line<br/>
     separator(window,column_length,padx,pady)<br/>

@@ -433,7 +433,12 @@ app_loop()
     ![Screenshot](/screenshots/separator.png)
 
 * **Top menu**<br/>
-    See example_topmenu.py If you need a code.
+    See example_topmenu.py If you need the whole code.<br />
+    ```python
+    tabs = {"File":{"New":"False","Open":"False","Save":"False","Save as":"False","Close":"False","---":"---","Exit":quit},
+    "Edit":{"Undo":"False","---":"---","Cut":"False","Copy":"False","Paste":"False","Delete":"False","Select All":"False"},
+    "Help":{"Help Index":"False","About...":"False","Help":"False"}}
+    ```
     ![Screenshot](/screenshots/topmenu.jpg)
 
 * **quit**<br/>

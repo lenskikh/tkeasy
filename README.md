@@ -214,8 +214,8 @@ app_loop()
     ```    
     ![Screenshot](/screenshots/droplist.jpg)
 
-* **file browse dialog**
-    select_file<br/>
+* **file browse dialog**<br/>
+    select_file()<br/>
     > command=select_file<br/>
     > Use button method and in the command point out select_file
     ```python
@@ -234,8 +234,8 @@ app_loop()
     ```
     ![Screenshot](/screenshots/file.jpg)
 
-* **folder browse dialog**
-    select_folder<br/>
+* **folder browse dialog**<br/>
+    select_folder()<br/>
     > command=select_folder
     > Use button method and in the command point out select_folder
     ```python
@@ -255,7 +255,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/folder.png)
 
-* **Save file dialog**
+* **Save file dialog**<br/>
     save_file()
     ```python
     from tkeasy import *

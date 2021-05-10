@@ -170,6 +170,10 @@ def clipboard_in(selected,**kwargs):
     memory[window].clipboard_clear()
     memory[window].clipboard_append(selected)
 
+def delete_selected(name,**kwargs):
+    window = new_window(**kwargs) 
+    memory[name].delete("sel.first", "sel.last")
+
 def select_file():
     memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",title = "Select file")
 

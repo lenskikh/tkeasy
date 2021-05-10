@@ -20,8 +20,13 @@ def copy():
     selected = text_area_select("area 2")
     clipboard_in(selected)
 
-tabs = {"File":{"New":new_file,"Open":open_in_menu,"Save":save,"Save as":save,"Close":"False","---":"---","Exit":quit},
-"Edit":{"Undo":"False","---":"---","Cut":"False","Copy":copy,"Paste":"False","Delete":"False","Select All":"False"},
+def cut():
+    selected = text_area_select("area 2")
+    clipboard_in(selected)
+    delete_selected("area 2")
+
+tabs = {"File":{"New":new_file,"Open":open_in_menu,"Save":save,"Save as":save,"Close":new_file,"---":"---","Exit":quit},
+"Edit":{"Undo":"False","---":"---","Cut":cut,"Copy":copy,"Paste":"False","Delete":"False","Select All":"False"},
 "Help":{"Help Index":"False","About...":"False","Help":"False"}}
 
 top_menu(tabs)

@@ -264,8 +264,7 @@ app_loop()
     ```python
     from tkeasy import *
 
-    save_file()
-    print(get_info("save")) 
+    print(save_file()) 
     app_loop()   
     ```
 

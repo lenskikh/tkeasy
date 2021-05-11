@@ -221,14 +221,16 @@ app_loop()
     ```python
     from tkeasy import *
 
-    def show_info():
-        choice = get_info("radiobox")
-        print(choice)
+    title(text="Ask file")
 
-    radiobox(text="Apple",row=0,column=0)
-    radiobox(text="Melon",row=1,column=0,value="weight = 2kg")
-    radiobox(text="Lemon",row=2,column=0)
-    button(text="Show Info",command=show_info,row=3,column=0)
+    def showfile():
+        print (select_file())
+
+    label(text="ASK FILE",colortext="white",
+        background="BLUE",row=0,column=0)
+
+    button(text="FILE BROWSER",
+        command=showfile,row=1,column=0)
 
     app_loop()
     ```
@@ -241,15 +243,17 @@ app_loop()
     ```python
     from tkeasy import *
 
-    def readname():
-        print(get_info("folder"))
+    title(text="Ask Folder")
+    config(size="50x60")
 
-    button(text='FOLDER BROWSER',command=select_folder,
-        row=0,column=0,sticky="center")
+    def askfolder():
+        print(select_folder())
 
-    button(text="Print Name Of Folder",
-        command=readname,row=1,column=0,
-        sticky="center")
+    label(text="ASK FOLDER",colortext="white",
+        background="green",row=0,column=0)
+
+    button(text='CHOOSE FOLDER',command=askfolder,
+        row=1,column=0)
 
     app_loop()
     ```

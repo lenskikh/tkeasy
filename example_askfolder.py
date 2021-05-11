@@ -1,7 +1,6 @@
 #ask folder - gui widget
 from tkeasy import *
 
-#root is default var of Tk
 title(text="Ask Folder")
 config(size="50x60")
 

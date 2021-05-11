@@ -1,6 +1,6 @@
 import os
 from tkinter import *
-from tkinter import filedialog, scrolledtext, messagebox
+from tkinter import filedialog, scrolledtext, messagebox, colorchooser
 
 memory = {"filename":"", "key TAB":""}
 
@@ -179,6 +179,10 @@ def paste_text(name,**kwargs):
     selected = memory[window].clipboard_get()
     position = memory[name].index(INSERT)
     memory[name].insert(position, selected)
+
+def colorpicker(**kwargs):
+    color = colorchooser.askcolor()[1]
+    return color
 
 def select_file():
     memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",title = "Select file")

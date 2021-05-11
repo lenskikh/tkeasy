@@ -10,8 +10,7 @@ def open_in_menu():
     print(get_info("file"))
 
 def save():
-    save_file()
-    name_for_save = get_info("save")
+    name_for_save = save_file()
     text_file = open(name_for_save, 'w')
     text_file.write(get_info("area 2"))
     text_file.close()

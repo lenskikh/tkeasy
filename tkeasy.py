@@ -2,7 +2,7 @@ import os
 from tkinter import *
 from tkinter import filedialog, scrolledtext, messagebox, colorchooser
 
-memory = {"filename":"", "key TAB":""}
+memory = {"key TAB":""}
 
 #clear entry if text inside field used as prompting
 #when you click in entry field, a text inside text will be cleared
@@ -191,7 +191,7 @@ def select_folder():
     return filedialog.askdirectory(initialdir = os.getcwd()+"./",title = "Select folder")   
 
 def save_file():
-	memory["save"] = filedialog.asksaveasfilename(initialdir = os.getcwd()+"./",title = "Save file") 
+	return filedialog.asksaveasfilename(initialdir = os.getcwd()+"./",title = "Save file") 
 
 
 def separator(column_length,**kwargs):

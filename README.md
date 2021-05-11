@@ -37,7 +37,7 @@ app_loop()
 
 ## Features of tkeasy include:
 
-* **title**
+* **title**<br/>
     title(window,text)<br/>
     > text = "New Title"<br/>
     > window (*optional*) = "name"<br/>
@@ -46,7 +46,7 @@ app_loop()
     title(text="Title")
     app_loop()
     ``` 
-* **size of window and background color**
+* **size of window and background color**<br/>
     config(window,size,bgcolor,border)<br/>
     > size (*optional*) = "500x500"<br/>
     > window (*optional*) = "name"<br/>
@@ -70,7 +70,7 @@ app_loop()
     Any name should be unique.<br />
     How do I get information from a text field? Give the field a unique name that will not be repeated in other widgets. For example "text area 01". Therefore, if you want to get information from this field, use get_info("text area 01"). The only exception applies only to the radio box. The radio box always has a name "radiobox" get_info("radiobox")
 
-* **button**
+* **button**<br/>
     button(window,text,command,sticky,padx,pady,row,column)<br/>
     > window (*optional*) = "name"<br/>
     > text="text" - text of button<br/>
@@ -89,7 +89,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/button.png)
 
-* **label**
+* **label**<br/>
     label(window,text,colortext,background,label_font,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > text="text" - text of label<br/>
@@ -110,7 +110,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/label.png)
 
-* **checkboxes**
+* **checkboxes**<br/>
     checkbox(window,name,text,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of checkbox<br/>
@@ -147,7 +147,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/checkbox.png)
 
-* **radiobox**
+* **radiobox**<br/>
     radiobox(window,text,value,row,column,sticky,padx,pady)<br/>
     > Radiobox by default is not selected<br/>
     > window (*optional*) = "name"<br/>
@@ -180,7 +180,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/radio.png)
 
-* **dropdown list**
+* **dropdown list**<br/>
     dropdown_list(window,variable,choices,default,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > variable = "variable"<br /> 
@@ -269,7 +269,7 @@ app_loop()
     app_loop()   
     ```
 
-* **one-line text input**
+* **one-line text input**<br/>
     entry(window,name,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of entry<br/>
@@ -293,7 +293,7 @@ app_loop()
     ```  
     ![Screenshot](/screenshots/inputline.PNG)
 
-* **multi-line text input**
+* **multi-line text input**<br/>
     text_area(name,row,column,sticky,padx,pady)<br/>
     > text_area_scroll(name,row,column,sticky,padx,pady)<br/>
     > scroll looks ugly on some OS, use text_area() if text is short.<br/>
@@ -412,7 +412,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/w.png)
 
-* **clickable text**
+* **clickable text**<br/>
     label_click()
     ```python
     label(text="Link 1",row=0,column=0)
@@ -432,7 +432,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/photo.png)
     
-* **clickable images**
+* **clickable images**<br/>
     photo_click()
     ```python
     photo(file="1.png",row=0,column=0)

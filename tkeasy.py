@@ -188,7 +188,7 @@ def select_file():
     return filedialog.askopenfilename(initialdir = os.getcwd()+"./",title = "Select file")
 
 def select_folder():
-    memory["folder"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",title = "Select folder")   
+    return filedialog.askdirectory(initialdir = os.getcwd()+"./",title = "Select folder")   
 
 def save_file():
 	memory["save"] = filedialog.asksaveasfilename(initialdir = os.getcwd()+"./",title = "Save file") 

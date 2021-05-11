@@ -375,9 +375,16 @@ app_loop()
     ```
 
 * **Delete selected text**<br />
-    delete_selected(name)<br />
+    ```python
+    delete_selected("name of text_area")
+    ```
     Select a text and delete it<br />
-    > name of text_area
+
+* **Paste text**<br />
+    ```python
+    paste_text("name of text_area")
+    ```
+    Paste text from clipboard
 
 * **multiple windows** <br/>
     Unlimited number of windows can be open at the same time.<br/>

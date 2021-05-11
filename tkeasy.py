@@ -174,6 +174,12 @@ def delete_selected(name,**kwargs):
     window = new_window(**kwargs) 
     memory[name].delete("sel.first", "sel.last")
 
+def paste_text(name,**kwargs):
+    window = new_window(**kwargs) 
+    selected = memory[window].clipboard_get()
+    position = memory[name].index(INSERT)
+    memory[name].insert(position, selected)
+
 def select_file():
     memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",title = "Select file")
 

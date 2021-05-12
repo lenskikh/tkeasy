@@ -181,9 +181,8 @@ def paste_text(name,**kwargs):
     memory[name].insert(position, selected)
 
 def colorpicker(**kwargs):
-    color = colorchooser.askcolor()[1]
-    return color
-
+    return colorchooser.askcolor()[1]
+     
 def select_file():
     return filedialog.askopenfilename(initialdir = os.getcwd()+"./",title = "Select file")
 

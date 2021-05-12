@@ -81,13 +81,13 @@ def alignment(**kwargs):
     try:
         sticky = kwargs["sticky"]
         if sticky == "right":
-            sticky = E
+            sticky = "E"
         elif sticky == "left":
-            sticky = W
+            sticky = "W"
         elif sticky == "center":
-            sticky = EW        
+            sticky = "EW"        
     except KeyError:
-        sticky = EW       
+        sticky = "EW"       
 
     return sticky
 

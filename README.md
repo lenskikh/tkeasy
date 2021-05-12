@@ -7,6 +7,11 @@ Type in terminal or cmd</br>
 <code>git clone https://github.com/lenskikh/tkeasy.git</code></br>
 Run any file with name "example"
 
+On Linux Manjaro install tk first
+```unix
+sudo pacman -S tk
+```
+
 ## Your fisrt GUI program
 ```python
 from tkeasy import *

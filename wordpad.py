@@ -6,8 +6,7 @@ def new_file():
     text_area_clear("area 2")
     
 def open_in_menu():
-    select_file()
-    print(get_info("file"))
+    print(select_file())
 
 def save():
     name_for_save = save_file()

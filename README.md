@@ -8,9 +8,9 @@ Type in terminal or cmd</br>
 Run any file with name "example"
 
 On Linux Manjaro install tk first
-```unix
-sudo pacman -S tk
-```
+    ```python
+    sudo pacman -S tk
+    ```
 
 ## Your fisrt GUI program
 ```python

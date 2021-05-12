@@ -3,18 +3,21 @@ from tkeasy import *
 title("Full syntax")
 
 def info():
-   print(get_info("ent1"))  #entry
-   print(get_info("ch1"))   #checkbox
-   print(get_info("ch2"))   #checkbox
-   print(get_info("ch3"))   #checkbox
-   print(get_info("scale")) #slider
-   print(get_info("radiobox"))
-   print(get_info("area 1"))
-   print(text_area_select("area 1"))
+    print(get_info("ent1"))  #entry
+    print(get_info("ch1"))   #checkbox
+    print(get_info("ch2"))   #checkbox
+    print(get_info("ch3"))   #checkbox
+    print(get_info("scale")) #slider
+    print(get_info("radiobox"))
+    print(get_info("area 1"))
+    try:
+       print(text_area_select("area 1"))
+    except:
+        pass
+
 
 def open_in_menu():
-    select_file()
-    print(get_info("file"))
+    print(select_file())
 
 config(size="300x600+500+200",background="lightblue",icon="icon.ico")
 #config(size="600x300+500+200",background="brown",icon="icon.ico",border="False")

@@ -2,7 +2,6 @@
 from tkeasy import *
 
 title(text="Ask Folder")
-config(size="50x60")
 
 def askfolder():
     print(select_folder())

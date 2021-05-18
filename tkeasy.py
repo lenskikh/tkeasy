@@ -2,28 +2,7 @@ import os
 from tkinter import *
 from tkinter import filedialog, scrolledtext, messagebox, colorchooser
 
-memory = {"key TAB":""}
-
-#clear entry if text inside field used as prompting
-#when you click in entry field, a text inside text will be cleared
-def clearbyclick(event):    
-    try: #if user click outside field we'll get error message
-        memoryForClear = str(memory[window].focus_get())
-        if memoryForClear in memory["key TAB"]:
-            pass #entry field was cleared
-        elif "TAB" in memory["key TAB"]:
-            pass
-        else:
-            memory[window].focus_get().delete(0, END)
-            memory["key TAB"]+= memoryForClear
-    except:
-        pass
-
-#if press TAB key a text inside entry will be cleared
-def key(event):
-    char = str(event.char)
-    if char == '\t':
-        memory["key TAB"]+="TAB"
+memory = {}
 
 #new window
 def new_window(**kwargs):
@@ -192,6 +171,14 @@ def select_folder():
 def save_file():
 	return filedialog.asksaveasfilename(initialdir = os.getcwd()+"./",title = "Save file") 
 
+def makegrid(fn,row,column,**kwargs):
+    return fn.grid(
+        row = row,
+        column = column,
+        sticky = alignment(**kwargs),
+        padx = padx(**kwargs),
+        pady = pady(**kwargs)
+    )
 
 def separator(column_length,**kwargs):
     window = new_window(**kwargs) 
@@ -201,14 +188,10 @@ def separator(column_length,**kwargs):
 
 def button(text,command,row,column,**kwargs):  
     window = new_window(**kwargs) 
-    Button(memory[window], 
+    fn = Button(memory[window], 
         text = text,
-        command = command).grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))
+        command = command)
+    makegrid(fn,row,column,**kwargs)
 
 def label(text,row,column,**kwargs):   
     window = new_window(**kwargs)
@@ -219,12 +202,7 @@ def label(text,row,column,**kwargs):
         justify = justification(**kwargs),
         font = label_font(**kwargs),
         wrap = label_length(**kwargs))
-    memory["label"].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))  
+    makegrid(memory["label"],row,column,**kwargs)
 
 def label_click():
     return memory["label"]
@@ -234,12 +212,7 @@ def photo(file,row,column,**kwargs):
     photo = PhotoImage(file=file)
     memory["picture"] = Label(memory[window],image=photo)
     memory["picture"].photo = photo
-    memory["picture"].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))
+    makegrid(memory["picture"],row,column,**kwargs)
  
 def photo_click():
     return memory["picture"]
@@ -248,12 +221,7 @@ def entry(name,row,column,**kwargs):
     window = new_window(**kwargs)
     memory[name] = Entry(memory[window],
         width = width_entry(**kwargs))
-    memory[name].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))
+    makegrid(memory[name],row,column,**kwargs)
 
 def checkbox(name,text,row,column,**kwargs):
     window = new_window(**kwargs)
@@ -263,12 +231,7 @@ def checkbox(name,text,row,column,**kwargs):
         variable = memory[name],
         bg = background(**kwargs),
         activebackground = activebg(**kwargs))
-    memory[text].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))
+    makegrid(memory[text],row,column,**kwargs)
 
 def slider(name,row,column,**kwargs):
     window = new_window(**kwargs)
@@ -277,12 +240,7 @@ def slider(name,row,column,**kwargs):
         to = 100, 
         orient=scale_oriental(**kwargs),
         bg = background(**kwargs))
-    memory[name].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))        
+    makegrid(memory[name],row,column,**kwargs)   
 
 def radiobox(text,row,column,**kwargs):
     window = new_window(**kwargs)
@@ -304,24 +262,14 @@ def radiobox(text,row,column,**kwargs):
         value = value,
         bg = background(**kwargs),
         activebackground = activebg(**kwargs))
-    radiob.grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))    
+    makegrid(radiob,row,column,**kwargs)
 
 def dropdown_list(variable,choices,default,row,column,**kwargs):
     window = new_window(**kwargs)
     memory[variable] = StringVar(memory[window])
     popupmenu = OptionMenu(memory[window], memory[variable], *choices)
     memory[variable].set(default) # default value
-    popupmenu.grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))    
+    makegrid(popupmenu,row,column,**kwargs)
 
 #text in text area looks ugly with scroll in macos
 #you can use textarea without scroll
@@ -332,12 +280,7 @@ def text_area(name,row,column,**kwargs):
         height = 10, 
         width = 30,
         background = "grey95")
-    memory[name].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))
+    makegrid(memory[name],row,column,**kwargs)
 
 #Works slowly at big text (in macos)
 def text_area_scroll(name,row,column,**kwargs):
@@ -347,12 +290,7 @@ def text_area_scroll(name,row,column,**kwargs):
         height = 10, 
         width = 30,
         background = "grey95")
-    memory[name].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))
+    makegrid(memory[name],row,column,**kwargs)
 
 def text_area_select(name):
     return memory[name].selection_get()

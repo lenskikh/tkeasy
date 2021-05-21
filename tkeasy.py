@@ -6,7 +6,7 @@ memory = {}
 
 #version, author
 def version():
-    print("Version 0.5.1")
+    print("Version 0.6")
     print("Author Mikhail Lenskikh")
 
 #new window

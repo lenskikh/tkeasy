@@ -209,7 +209,7 @@ app_loop()
 
     app_loop()    
     ```
-    ![Screenshot](/screenshots/spinbox.png)
+    ![Screenshot](/screenshots/spinbox.PNG)
 
 * **dropdown list**<br/>
     dropdown_list(window,variable,choices,default,row,column,sticky,padx,pady)<br/>

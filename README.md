@@ -83,8 +83,8 @@ app_loop()
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/>
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
-    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)
+    > padx (*optional*) = 2 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 2 (*Number. Without brackets and quotation marks*)
     ```python
     from tkeasy import *
     def show_info():
@@ -106,8 +106,8 @@ app_loop()
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
-    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
+    > padx (*optional*) = 2 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 2 (*Number. Without brackets and quotation marks*)    
     ```python
     from tkeasy import *
     label(text="Label text",row=0,column=0)
@@ -123,8 +123,8 @@ app_loop()
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
-    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*) 
+    > padx (*optional*) = 2 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 2 (*Number. Without brackets and quotation marks*) 
     ```python
     checkbox(name="checkbox 1", text="Apple",row=0,column=0,sticky = "left")
     checkbox(name="checkbox 2", text="Banan",row=0,column=0,sticky = "left")
@@ -161,8 +161,8 @@ app_loop()
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
-    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)     
+    > padx (*optional*) = 2 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 2 (*Number. Without brackets and quotation marks*)     
     ```python
     radiobox(text="Apple",row=0,column=0)
     radiobox(text="Melon",row=1,column=0,value="weight = 2kg")
@@ -193,8 +193,8 @@ app_loop()
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
-    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)   
+    > padx (*optional*) = 2 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 2 (*Number. Without brackets and quotation marks*)   
     ```python 
     from tkeasy import *
 
@@ -219,8 +219,8 @@ app_loop()
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
-    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)     
+    > padx (*optional*) = 2 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 2 (*Number. Without brackets and quotation marks*)     
     ```python
     fruits = ["Apple","Pear","Banana","Kiwi"]
     dropdown_list(variable="fruits var",choices=age,default="Chose fruit",row=0,column=0)
@@ -305,8 +305,8 @@ app_loop()
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
-    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*) 
+    > padx (*optional*) = 2 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 2 (*Number. Without brackets and quotation marks*) 
     ```python   
     from tkeasy import *
 
@@ -331,8 +331,8 @@ app_loop()
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
-    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*) 
+    > padx (*optional*) = 2 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 2 (*Number. Without brackets and quotation marks*) 
     ```python 
     from tkeasy import *
 
@@ -477,8 +477,8 @@ app_loop()
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/>
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
-    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
+    > padx (*optional*) = 2 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 2 (*Number. Without brackets and quotation marks*)    
     ![Screenshot](/screenshots/sliders.png)
 
 * **separator**<br/>
@@ -486,8 +486,8 @@ app_loop()
     separator(window,column_length,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > column_length = 1<br/>
-    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
-    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)    
+    > padx (*optional*) = 2 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 2 (*Number. Without brackets and quotation marks*)    
     ```python
     from tkeasy import *
     separator(column_length=1)

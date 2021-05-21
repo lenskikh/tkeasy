@@ -189,7 +189,7 @@ app_loop()
     spinbox(window,name,from_to,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - unique name for get_info<br/>
-    > from_to = range between two digits. Use a dash in the range ("0-10")<br/>
+    > from_to = range between two digits. Use a dash in the range "0-10"<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
@@ -209,6 +209,7 @@ app_loop()
 
     app_loop()    
     ```
+    ![Screenshot](/screenshots/spinbox.png)
 
 * **dropdown list**<br/>
     dropdown_list(window,variable,choices,default,row,column,sticky,padx,pady)<br/>

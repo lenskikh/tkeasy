@@ -4,6 +4,11 @@ from tkinter import filedialog, scrolledtext, messagebox, colorchooser
 
 memory = {}
 
+#version, author
+def version():
+    print("Version 0.5.1")
+    print("Author Mikhail Lenskikh")
+
 #new window
 def new_window(**kwargs):
     try:
@@ -360,7 +365,8 @@ def top_menu(tabs,**kwargs):
             if name_in_menu == "---":
                 filemenu.add_separator()
             else:
-                filemenu.add_command(label=name_in_menu, command=tabs[name_of_tab][name_in_menu])
+                filemenu.add_command(label=name_in_menu, 
+                command=tabs[name_of_tab][name_in_menu])
 
     memory[window].config(menu=menubar)
 

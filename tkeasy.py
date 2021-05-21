@@ -320,6 +320,13 @@ def listbox(name,row,column,**kwargs):
     except:
         pass
 
+def spinbox(name,from_to,row,column,**kwargs):
+    window = new_window(**kwargs)  
+    data1 = int(from_to.split("-")[0])
+    data2 = int(from_to.split("-")[1])
+    memory[name] = Spinbox(memory[window],from_=data1, to=data2)
+    makegrid(memory[name],row,column,**kwargs)
+
 def listbox_insert(name,text):
     for x in text:
         memory[name].insert("end", x)    

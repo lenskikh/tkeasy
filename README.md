@@ -185,6 +185,31 @@ app_loop()
     ```
     ![Screenshot](/screenshots/radio.png)
 
+* **spinbox**<br/>
+    spinbox(window,name,from_to,row,column,sticky,padx,pady)<br/>
+    > window (*optional*) = "name"<br/>
+    > name = "name" - unique name for get_info<br/>
+    > from_to = range between two digits. Use a dash in the range ("0-10")
+    > row = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > column = 0 (*Number. Without brackets and quotation marks*)<br/>
+    > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
+    > padx (*optional*) = 5 (*Number. Without brackets and quotation marks*)<br/>
+    > pady (*optional*) = 5 (*Number. Without brackets and quotation marks*)   
+    ```python 
+    from tkeasy import *
+
+    def getspin():
+        print(get_info("spin"))
+        print(get_info("spin2"))
+
+    spinbox(name="spin",from_to="0-10",row=0,column=0,padx=10,pady=10)
+    spinbox(name="spin2",from_to="20-30",row=1,column=0,padx=10,pady=10)
+
+    button(text="GET INFO",command=getspin,row=3,column=0)
+
+    app_loop()    
+    ```
+
 * **dropdown list**<br/>
     dropdown_list(window,variable,choices,default,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>

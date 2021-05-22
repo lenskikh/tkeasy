@@ -505,7 +505,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/topmenu.jpg)
 
-    On the mac, the menu will appear in the toolbar
+    On the mac, the menu will appear in the toolbar<br />
     ![Screenshot](/screenshots/menubar_mac.jpg)
 
 * **color picker**<br />

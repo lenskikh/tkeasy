@@ -505,6 +505,9 @@ app_loop()
     ```
     ![Screenshot](/screenshots/topmenu.jpg)
 
+    On the mac, the menu will appear in he toolbar
+    ![Screenshot](/screenshots/menubar_mac.png)
+
 * **color picker**<br />
     ```python
     from tkeasy import *

@@ -65,6 +65,10 @@ def move_window(event,**kwargs):
     window = new_window(**kwargs) 
     memory[window].geometry(f'+{event.x_root}+{event.y_root}')
 
+def advanced(**kwargs):
+    window = new_window(**kwargs)
+    return memory[window]
+
 def alignment(**kwargs):
     try:
         sticky = kwargs["sticky"]

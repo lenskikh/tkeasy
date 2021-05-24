@@ -17,7 +17,7 @@ def new_window(**kwargs):
         window = "root"        
     if window not in memory:
         memory[window] = Tk()
-    return window        
+    return window      
 
 def title(text,**kwargs):
     window = new_window(**kwargs)
@@ -60,6 +60,10 @@ def get_info(name):
         else:
             #entry,checkbox,radiobox
             return memory[name].get()
+
+def move_window(event,**kwargs):
+    window = new_window(**kwargs) 
+    memory[window].geometry(f'+{event.x_root}+{event.y_root}')
 
 def alignment(**kwargs):
     try:

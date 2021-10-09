@@ -6,18 +6,23 @@ memory = {}
 
 #version, author
 def version():
-    print("Version 0.6.5")
+    print("Version 0.7")
     print("Author Mikhail Lenskikh")
 
-#new window
+#windows
 def new_window(**kwargs):
     try:
+        #the checking if user pointed the new window
         window = kwargs["window"]
     except:
-        window = "root"        
-    if window not in memory:
+        window = "root"
+    #the first window on start
+    if bool(memory) is False:
+        #"root" name is using for the first window
         memory[window] = Tk()
-    return window      
+    elif window not in memory:
+        memory[window] = Toplevel()
+    return window
 
 def title(text,**kwargs):
     window = new_window(**kwargs)

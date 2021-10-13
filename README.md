@@ -1,3 +1,5 @@
+[Russian / Русская документация](#Russian)
+
 # tkeasy
 Wrapper of tkinter giving an easier way to build a gui interface. GUI Development does not have to be difficult nor painful.</br>
 ![Screenshot](/screenshots/droplist.png)
@@ -531,3 +533,6 @@ app_loop()
     ```
 * **app_loop()**<br/>
     Add app_loop() at the end of an app. If the app is launched from terminal, it will immediately close without app_loop() 
+
+
+##Russian

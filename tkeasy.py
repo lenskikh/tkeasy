@@ -21,12 +21,6 @@ def new_window(**kwargs):
         memory[window] = Tk()    
     
     return window       
-
-def on_closing():
-    memory["win"].destroy()
-    del(memory["win"])
-    memory["win2"].destroy()
-    del(memory["win2"])
     
 def title(text,**kwargs):
     window = new_window(**kwargs)

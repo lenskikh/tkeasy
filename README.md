@@ -535,4 +535,4 @@ app_loop()
     Add app_loop() at the end of an app. If the app is launched from terminal, it will immediately close without app_loop() 
 
 
-##Russian
+## Russian

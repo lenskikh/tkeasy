@@ -550,3 +550,16 @@ app_loop()
     ```python
     sudo pacman -S tk
     ```
+
+## Ваша первая GUI программа
+```python
+from tkeasy import *
+
+title("The first window")
+label(text="The first window",row=0,column=0)
+app_loop()
+```
+![Screenshot](/screenshots/thefirst.png)
+
+title - заголовок окна</br>
+label - текстовой виджет, после скобок text="ваш текст", далее расположение виджета, в данной обертке есть только одна возможность - по таблице, которая состоит из рядов row и колонок. Таблица выбрана из-за наиболее предсказуемого поведения.

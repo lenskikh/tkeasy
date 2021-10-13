@@ -547,7 +547,7 @@ app_loop()
 Примеры смотрите в файлах, которые начинаются с "example"</br>
 
 На Linux нужно доустановить tk, например, на Manjaro
-    ```python
+    ```
     sudo pacman -S tk
     ```
 
@@ -562,4 +562,26 @@ app_loop()
 ![Screenshot](/screenshots/thefirst.png)
 
 title - заголовок окна</br>
-label - текстовой виджет, после скобок text="ваш текст", далее расположение виджета, в данной обертке есть только одна возможность - по таблице, которая состоит из рядов row и колонок. Таблица выбрана из-за наиболее предсказуемого поведения.
+label - текстовой виджет, после скобок text="ваш текст", далее расположение виджета, в данной обертке есть только одна возможность - по сетке, которая состоит из рядов row и колонок column. Сетка выбрана из-за наиболее предсказуемого поведения.
+app_loop() необходим, если мы запускаем программу из терминала, он не дает ей закрыться сразу после запуска.
+
+## Ваша вторая GUI программа
+```python
+from tkeasy import *
+
+def show_info():
+    choice = get_info("radioBox")
+    if choice == "None":
+        msg_box_warning("warning","Choose something, please")
+    else:
+        msg_box("Your choice",f'Your choice is {choice}')
+
+radiobox(text="Apple",row=0,column=0)
+radiobox(text="Melon",row=1,column=0,value="weight = 2kg")
+radiobox(text="Lemon",row=2,column=0)
+button(text="Show Info",command=show_info,row=3,column=0)
+app_loop()
+```
+![Screenshot](/screenshots/radiobox.png)
+
+В данной программе мы используем виджет radiobox и button. Чтобы собрать информацию со всех виджетов, мы используем функцию show_info на которую ссылается кнопка в command=show_info, то есть после command мы делаем ссылку на функцию. В самой функции мы собираем информацию при помощи get_info(), который отвечает за сбор информации со всех виджетов. После скобок мы указываем название виджета, которое придумываем сами. Например, если мы берем с виджета input и называем его entry, то получится get_info("entry"). Для радиобокса предусмотрено стандартное название get_info("radioBox"), так как каждый радиобокс уникален. 

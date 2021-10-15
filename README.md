@@ -693,7 +693,7 @@ app_loop()
     Данный виджет используется, чтобы сделать галочками какие-то выборы. В отличие от радиобокса выбор не является уникальным. Их может быть несколько.<br/>
     > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
     > name = "имя" - укажите имя чекбокса по которому get_info() его найдет, чтобы забрать информацию с него<br/>
-    > text = "текст" - текст, который будет отображаться напротив чекбокса<br/>
+    > text = "текст", который будет отображаться напротив чекбокса<br/>
     > row = номер ряда расположения виджета в сетке<br/>
     > column = номер колонки расположения виджета в сетке<br/>
     > sticky (*необязательно*) = приклеивание кнопки внутри ячейки сетки. Укажите "left" или "right" или "center"<br/> 
@@ -703,7 +703,7 @@ app_loop()
     checkbox(name="checkbox 1", text="Apple",row=0,column=0,sticky = "left")
     checkbox(name="checkbox 2", text="Banan",row=0,column=0,sticky = "left")
     ```
-    The whole example
+    Полный пример
     ```python
     from tkeasy import *
 
@@ -725,3 +725,38 @@ app_loop()
     app_loop()
     ```
     ![Screenshot](/screenshots/checkbox.png)
+
+* **Виджет радиобокс**<br/>
+    radiobox(window,text,value,row,column,sticky,padx,pady)<br/>
+    Используется для обозначения уникального выбора<br/>
+    > По умолчанию ни один радиобокс не выбран.<br/>
+    > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
+    > text = "текст", который будет отображаться напротив радиобокса<br/>
+    > value (*необязательно*) = "значение". Вы можете указать значение в радиобоксе и получать информацию по нему, а не по тексту. Смотрите пример ниже. Если значение не указано, то информация будет получена по тексту<br />
+    > row = номер ряда расположения виджета в сетке<br/>
+    > column = номер колонки расположения виджета в сетке<br/>
+    > sticky (*необязательно*) = приклеивание кнопки внутри ячейки сетки. Укажите "left" или "right" или "center"<br/> 
+    > padx (*необязательно*) = отступ от виджета, добавляет пространство по горизонтале.<br/>
+    > pady (*необязательно*) = отступ от виджета, добавляет пространство по вертикале     
+    ```python
+    radiobox(text="Apple",row=0,column=0)
+    radiobox(text="Melon",row=1,column=0,value="weight = 2kg")
+    ```
+   
+    The whole example
+    ```python
+    from tkeasy import *
+
+    def show_info():
+        #Радиобоксу не нужно давать имя для get_info(), по умолчанию используется "radiobox"
+        choice = get_info("radiobox")
+        print(choice)
+
+    radiobox(text="Apple",row=0,column=0)
+    radiobox(text="Melon",row=1,column=0,value="weight = 2kg")
+    radiobox(text="Lemon",row=2,column=0)
+    button(text="Show Info",command=show_info,row=3,column=0)
+
+    app_loop()
+    ```
+    ![Screenshot](/screenshots/radio.png)

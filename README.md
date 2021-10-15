@@ -743,7 +743,7 @@ app_loop()
     radiobox(text="Melon",row=1,column=0,value="weight = 2kg")
     ```
    
-    The whole example
+    Полный пример
     ```python
     from tkeasy import *
 
@@ -760,3 +760,30 @@ app_loop()
     app_loop()
     ```
     ![Screenshot](/screenshots/radio.png)
+
+    * **Виджет Спинбокс**<br/>
+    spinbox(window,name,from_to,row,column,sticky,padx,pady)<br/>
+    Спинбокс виджет, который позволяет нам выбирать из фиксированного набора значений цифрового типа.<br/>
+    > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
+    > name = "имя" - укажите имя спинбокса по которому get_info() его найдет, чтобы забрать информацию с него<br/>
+    > from_to = укажите границу. Например, from_to="0-10" будет предложенно пользователю  выбрать от 0 до 10<br/>
+    > row = номер ряда расположения виджета в сетке<br/>
+    > column = номер колонки расположения виджета в сетке<br/>
+    > sticky (*необязательно*) = приклеивание кнопки внутри ячейки сетки. Укажите "left" или "right" или "center"<br/> 
+    > padx (*необязательно*) = отступ от виджета, добавляет пространство по горизонтале.<br/>
+    > pady (*необязательно*) = отступ от виджета, добавляет пространство по вертикале   
+    ```python 
+    from tkeasy import *
+
+    def getspin():
+        print(get_info("spin"))
+        print(get_info("spin2"))
+
+    spinbox(name="spin",from_to="0-10",row=0,column=0,padx=10,pady=10)
+    spinbox(name="spin2",from_to="20-30",row=1,column=0,padx=10,pady=10)
+
+    button(text="GET INFO",command=getspin,row=3,column=0)
+
+    app_loop()    
+    ```
+    ![Screenshot](/screenshots/spinbox.PNG)

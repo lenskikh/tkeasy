@@ -669,7 +669,7 @@ app_loop()
 * **Виджет label (этикетка)**<br/>
     label(window,text,colortext,background,label_font,row,column,sticky,padx,pady)<br/>
     Виджет для публикации текста<br/>
-    > window (*необязательно*) = "имя"<br/>
+    > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
     > text="text" - текст, который будет опубликован<br/>
     > colortext (*необязательно*) = "red" (Можете писать цвет в HEX или просто писать название цвета "black" или "green")<br/>
     > background (*необязательно*) = "#241e14" (Можете писать цвет в HEX)<br/>
@@ -687,3 +687,41 @@ app_loop()
     app_loop()
     ```
     ![Screenshot](/screenshots/label.png)
+
+    * **Виджет чекбокс**<br/>
+    checkbox(window,name,text,row,column,sticky,padx,pady)<br/>
+    Данный виджет используется, чтобы сделать галочками какие-то выборы. В отличие от радиобокса выбор не является уникальным. Их может быть несколько.<br/>
+    > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
+    > name = "имя" - укажите имя чекбокса по которому get_info() его найдет, чтобы забрать информацию с него<br/>
+    > text = "текст" - текст, который будет отображаться напротив чекбокса<br/>
+    > row = номер ряда расположения виджета в сетке<br/>
+    > column = номер колонки расположения виджета в сетке<br/>
+    > sticky (*необязательно*) = приклеивание кнопки внутри ячейки сетки. Укажите "left" или "right" или "center"<br/> 
+    > padx (*необязательно*) = отступ от виджета, добавляет пространство по горизонтале.<br/>
+    > pady (*необязательно*) = отступ от виджета, добавляет пространство по вертикале  
+    ```python
+    checkbox(name="checkbox 1", text="Apple",row=0,column=0,sticky = "left")
+    checkbox(name="checkbox 2", text="Banan",row=0,column=0,sticky = "left")
+    ```
+    The whole example
+    ```python
+    from tkeasy import *
+
+    def info():
+        print(get_info("checkbox 1"))
+        print(get_info("checkbox 2"))
+
+    label(text="What a fruit do you like?",row=0,column=0)
+
+    checkbox(name="checkbox 1", text="Apple",
+            row=1,column=0,sticky = "left")
+
+    checkbox(name="checkbox 2", text="Banan",
+            row=2,column=0,sticky = "left")
+
+    button(text="show info",
+        command=info,row=3,column=0)
+
+    app_loop()
+    ```
+    ![Screenshot](/screenshots/checkbox.png)

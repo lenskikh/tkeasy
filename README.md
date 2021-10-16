@@ -905,3 +905,54 @@ app_loop()
     app_loop()
     ```  
     ![Screenshot](/screenshots/inputline.PNG)
+
+* **Мультистрочный ввод**<br/>
+    text_area(name,row,column,sticky,padx,pady)<br/>
+    Виджет, который ожидает ввод больше чем в одну строку. 
+    > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
+    > name = "имя" по которому get_info() найдет значение, чтобы забрать информацию с этого виджета<br/>
+    > row = номер ряда расположения виджета в сетке<br/>
+    > column = номер колонки расположения виджета в сетке<br/>
+    > sticky (*необязательно*) = приклеивание кнопки внутри ячейки сетки. Укажите "left" или "right" или "center"<br/> 
+    > padx (*необязательно*) = отступ от виджета, добавляет пространство по горизонтале.<br/>
+    > pady (*необязательно*) = отступ от виджета, добавляет пространство по вертикале 
+    ```python 
+    from tkeasy import *
+
+    title(text="Text area")
+
+    def show_info():
+        print(get_info("area").strip())
+        
+    text_area(name="area",row=0,column=0)
+    button(text="Show Info",command=show_info,row=1,column=0)
+
+    app_loop()
+    ```
+    ![Screenshot](/screenshots/area.png)
+
+    or
+    ```python 
+    text_area_scroll(name="area",row=0,column=0)
+    ```
+    > text_area_scroll(name,row,column,sticky,padx,pady)<br/>
+    Текстовое поле со скролом. К сожалению, на некоторых системах скрол работает медленно и ужасно.
+
+* **Вставка текста в однострочное поле**<br />
+    Можно заранее вставить текст в однострочное поле ввода. Окрасив текст в серый цвет, можно использовать это как подсказку для пользователя.
+    insert_text(name,text,color)<br />
+    > name = введите имя, которое вы уже использовали при создании виджета entry. Так обертка будет точно знать в какое поле вставлять<br/>
+    > text = текст, который вы хотите добавить<br/>
+    > color = "#323648" цвет текста в HEX или просто используйте его название, например, color = "gray"
+    ```python 
+    from tkeasy import *
+
+    entry(name="firstname",row=0,column=0)
+    insert_text(name="firstname",text="First name",color = "gray")
+
+    entry(name="secondname",row=1,column=0)
+    insert_text(name="secondname",text="Second name",color = "gray")
+
+    app_loop()
+    ```
+    ![Screenshot](/screenshots/insert.png)

@@ -293,7 +293,8 @@ app_loop()
     ![Screenshot](/screenshots/folder.png)
 
 * **Save file dialog**<br/>
-    save_file()
+    save_file()<br/>
+    The user can save information from the document, for this we need to find out the name of the file where he wants to save. It is better to use for the top menu.
     ```python
     from tkeasy import *
 
@@ -869,3 +870,13 @@ app_loop()
     app_loop()
     ```
     ![Screenshot](/screenshots/folder.png)
+
+* **Диалог - сохранить файл**<br/>
+    save_file()<br/>
+    Пользователь может сохранить информацию с документа, для этого нам нужно узнать название файла, куда он хочет сохранить. Лучше использовать для верхнего меню. 
+    ```python
+    from tkeasy import *
+
+    print(save_file()) 
+    app_loop()   
+    ```

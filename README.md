@@ -823,7 +823,7 @@ app_loop()
     ```    
     ![Screenshot](/screenshots/droplist.jpg)
 
-    * **Файловый диалог виджет**<br/>
+* **Файловый диалог виджет**<br/>
     select_file()<br/>
     Данный виджет используется для вызова файлового диалога, который позволяет пользователю указать на файл.<br/>
     > command=select_file<br/>
@@ -845,3 +845,27 @@ app_loop()
     app_loop()
     ```
     ![Screenshot](/screenshots/file.jpg)
+
+* **Виджет - браузер папок**<br/>
+    select_folder()<br/>
+    Данный виджет используется для вызова браузера папок, который позволяет пользователю указать на папку(фолдер).<br/>
+    > command=select_folder<br/>
+    > Use button method and in the command point out select_folder
+    ```python
+    from tkeasy import *
+
+    title(text="Ask Folder")
+    config(size="50x60")
+
+    def askfolder():
+        print(select_folder())
+
+    label(text="ASK FOLDER",colortext="white",
+        background="green",row=0,column=0)
+
+    button(text='CHOOSE FOLDER',command=askfolder,
+        row=1,column=0)
+
+    app_loop()
+    ```
+    ![Screenshot](/screenshots/folder.png)

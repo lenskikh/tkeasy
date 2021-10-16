@@ -688,7 +688,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/label.png)
 
-    * **Виджет чекбокс**<br/>
+* **Виджет чекбокс**<br/>
     checkbox(window,name,text,row,column,sticky,padx,pady)<br/>
     Данный виджет используется, чтобы сделать галочками какие-то выборы. В отличие от радиобокса выбор не является уникальным. Их может быть несколько.<br/>
     > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
@@ -761,7 +761,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/radio.png)
 
-    * **Виджет Спинбокс**<br/>
+* **Виджет Спинбокс**<br/>
     spinbox(window,name,from_to,row,column,sticky,padx,pady)<br/>
     Спинбокс виджет, который позволяет нам выбирать из фиксированного набора значений цифрового типа.<br/>
     > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
@@ -788,7 +788,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/spinbox.PNG)
 
-    * **Дропдаун лист виджет**<br/>
+* **Дропдаун лист виджет**<br/>
     dropdown_list(window,variable,choices,default,row,column,sticky,padx,pady)<br/>
     Дроплист виджет(или «выпадашка») — элемент графического интерфейса пользователя (выпадающий / раскрывающийся список), дающий возможность юзеру выбрать одно из нескольких существующих значений параметра.<br/>
     > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
@@ -822,3 +822,26 @@ app_loop()
     app_loop()
     ```    
     ![Screenshot](/screenshots/droplist.jpg)
+
+    * **Файловый диалог виджет**<br/>
+    select_file()<br/>
+    Данный виджет используется для вызова файлового диалога, который позволяет пользователю указать на файл.<br/>
+    > command=select_file<br/>
+    > Обращение к select_file() происходит через функцию, смотрите пример ниже
+    ```python
+    from tkeasy import *
+
+    title(text="Ask file")
+
+    def showfile():
+        print (select_file())
+
+    label(text="ASK FILE",colortext="white",
+        background="BLUE",row=0,column=0)
+
+    button(text="FILE BROWSER",
+        command=showfile,row=1,column=0)
+
+    app_loop()
+    ```
+    ![Screenshot](/screenshots/file.jpg)

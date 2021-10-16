@@ -880,3 +880,28 @@ app_loop()
     print(save_file()) 
     app_loop()   
     ```
+
+* **Однострочный ввод**<br/>
+    entry(window,name,row,column,sticky,padx,pady)<br/>
+    Виджет - однострочное поле ввода. Используется для ввода информации. 
+    > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
+    > name = "имя" по которому get_info() найдет значение, чтобы забрать информацию с этого виджета<br/>
+    > row = номер ряда расположения виджета в сетке<br/>
+    > column = номер колонки расположения виджета в сетке<br/>
+    > sticky (*необязательно*) = приклеивание кнопки внутри ячейки сетки. Укажите "left" или "right" или "center"<br/> 
+    > padx (*необязательно*) = отступ от виджета, добавляет пространство по горизонтале.<br/>
+    > pady (*необязательно*) = отступ от виджета, добавляет пространство по вертикале   
+    ```python   
+    from tkeasy import *
+
+    def frominput():
+        print(get_info("entry 1"))
+
+    entry(name="entry 1",row=0,column=0)
+
+    button(text='from input',command=frominput,
+        row=1,column=0,sticky="center")
+
+    app_loop()
+    ```  
+    ![Screenshot](/screenshots/inputline.PNG)

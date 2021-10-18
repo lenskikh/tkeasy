@@ -958,9 +958,71 @@ app_loop()
     ![Screenshot](/screenshots/insert.png)
 
 * **Многострочный вывод**<br/>
-    Вы можете вставить текст в многострочное окно, сначала создать текстовое поле со скролом method text_area_scroll() затем вставьте текст при помощи method insert_text_area()<br/>
+    Вы можете вставить текст в многострочное окно. Cначала надо создать текстовое поле со скролом method text_area_scroll() затем вставить текст при помощи method insert_text_area()<br/>
     В некоторых операционных системах скролл работает медленно<br/>
     ```python 
     text_area_scroll(name="area output",row=0,column=0)
     insert_text_area(name="area output",text="some text",color = "black")
     ```
+
+* **Выделенный текст**<br />
+    Можно получить участок выделенного текста при помощи text_area_select() В многострочном вводе пользователь может выделить текст, виджет может увидеть какой именно участок выделен. Смотрите пример в wordpad.py<br />
+
+* **Очистка текста в многострочном выводе**<br />
+    Используется для создания нового документа. Смотрите пример в wordpad.py<br />
+    text_area_clear()<br />
+
+* **Копирование в буфер обмена**<br />
+    Выделенный текст можно скопировать в буфер обмена. Смотрите пример в wordpad.py<br />
+    clipboard_in(selected)<br />
+    ```python
+    selected = text_area_select(name) #Получение текста с выделенного участка
+    clipboard_in(selected) #Копирование его в буфер обмена
+    ```
+
+* **Удаление выделенного текста**<br />
+    Смотрите пример в wordpad.py<br />
+    ```python
+    delete_selected("name of text_area")
+    ```
+
+* **Вставка текста из буфера обмена**<br />
+    Смотрите пример в wordpad.py<br />
+    ```python
+    paste_text("name of text_area")
+    ```
+
+* **Многооконный режим** <br/>
+    Вы можете создавать неограниченное количество окн<br/>
+    Для первого окна нет необходимости использовать параметр "window". Иначе будет создано лишнее пустое окно по умолчанию. Параметр "window" используется только для новых окн. Для нового окна в начале каждого виджета пропишите параметр "window". Однако, чтобы избежать потерю состояния окна после закрытия его пользователем, необходимо использовать random.random(), как показано в примере ниже. Иначе, после закрытия окна, пользователь не сможет его открыть заново по кнопке, если у вас предусмотрен такой функционал, как показано в примере ниже.
+    Смотрите пример в example_two_windows_entry.py 
+    ```python
+    from tkeasy import *
+    import random
+
+    def show_info():
+            #Random is used as a solution to reopen the window.
+            win=str(random.random())
+            title(window=win,text="The second window")
+            label(window=win,text="The second window",row=0,column=0)
+            entry(window=win,name="entry2",row=1,column=0)
+            insert_text(window=win,name="entry2",text="entry",color="gray")
+            text_area(window=win,name="textarea",row=2,column=0)
+            insert_text_area(window=win,name="textarea",text="text area",color="gray")
+              
+    button(text="Show Info",command=show_info,row=0,column=0)
+    app_loop()
+    ```
+    ![Screenshot](/screenshots/w.png)
+
+* **Линкованный текст**<br/>
+    Вы можете сделать текст кликабельным. <br/>
+    label_click()
+    ```python
+    label(text="Link 1",row=0,column=0)
+    label_click().bind("<Button-1>",lambda url:msg_box("Clicked","Link 1"))
+
+    label(text="Link 2",row=1,column=0)
+    label_click().bind("<Button-1>",lambda url:msg_box("Clicked","Link 2"))
+    ```
+    ![Screenshot](/screenshots/labelclick.png)

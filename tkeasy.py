@@ -6,7 +6,7 @@ memory = {}
 
 #version, author
 def version():
-    print("Version 0.8")
+    return "Version 0.8"
 
 #new window
 def new_window(**kwargs):

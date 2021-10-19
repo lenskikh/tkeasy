@@ -1093,7 +1093,7 @@ app_loop()
     ```
     ![Screenshot](/screenshots/topmenu.jpg)
 
-    On the mac, the menu will appear in the toolbar<br />
+    На макоси меню располагается в тулбаре. Будьте внимательны!<br />
     ![Screenshot](/screenshots/menubar_mac.jpg)
 
 * **Пипетка для выбора цвета**<br />

@@ -1,50 +1,54 @@
 import os
 from tkinter import *
-from tkinter import filedialog, scrolledtext, messagebox
+from tkinter import filedialog, scrolledtext, messagebox, colorchooser
 
-memory = {"filename":"", "key TAB":""}
+memory = {}
 
-#clear entry if text inside field used as prompting
-#when you click in entry field, a text inside text will be cleared
-def clearbyclick(event):    
-    try: #if user click outside field we'll get error message
-        memoryForClear = str(memory[window].focus_get())
-        if memoryForClear in memory["key TAB"]:
-            pass #entry field was cleared
-        elif "TAB" in memory["key TAB"]:
-            pass
-        else:
-            memory[window].focus_get().delete(0, END)
-            memory["key TAB"]+= memoryForClear
-    except:
-        pass
-
-#if press TAB key a text inside entry will be cleared
-def key(event):
-    char = str(event.char)
-    if char == '\t':
-        memory["key TAB"]+="TAB"
+#version, author
+def version():
+    return "Version 0.8.1"
 
 #new window
 def new_window(**kwargs):
     try:
         window = kwargs["window"]
     except:
-        window = "root"        
+    #root - defualt name for the first window
+        window = "root"
+        
+    #see example for reopen windows
     if window not in memory:
-        memory[window] = Tk()
-    return window        
-
+        memory[window] = Tk()    
+    
+    return window       
+    
 def title(text,**kwargs):
     window = new_window(**kwargs)
     memory[window].title(text)
 
-def config(size,**kwargs):
+def config(**kwargs):
     window = new_window(**kwargs)
-    memory[window].geometry(size)  
     try:
-        bgcolor = kwargs["bgcolor"]
+        size = kwargs["size"]
+        memory[window].geometry(size)  
+    except:
+        pass
+
+    try:
+        bgcolor = kwargs["background"]
         memory[window].configure(background=bgcolor)  
+    except:
+        pass
+
+    try:
+        border = kwargs["border"]
+        memory[window].overrideredirect(1)
+    except:
+        pass
+
+    try:
+        icon = kwargs["icon"]
+        memory[window].iconbitmap(icon)
     except:
         pass
     
@@ -54,23 +58,31 @@ def get_info(name):
         return memory[name].get("1.0", 'end')
     except:
         #ask file or folder
-        if name == "file" or name == "folder":
+        if name == "file" or name == "folder" or name == "save":
             return memory[name]
         else:
             #entry,checkbox,radiobox
             return memory[name].get()
 
+def move_window(event,**kwargs):
+    window = new_window(**kwargs) 
+    memory[window].geometry(f'+{event.x_root}+{event.y_root}')
+
+def advanced(**kwargs):
+    window = new_window(**kwargs)
+    return memory[window]
+
 def alignment(**kwargs):
     try:
         sticky = kwargs["sticky"]
         if sticky == "right":
-            sticky = E
+            sticky = "E"
         elif sticky == "left":
-            sticky = W
+            sticky = "W"
         elif sticky == "center":
-            sticky = EW        
+            sticky = "EW"        
     except KeyError:
-        sticky = EW       
+        sticky = "EW"       
 
     return sticky
 
@@ -78,18 +90,18 @@ def alignment(**kwargs):
 def colortext(**kwargs):
     try:
         colortext = kwargs["colortext"]
-    except KeyError:
-        colortext = "black"
-    return colortext
-
+        return colortext
+    except:
+        pass
+    
 #for label
 def background(**kwargs):
     try:
         background = kwargs["background"]
-    except KeyError:
-        background = "white"
-    return background
-
+        return background
+    except:
+        pass
+    
 #wrap for label
 def label_length(**kwargs):
     try:
@@ -141,14 +153,48 @@ def scale_oriental(**kwargs):
         orient = "horizontal"
     return orient
 
+def activebg(**kwargs):
+    try: 
+        activebg = kwargs["activebg"]
+        return activebg
+    except:
+        pass
+    
+def clipboard_in(selected,**kwargs):
+    window = new_window(**kwargs) 
+    memory[window].clipboard_clear()
+    memory[window].clipboard_append(selected)
 
+def delete_selected(name,**kwargs):
+    window = new_window(**kwargs) 
+    memory[name].delete("sel.first", "sel.last")
+
+def paste_text(name,**kwargs):
+    window = new_window(**kwargs) 
+    selected = memory[window].clipboard_get()
+    position = memory[name].index(INSERT)
+    memory[name].insert(position, selected)
+
+def colorpicker(**kwargs):
+    return colorchooser.askcolor()[1]
+     
 def select_file():
-    memory["file"] = filedialog.askopenfilename(initialdir = os.getcwd()+"./",
-                                            title = "Select file")
+    return filedialog.askopenfilename(initialdir = os.getcwd()+"./",title = "Select file")
 
 def select_folder():
-    memory["folder"] = filedialog.askdirectory(initialdir = os.getcwd()+"./",
-                                            title = "Select folder")   
+    return filedialog.askdirectory(initialdir = os.getcwd()+"./",title = "Select folder")   
+
+def save_file():
+	return filedialog.asksaveasfilename(initialdir = os.getcwd()+"./",title = "Save file") 
+
+def makegrid(fn,row,column,**kwargs):
+    return fn.grid(
+        row = row,
+        column = column,
+        sticky = alignment(**kwargs),
+        padx = padx(**kwargs),
+        pady = pady(**kwargs)
+    )
 
 def separator(column_length,**kwargs):
     window = new_window(**kwargs) 
@@ -158,14 +204,11 @@ def separator(column_length,**kwargs):
 
 def button(text,command,row,column,**kwargs):  
     window = new_window(**kwargs) 
-    Button(memory[window], 
+    fn = Button(memory[window], 
         text = text,
-        command = command).grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))
+        command = command,
+        justify = justification(**kwargs),)
+    makegrid(fn,row,column,**kwargs)
 
 def label(text,row,column,**kwargs):   
     window = new_window(**kwargs)
@@ -176,12 +219,7 @@ def label(text,row,column,**kwargs):
         justify = justification(**kwargs),
         font = label_font(**kwargs),
         wrap = label_length(**kwargs))
-    memory["label"].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))  
+    makegrid(memory["label"],row,column,**kwargs)
 
 def label_click():
     return memory["label"]
@@ -191,12 +229,7 @@ def photo(file,row,column,**kwargs):
     photo = PhotoImage(file=file)
     memory["picture"] = Label(memory[window],image=photo)
     memory["picture"].photo = photo
-    memory["picture"].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))
+    makegrid(memory["picture"],row,column,**kwargs)
  
 def photo_click():
     return memory["picture"]
@@ -205,36 +238,26 @@ def entry(name,row,column,**kwargs):
     window = new_window(**kwargs)
     memory[name] = Entry(memory[window],
         width = width_entry(**kwargs))
-    memory[name].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))
+    makegrid(memory[name],row,column,**kwargs)
 
 def checkbox(name,text,row,column,**kwargs):
     window = new_window(**kwargs)
     memory[name] = IntVar()
     memory[text] = Checkbutton(memory[window],
         text = text,
-        variable = memory[name])
-    memory[text].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))
+        variable = memory[name],
+        bg = background(**kwargs),
+        activebackground = activebg(**kwargs))
+    makegrid(memory[text],row,column,**kwargs)
 
 def slider(name,row,column,**kwargs):
     window = new_window(**kwargs)
     memory[name] = Scale(memory[window],
-        from_= 0, to = 100, orient=scale_oriental(**kwargs))
-    memory[name].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))        
+        from_= 0, 
+        to = 100, 
+        orient=scale_oriental(**kwargs),
+        bg = background(**kwargs))
+    makegrid(memory[name],row,column,**kwargs)   
 
 def radiobox(text,row,column,**kwargs):
     window = new_window(**kwargs)
@@ -253,25 +276,17 @@ def radiobox(text,row,column,**kwargs):
     radiob = Radiobutton(memory[window], 
         text = text, 
         variable = memory["radiobox"], 
-        value = value)
-    radiob.grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))    
+        value = value,
+        bg = background(**kwargs),
+        activebackground = activebg(**kwargs))
+    makegrid(radiob,row,column,**kwargs)
 
 def dropdown_list(variable,choices,default,row,column,**kwargs):
     window = new_window(**kwargs)
     memory[variable] = StringVar(memory[window])
     popupmenu = OptionMenu(memory[window], memory[variable], *choices)
     memory[variable].set(default) # default value
-    popupmenu.grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))    
+    makegrid(popupmenu,row,column,**kwargs)
 
 #text in text area looks ugly with scroll in macos
 #you can use textarea without scroll
@@ -282,12 +297,7 @@ def text_area(name,row,column,**kwargs):
         height = 10, 
         width = 30,
         background = "grey95")
-    memory[name].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))
+    makegrid(memory[name],row,column,**kwargs)
 
 #Works slowly at big text (in macos)
 def text_area_scroll(name,row,column,**kwargs):
@@ -297,12 +307,13 @@ def text_area_scroll(name,row,column,**kwargs):
         height = 10, 
         width = 30,
         background = "grey95")
-    memory[name].grid(
-        row = row,
-        column = column,
-        sticky = alignment(**kwargs),
-        padx = padx(**kwargs),
-        pady = pady(**kwargs))
+    makegrid(memory[name],row,column,**kwargs)
+
+def text_area_select(name):
+    return memory[name].selection_get()
+
+def text_area_clear(name):
+    memory[name].delete('1.0', END)
 
 def listbox(name,row,column,**kwargs):
     window = new_window(**kwargs)
@@ -321,12 +332,19 @@ def listbox(name,row,column,**kwargs):
     except:
         pass
 
+def spinbox(name,from_to,row,column,**kwargs):
+    window = new_window(**kwargs)  
+    data1 = int(from_to.split("-")[0])
+    data2 = int(from_to.split("-")[1])
+    memory[name] = Spinbox(memory[window],from_=data1, to=data2)
+    makegrid(memory[name],row,column,**kwargs)
+
 def listbox_insert(name,text):
     for x in text:
         memory[name].insert("end", x)    
 
 def listbox_item_selected(name):
-    print(memory[name].get("active"))
+    return memory[name].get("active")
 
 
 #for change text in text area
@@ -350,7 +368,31 @@ def msg_box_warning(title,message):
 def msg_box_ask(name,title,message): 
     memory[name] = messagebox.askyesnocancel(title=title, message=message)
 
+def top_menu(tabs,**kwargs):
+
+    window = new_window(**kwargs)
+    
+    menubar = Menu(memory[window])
+    
+    for name_of_tab in tabs:
+
+        filemenu = Menu(menubar, tearoff=0)
+        menubar.add_cascade(label=name_of_tab, menu=filemenu)
+
+        for name_in_menu in tabs[name_of_tab]:
+           
+            if name_in_menu == "---":
+                filemenu.add_separator()
+            else:
+                filemenu.add_command(label=name_in_menu, 
+                command=tabs[name_of_tab][name_in_menu])
+
+    memory[window].config(menu=menubar)
+
+def quit(**kwargs):
+    window = new_window(**kwargs)
+    memory[window].destroy()
+
 def app_loop(**kwargs):
     window = new_window(**kwargs)
     memory[window].mainloop()
-

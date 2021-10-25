@@ -6,7 +6,7 @@ memory = {}
 
 #version, author
 def version():
-    return "Version 0.8.1"
+    return "Version 0.8"
 
 #new window
 def new_window(**kwargs):
@@ -207,7 +207,7 @@ def button(text,command,row,column,**kwargs):
     fn = Button(memory[window], 
         text = text,
         command = command,
-        justify = justification(**kwargs),)
+        justify = justification(**kwargs))
     makegrid(fn,row,column,**kwargs)
 
 def label(text,row,column,**kwargs):   

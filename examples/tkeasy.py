@@ -4,9 +4,9 @@ from tkinter import filedialog, scrolledtext, messagebox, colorchooser
 
 memory = {}
 
-#version, author
+#version
 def version():
-    return "Version 0.8"
+    return "Version 0.9"
 
 #new window
 def new_window(**kwargs):
@@ -20,7 +20,24 @@ def new_window(**kwargs):
     if window not in memory:
         memory[window] = Tk()    
     
-    return window       
+    return window    
+
+def frames(**kwargs):   
+    window = new_window(**kwargs) 
+    try:
+        frame = kwargs["frame"]
+        x = kwargs["x"]
+        y = kwargs["y"]
+    except:
+        frame = "root_frame"
+        x = 0
+        y = 0
+
+    if frame not in memory:
+        memory[frame] = Frame(memory[window])
+        memory[frame].place(x=x,y=y)
+
+    return frame       
     
 def title(text,**kwargs):
     window = new_window(**kwargs)
@@ -198,21 +215,24 @@ def makegrid(fn,row,column,**kwargs):
 
 def separator(column_length,**kwargs):
     window = new_window(**kwargs) 
+    frame = frames(**kwargs)
     separator = Frame(memory[window],height=2, bd=1, relief="sunken")
     separator.grid(columnspan=column_length, sticky="EW",
         padx=padx(**kwargs), pady=pady(**kwargs))
 
 def button(text,command,row,column,**kwargs):  
     window = new_window(**kwargs) 
-    fn = Button(memory[window], 
+    frame = frames(**kwargs)
+    fn = Button(memory[frame], 
         text = text,
         command = command,
-        justify = justification(**kwargs))
+        justify = justification(**kwargs),)
     makegrid(fn,row,column,**kwargs)
 
 def label(text,row,column,**kwargs):   
     window = new_window(**kwargs)
-    memory["label"] = Label(memory[window], 
+    frame = frames(**kwargs)
+    memory["label"] = Label(memory[frame], 
         text = text,
         fg = colortext(**kwargs),
         bg = background(**kwargs),
@@ -226,8 +246,9 @@ def label_click():
 
 def photo(file,row,column,**kwargs):
     window = new_window(**kwargs) 
+    frame = frames(**kwargs)
     photo = PhotoImage(file=file)
-    memory["picture"] = Label(memory[window],image=photo)
+    memory["picture"] = Label(memory[frame],image=photo)
     memory["picture"].photo = photo
     makegrid(memory["picture"],row,column,**kwargs)
  
@@ -236,14 +257,16 @@ def photo_click():
 
 def entry(name,row,column,**kwargs):
     window = new_window(**kwargs)
-    memory[name] = Entry(memory[window],
+    frame = frames(**kwargs)
+    memory[name] = Entry(memory[frame],
         width = width_entry(**kwargs))
     makegrid(memory[name],row,column,**kwargs)
 
 def checkbox(name,text,row,column,**kwargs):
     window = new_window(**kwargs)
+    frame = frames(**kwargs)
     memory[name] = IntVar()
-    memory[text] = Checkbutton(memory[window],
+    memory[text] = Checkbutton(memory[frame],
         text = text,
         variable = memory[name],
         bg = background(**kwargs),
@@ -252,7 +275,8 @@ def checkbox(name,text,row,column,**kwargs):
 
 def slider(name,row,column,**kwargs):
     window = new_window(**kwargs)
-    memory[name] = Scale(memory[window],
+    frame = frames(**kwargs)
+    memory[name] = Scale(memory[frame],
         from_= 0, 
         to = 100, 
         orient=scale_oriental(**kwargs),
@@ -261,6 +285,7 @@ def slider(name,row,column,**kwargs):
 
 def radiobox(text,row,column,**kwargs):
     window = new_window(**kwargs)
+    frame = frames(**kwargs)
     if "radiobox" not in memory:
         memory["radiobox"] = StringVar()
 
@@ -273,7 +298,7 @@ def radiobox(text,row,column,**kwargs):
         #if value not provided, use text as value
         value = text
 
-    radiob = Radiobutton(memory[window], 
+    radiob = Radiobutton(memory[frame], 
         text = text, 
         variable = memory["radiobox"], 
         value = value,
@@ -283,8 +308,9 @@ def radiobox(text,row,column,**kwargs):
 
 def dropdown_list(variable,choices,default,row,column,**kwargs):
     window = new_window(**kwargs)
+    frame = frames(**kwargs)
     memory[variable] = StringVar(memory[window])
-    popupmenu = OptionMenu(memory[window], memory[variable], *choices)
+    popupmenu = OptionMenu(memory[frame], memory[variable], *choices)
     memory[variable].set(default) # default value
     makegrid(popupmenu,row,column,**kwargs)
 
@@ -292,7 +318,8 @@ def dropdown_list(variable,choices,default,row,column,**kwargs):
 #you can use textarea without scroll
 def text_area(name,row,column,**kwargs):
     window = new_window(**kwargs)
-    memory[name] = Text(memory[window],
+    frame = frames(**kwargs)
+    memory[name] = Text(memory[frame],
         wrap = WORD,
         height = 10, 
         width = 30,
@@ -302,7 +329,8 @@ def text_area(name,row,column,**kwargs):
 #Works slowly at big text (in macos)
 def text_area_scroll(name,row,column,**kwargs):
     window = new_window(**kwargs)
-    memory[name] = scrolledtext.ScrolledText(memory[window],
+    frame = frames(**kwargs)
+    memory[name] = scrolledtext.ScrolledText(memory[frame],
         wrap = WORD,
         height = 10, 
         width = 30,
@@ -317,12 +345,13 @@ def text_area_clear(name):
 
 def listbox(name,row,column,**kwargs):
     window = new_window(**kwargs)
+    frame = frames(**kwargs)
     try:
         height = kwargs["height"]
     except:
         height = 10
 
-    memory[name] = Listbox(memory[window],height = height)
+    memory[name] = Listbox(memory[frame],height = height)
     memory[name].grid(
         row = row,
         column = column)   
@@ -333,10 +362,11 @@ def listbox(name,row,column,**kwargs):
         pass
 
 def spinbox(name,from_to,row,column,**kwargs):
-    window = new_window(**kwargs)  
+    window = new_window(**kwargs) 
+    frame = frames(**kwargs) 
     data1 = int(from_to.split("-")[0])
     data2 = int(from_to.split("-")[1])
-    memory[name] = Spinbox(memory[window],from_=data1, to=data2)
+    memory[name] = Spinbox(memory[frame],from_=data1, to=data2)
     makegrid(memory[name],row,column,**kwargs)
 
 def listbox_insert(name,text):

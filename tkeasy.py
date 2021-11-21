@@ -367,10 +367,10 @@ def text_area_select(name):
 
 def text_area_clear(name):
     memory[name].delete('1.0', END)
-'''
+
 def entry_clear(name):
     memory[name].delete(0, 'end')
-'''
+
 def listbox(name,row,column,**kwargs):
     window = new_window(**kwargs)
     frame = frames(**kwargs)

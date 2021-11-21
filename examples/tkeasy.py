@@ -239,12 +239,6 @@ def makegrid(fn,row,column,**kwargs):
         pady = pady(**kwargs)
     )
 
-def separator(column_length,**kwargs):
-    window = new_window(**kwargs) 
-    separator = Frame(memory[window],height=2, bd=1, relief="sunken")
-    separator.grid(columnspan=column_length, sticky="EW",
-        padx=padx(**kwargs), pady=pady(**kwargs))
-
 def button(text,command,row,column,**kwargs):  
     window = new_window(**kwargs) 
     frame = frames(**kwargs)

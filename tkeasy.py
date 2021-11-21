@@ -24,17 +24,43 @@ def new_window(**kwargs):
 
 def frames(**kwargs):   
     window = new_window(**kwargs) 
+    
     try:
         frame = kwargs["frame"]
-        x = kwargs["x"]
-        y = kwargs["y"]
+        options = frame.split(",")
+        
+        coords = options[0].split("=")
+        x = options[0].split("=")[1]
+        y = options[1].split("=")[1]
     except:
         frame = "root_frame"
         x = 0
         y = 0
 
+    #thickness of border
+    try:
+        highlightthickness = options[2].split("=")[1]
+    except: 
+        highlightthickness = 0
+
+    #color of frame border
+    try:
+        highlightbackground = options[3].split("=")[1]
+    except:
+        highlightbackground = "white"
+
+    try:
+        padx = options[4].split("=")[1]
+    except:
+        padx = 1
+
+    try:
+        pady = options[5].split("=")[1]
+    except:
+        pady = 1
+
     if frame not in memory:
-        memory[frame] = Frame(memory[window])
+        memory[frame] = Frame(memory[window],highlightbackground=highlightbackground,highlightthickness=highlightthickness,padx=padx,pady=pady)
         memory[frame].place(x=x,y=y)
 
     return frame       
@@ -215,7 +241,6 @@ def makegrid(fn,row,column,**kwargs):
 
 def separator(column_length,**kwargs):
     window = new_window(**kwargs) 
-    frame = frames(**kwargs)
     separator = Frame(memory[window],height=2, bd=1, relief="sunken")
     separator.grid(columnspan=column_length, sticky="EW",
         padx=padx(**kwargs), pady=pady(**kwargs))
@@ -342,7 +367,10 @@ def text_area_select(name):
 
 def text_area_clear(name):
     memory[name].delete('1.0', END)
-
+'''
+def entry_clear(name):
+    memory[name].delete(0, 'end')
+'''
 def listbox(name,row,column,**kwargs):
     window = new_window(**kwargs)
     frame = frames(**kwargs)

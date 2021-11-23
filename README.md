@@ -428,7 +428,19 @@ app_loop()
 * **Frames** <br/>
     Frames allow you to arrange widgets in any order<br/>
     For example, you place a horizontal long widget, and shorter widgets under it in another frame.<br/>
-    ![Screenshot](/screenshots/calc.png)
+    ![Screenshot](/screenshots/calc.png)<br/>
+    In windows and mac, frames have a different measurement system. Therefore, the program that you wrote in windows on the mac needs to be changed by specifying other values for the length of the widget, frame and window.<br/>
+    The values of the frame parameters are passed through the dictionary.<br/>
+    ```python
+    the_first_frame = {"name_of_frame":"first_frame","x":27,"y":10,
+                   "border_thickness":1,"border_color":"black",
+                   "background":"#7cc5ba","padx":5,"pady":5}
+    ```
+    Then at the beginning of each widget you insert the dictionary name
+    ```python
+    button(frame=the_first_frame,text=" AC ",command=AC,colortext="black",background="#edce54",row=0,column=0)
+    ```
+    Wherever you want to apply the same frame, you use the same name. The wrapper recognizes the repetition and will use it from the previously specified dictionary.
 
 * **multiple windows** <br/>
     Unlimited number of windows can be open at the same time.<br/>

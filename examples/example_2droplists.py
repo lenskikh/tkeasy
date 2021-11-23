@@ -1,16 +1,27 @@
 from tkeasy import *
+import random
 
 title(text="The first window")
 
+
+
 def info():
-    title(window="second",text="Info")
-    label(window="second",text="Gender",
-      background="green",colortext="white",row=0,column=0)
-    label(window="second",text=get_info("gender var"),
+    second = str(random.random())
+    frame2 = {"name_of_frame":str(random.random()),
+              "x":5,"y":5,"border_thickness":1,
+              "border_color":"#7cc5ba",
+              "background":"white",
+              "padx":5,"pady":5}
+    
+    title(window=second,text="Info")
+    config(window=second,size="160x78",background="white")
+    
+    label(window=second,frame=frame2,text=" Gender ",background="green",colortext="white",row=0,column=0)
+    label(window=second,frame=frame2,text=get_info("gender var"),
       background="grey90",row=0,column=1)
-    label(window="second",text="Age",
+    label(window=second,frame=frame2,text=" Age ",
       background="green",colortext="white",row=1,column=0)    
-    label(window="second",text=get_info("age var"),
+    label(window=second,frame=frame2,text=get_info("age var"),
       background="grey90",row=1,column=1)    
 
 choices = ["=","Female","Male"]
@@ -24,5 +35,5 @@ dropdown_list(variable="age var",choices=age,
 button(text="Get Info",
        command=info,row=2,column=0)
 
-#you need use if run code in vsc
+#you need use it if run code in vsc
 app_loop()

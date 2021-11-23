@@ -1,12 +1,17 @@
 from tkeasy import *
 
 title("Calc")
-config(size="200x230",background="white",icon="icon.ico")
+config(size="205x230",background="white")
 
-the_first_frame = "x=27,y=10,border_thickness=1,border_color=#7cc5ba,padx=2,pady=5"
-entry(frame=the_first_frame,name="entry 1",width=23,row=1,column=0)
+the_first_frame = {"name_of_frame":"first_frame","x":27,"y":10,
+                   "border_thickness":1,"border_color":"#7cc5ba",
+                   "background":"#7cc5ba","padx":5,"pady":5}
 
-the_second_frame="x=27,y=50,border_thickness=1,border_color=#7cc5ba,padx=5,pady=6"
+entry(frame=the_first_frame,name="entry 1",width=22,row=1,column=0)
+
+the_second_frame={"name_of_frame":"second_frame","x":27,"y":50,
+                  "border_thickness":1,"border_color":"#7cc5ba",
+                  "background":"#7cc5ba","padx":5,"pady":6}
 
 screen = ""
 

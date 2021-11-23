@@ -22,45 +22,47 @@ def new_window(**kwargs):
     
     return window    
 
+#A frame by default if didn't set by user 
 def frames(**kwargs):   
     window = new_window(**kwargs) 
     
     try:
-        frame = kwargs["frame"]
-        options = frame.split(",")
+        frame = kwargs["frame"]["name_of_frame"]
         
-        coords = options[0].split("=")
-        x = options[0].split("=")[1]
-        y = options[1].split("=")[1]
+        x = kwargs["frame"]["x"]
+        y = kwargs["frame"]["y"]
     except:
         frame = "root_frame"
         x = 0
         y = 0
 
-    #thickness of border
     try:
-        highlightthickness = options[2].split("=")[1]
-    except: 
-        highlightthickness = 0
-
-    #color of frame border
-    try:
-        highlightbackground = options[3].split("=")[1]
+        highlightthickness = kwargs["frame"]["border_thickness"]
     except:
-        highlightbackground = "white"
+        highlightthickness = None
 
     try:
-        padx = options[4].split("=")[1]
+        highlightbackground = kwargs["frame"]["border_color"]
+    except:
+        highlightbackground = None
+
+    try:
+        background = kwargs["frame"]["background"]
+    except:
+        background = None
+
+    try:
+        padx = kwargs["frame"]["padx"] 
     except:
         padx = 1
 
     try:
-        pady = options[5].split("=")[1]
+        pady = kwargs["frame"]["pady"]
     except:
         pady = 1
 
     if frame not in memory:
-        memory[frame] = Frame(memory[window],highlightbackground=highlightbackground,highlightthickness=highlightthickness,padx=padx,pady=pady)
+        memory[frame] = Frame(memory[window],highlightbackground=highlightbackground,highlightthickness=highlightthickness,background=background,padx=padx,pady=pady)
         memory[frame].place(x=x,y=y)
 
     return frame       

@@ -93,7 +93,7 @@ app_loop()
     from tkeasy import *
     def show_info():
         print("button pressed")
-    button(text="Show Info",command=show_info,row=0,column=0)
+    button(text="Show Info",background="#7cc5ba",colortext="white",command=show_info,row=0,column=0)
     app_loop()
     ```
     ![Screenshot](/screenshots/button.png)

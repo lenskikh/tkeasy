@@ -137,7 +137,7 @@ def colortext(**kwargs):
         colortext = kwargs["colortext"]
         return colortext
     except:
-        pass
+        colortext = None
     
 #for label, button
 def background(**kwargs):
@@ -145,7 +145,7 @@ def background(**kwargs):
         background = kwargs["background"]
         return background
     except:
-        pass
+        background = None
     
 #wrap for label
 def label_length(**kwargs):
@@ -158,6 +158,7 @@ def label_length(**kwargs):
 def justification(**kwargs):
     try:
         justify = kwargs["justify"]
+        return justify 
     except KeyError:
         justify = "center"
     return justify 

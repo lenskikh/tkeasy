@@ -425,6 +425,11 @@ app_loop()
     ```
     Paste text from clipboard
 
+* **Frames** <br/>
+    Frames allow you to arrange widgets in any order<br/>
+    For example, you place a horizontal long widget, and shorter widgets under it in another frame.<br/>
+    ![Screenshot](/screenshots/calc.png)
+
 * **multiple windows** <br/>
     Unlimited number of windows can be open at the same time.<br/>
     Add "window" in the second and third window. The first window should be without window="the first window". See example example_two_windows_entry.py Otherwise, you will get three windows.

@@ -6,7 +6,7 @@ memory = {}
 
 #version
 def version():
-    return "Version 0.9"
+    return "Version 0.9.1"
 
 #new window
 def new_window(**kwargs):
@@ -131,7 +131,7 @@ def alignment(**kwargs):
 
     return sticky
 
-#for label                                            
+#for label, button                                            
 def colortext(**kwargs):
     try:
         colortext = kwargs["colortext"]
@@ -139,7 +139,7 @@ def colortext(**kwargs):
     except:
         pass
     
-#for label
+#for label, button
 def background(**kwargs):
     try:
         background = kwargs["background"]
@@ -247,6 +247,8 @@ def button(text,command,row,column,**kwargs):
     fn = Button(memory[frame], 
         text = text,
         command = command,
+        bg = background(**kwargs),
+        fg = colortext(**kwargs),
         justify = justification(**kwargs),)
     makegrid(fn,row,column,**kwargs)
 

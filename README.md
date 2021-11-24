@@ -443,18 +443,18 @@ app_loop()
     Wherever you want to apply the same frame, you use the same name. The wrapper recognizes the repetition and will use it from the previously specified dictionary.<br/>
     > name_of_frame - name of frame. Only the frame name is required, all other parameters are optional.<br/>
     Specify coordinates where the frame starts from. <br/>
-    > x(*optional*) - shift by horizontal <br/>
-    > y(*optional*) - shift by vertical<br/>
-    > border_thickness(*optional*) - thickness of frame<br/>
-    > border_color(*optional*) - color of border<br/>
-    > background(*optional*) - color of background<br/>
-    > padx(*optional*) - offset from widgets by x <br/>
-    > pady(*optional*) - offset from widgets by y <br/>
+    > x(*optional*) - shift by horizontal. 0 by default<br/>
+    > y(*optional*) - shift by vertical. 0 by default<br/>
+    > border_thickness(*optional*) - thickness of frame. None by default<br/>
+    > border_color(*optional*) - color of border. None by default<br/>
+    > background(*optional*) - color of background. None by default<br/>
+    > padx(*optional*) - offset from widgets by x. 1 by default <br/>
+    > pady(*optional*) - offset from widgets by y. 1 by default<br/>
 
 
 * **multiple windows** <br/>
     Unlimited number of windows can be open at the same time.<br/>
-    Add "window" in the second and third window. The first window should be without window="the first window". See example example_two_windows_entry.py Otherwise, you will get three windows.
+    Add "window" in the second and third window. The first window should be without window="the first window". See example example_two_windows_entry.py Otherwise, you will get three windows. For the second window to work correctly, it is necessary to specify the frame in the second window.
     ```python
     from tkeasy import *
     import random
@@ -462,13 +462,15 @@ app_loop()
     def show_info():
             #Random is used as a solution to reopen the window.
             win=str(random.random())
+            frame_one = {"name_of_frame":str(random.random())}
+            
             title(window=win,text="The second window")
-            label(window=win,text="The second window",row=0,column=0)
-            entry(window=win,name="entry2",row=1,column=0)
+            label(window=win,frame=frame_one,text="The second window",row=0,column=0)
+            entry(window=win,frame=frame_one,name="entry2",row=1,column=0)
             insert_text(window=win,name="entry2",text="entry",color="gray")
-            text_area(window=win,name="textarea",row=2,column=0)
+            text_area(window=win,frame=frame_one,name="textarea",row=2,column=0)
             insert_text_area(window=win,name="textarea",text="text area",color="gray")
-              
+                
     button(text="Show Info",command=show_info,row=0,column=0)
     app_loop()
     ```
@@ -1035,7 +1037,7 @@ app_loop()
     Фреймы позволяют расположить виджеты в любом порядке, вы можете их даже наслаивать друг на друга.<br/>
     Например, в калькуляторе длинный горизонтальный виджет (экран) располагается над несколькими маленькими короткими(кнопками).<br/>
     ![Screenshot](/screenshots/calc.png)<br/>
-    На макоси действует другая система измерения, поэтому фрейму поедут. На макоси нужно будет перевестать приложение указав другие размеры фреймов.<br/>
+    На макоси действует другая система измерения, поэтому фреймы поедут. На макоси нужно будет переверстать приложение указав другие размеры фреймов.<br/>
     Параметры для фрейма передаются через словарь.<br/>
     ```python
     the_first_frame = {"name_of_frame":"first_frame","x":27,"y":10,
@@ -1049,18 +1051,18 @@ app_loop()
     Все виджеты, что должны войти во фрейм, должны в начале содержать его имя в виде словаря<br/>
     > name_of_frame - словарь открывается с имени фрейма. Это единственный обязательный параметр. Все остальное необязательно к указанию.<br/>
     Укажите расположение фрейма. Начало фрейма идёт от левого верхнего угла. <br/>
-    > x(*необязателен*) - сдвиг по горизонтале <br/>
-    > y(*необязателен*) - сдвиг по вертикале<br/>
-    > border_thickness(*необязателен*) - толщина рамки фрейма<br/>
-    > border_color(*необязателен*) - цвет рамки фрейма<br/>
-    > background(*необязателен*) - цвет фона фрейма<br/>
-    > padx(*необязателен*) - отступ от виджетов по горизонтале<br/>
-    > pady(*необязателен*) - отступ от виджетов по вертикале<br/>
+    > x(*необязателен*) - сдвиг по горизонтале. 0 по умолчанию <br/>
+    > y(*необязателен*) - сдвиг по вертикале. 0 по умолчанию.<br/>
+    > border_thickness(*необязателен*) - толщина рамки фрейма. None по умолчанию.<br/>
+    > border_color(*необязателен*) - цвет рамки фрейма. None по умолчанию.<br/>
+    > background(*необязателен*) - цвет фона фрейма. None по умолчанию.<br/>
+    > padx(*необязателен*) - отступ от виджетов по горизонтале. 1 по умолчанию<br/>
+    > pady(*необязателен*) - отступ от виджетов по вертикале. 1 по умолчанию<br/>
 
 * **Многооконный режим** <br/>
     Вы можете создавать неограниченное количество окн<br/>
     Для первого окна нет необходимости использовать параметр "window". Иначе будет создано лишнее пустое окно по умолчанию. Параметр "window" используется только для новых окн. Для нового окна в начале каждого виджета пропишите параметр "window". Однако, чтобы избежать потерю состояния окна после закрытия его пользователем, необходимо использовать random.random(), как показано в примере ниже. Иначе, после закрытия окна, пользователь не сможет его открыть заново по кнопке, если у вас предусмотрен такой функционал, как показано в примере ниже.
-    Смотрите пример в example_two_windows_entry.py 
+    Смотрите пример в example_muilti_window_frames.py Для правильной работы второго окна необходимо указывать фрейм во втором окне.  
     ```python
     from tkeasy import *
     import random
@@ -1068,13 +1070,15 @@ app_loop()
     def show_info():
             #Random is used as a solution to reopen the window.
             win=str(random.random())
+            frame_one = {"name_of_frame":str(random.random())}
+            
             title(window=win,text="The second window")
-            label(window=win,text="The second window",row=0,column=0)
-            entry(window=win,name="entry2",row=1,column=0)
+            label(window=win,frame=frame_one,text="The second window",row=0,column=0)
+            entry(window=win,frame=frame_one,name="entry2",row=1,column=0)
             insert_text(window=win,name="entry2",text="entry",color="gray")
-            text_area(window=win,name="textarea",row=2,column=0)
+            text_area(window=win,frame=frame_one,name="textarea",row=2,column=0)
             insert_text_area(window=win,name="textarea",text="text area",color="gray")
-              
+                
     button(text="Show Info",command=show_info,row=0,column=0)
     app_loop()
     ```

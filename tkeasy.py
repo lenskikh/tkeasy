@@ -27,15 +27,17 @@ def frames(**kwargs):
     window = new_window(**kwargs) 
     
     try:
-        frame = kwargs["frame"]["name_of_frame"]
-        
+        frame = kwargs["frame"]["name_of_frame"]       
+    except:
+        frame = "root_frame"
+
+    try:
         x = kwargs["frame"]["x"]
         y = kwargs["frame"]["y"]
     except:
-        frame = "root_frame"
         x = 0
         y = 0
-
+        
     try:
         highlightthickness = kwargs["frame"]["border_thickness"]
     except:

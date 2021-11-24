@@ -1,6 +1,7 @@
 from tkeasy import *
 
 title("wordpad")
+config(size="250x170")
 
 def new_file():
     text_area_clear("area 2")

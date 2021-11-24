@@ -1068,7 +1068,7 @@ app_loop()
     import random
 
     def show_info():
-            #Random is used as a solution to reopen the window.
+            #Пока приходиться использовать random для повторного открытия окн.
             win=str(random.random())
             frame_one = {"name_of_frame":str(random.random())}
             

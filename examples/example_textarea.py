@@ -1,6 +1,7 @@
 from tkeasy import *
 
 title(text="Text area")
+config(size="250x200")
 
 def show_info():
     print(get_info("area").strip())

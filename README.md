@@ -516,20 +516,6 @@ app_loop()
     > pady (*optional*) = 2 (*Number. Without brackets and quotation marks*)    
     ![Screenshot](/screenshots/sliders.png)
 
-* **separator**<br/>
-    separator line<br/>
-    separator(window,column_length,padx,pady)<br/>
-    > window (*optional*) = "name"<br/>
-    > column_length = 1<br/>
-    > padx (*optional*) = 2 (*Number. Without brackets and quotation marks*)<br/>
-    > pady (*optional*) = 2 (*Number. Without brackets and quotation marks*)    
-    ```python
-    from tkeasy import *
-    separator(column_length=1)
-    app_loop()
-    ```
-    ![Screenshot](/screenshots/separator.png)
-
 * **Top menu**<br/>
     See example_topmenu.py If you need the whole code.<br />
     ```json
@@ -1126,20 +1112,6 @@ app_loop()
     > padx (*необязательно*) = отступ от виджета, добавляет пространство по горизонтале.<br/>
     > pady (*необязательно*) = отступ от виджета, добавляет пространство по вертикале     
     ![Screenshot](/screenshots/sliders.png)
-
-* **Разделительная линия**<br/>
-    Иногда возникает потребность в разделительной линии<br/>
-    separator(window,column_length,padx,pady)<br/>
-    > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
-    > column_length = 1 длинна линии, можно использовать от 1 до 2<br/>
-    > padx (*необязательно*) = отступ от виджета, добавляет пространство по горизонтале.<br/>
-    > pady (*необязательно*) = отступ от виджета, добавляет пространство по вертикале    
-    ```python
-    from tkeasy import *
-    separator(column_length=1)
-    app_loop()
-    ```
-    ![Screenshot](/screenshots/separator.png)
 
 * **Вверхнее меню**<br/>
     Смотрите пример в example_topmenu.py<br />

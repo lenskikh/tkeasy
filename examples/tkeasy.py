@@ -385,23 +385,25 @@ def entry_clear(name):
 def listbox(name,row,column,**kwargs):
     window = new_window(**kwargs)
     frame = frames(**kwargs)
-    
     try:
         height = kwargs["height"]
     except:
-        height = 10
+        height = None
 
+    try:
+        width = kwargs["width"]
+    except:
+        width = None
+
+    memory[name] = Listbox(memory[frame],height = height,width=width)
+    memory[name].grid(
+        row = row,
+        column = column)   
     try: 
         text = kwargs["text"]
         listbox_insert(name,text)
     except:
         pass
-
-    memory[name] = Listbox(memory[frame],height = height)
-    memory[name].grid(
-        row = row,
-        column = column)   
-
 
 def spinbox(name,from_to,row,column,**kwargs):
     window = new_window(**kwargs) 

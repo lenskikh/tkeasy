@@ -440,7 +440,16 @@ app_loop()
     ```python
     button(frame=the_first_frame,text=" AC ",command=AC,colortext="black",background="#edce54",row=0,column=0)
     ```
-    Wherever you want to apply the same frame, you use the same name. The wrapper recognizes the repetition and will use it from the previously specified dictionary.
+    Wherever you want to apply the same frame, you use the same name. The wrapper recognizes the repetition and will use it from the previously specified dictionary.<br/>
+    > name_of_frame - name of frame<br/>
+    Specify coordinates where the frame starts from. <br/>
+    > x - shift by horizontal <br/>
+    > y - shift by vertical<br/>
+    > border_thickness - thickness of frame<br/>
+    > border_color - color of border<br/>
+    > background - color of background<br/>
+    > padx - Offset from widgets by x <br/>
+    > pady - Offset from widgets by y <br/>
 
 * **multiple windows** <br/>
     Unlimited number of windows can be open at the same time.<br/>

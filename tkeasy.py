@@ -6,7 +6,7 @@ memory = {}
 
 #version
 def version():
-    return "Version 0.9.1"
+    return "Version 0.9.2"
 
 #new window
 def new_window(**kwargs):
@@ -37,7 +37,7 @@ def frames(**kwargs):
     except:
         x = 0
         y = 0
-        
+
     try:
         highlightthickness = kwargs["frame"]["border_thickness"]
     except:
@@ -62,6 +62,16 @@ def frames(**kwargs):
         pady = kwargs["frame"]["pady"]
     except:
         pady = 1
+
+    try:
+        width = kwargs["frame"]["width"]
+    except:
+        width = None
+
+    try:
+        height = kwargs["frame"]["height"]
+    except:
+        height = None
 
     if frame not in memory:
         memory[frame] = Frame(memory[window],highlightbackground=highlightbackground,highlightthickness=highlightthickness,background=background,padx=padx,pady=pady)
@@ -375,20 +385,23 @@ def entry_clear(name):
 def listbox(name,row,column,**kwargs):
     window = new_window(**kwargs)
     frame = frames(**kwargs)
+    
     try:
         height = kwargs["height"]
     except:
         height = 10
 
-    memory[name] = Listbox(memory[frame],height = height)
-    memory[name].grid(
-        row = row,
-        column = column)   
     try: 
         text = kwargs["text"]
         listbox_insert(name,text)
     except:
         pass
+
+    memory[name] = Listbox(memory[frame],height = height)
+    memory[name].grid(
+        row = row,
+        column = column)   
+
 
 def spinbox(name,from_to,row,column,**kwargs):
     window = new_window(**kwargs) 

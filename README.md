@@ -441,7 +441,7 @@ app_loop()
     button(frame=the_first_frame,text=" AC ",command=AC,colortext="black",background="#edce54",row=0,column=0)
     ```
     Wherever you want to apply the same frame, you use the same name. The wrapper recognizes the repetition and will use it from the previously specified dictionary.<br/>
-    > name_of_frame - name of frame<br/>
+    > name_of_frame - name of frame. Only the frame name is required, all other parameters are optional.<br/>
     Specify coordinates where the frame starts from. <br/>
     > x(*optional*) - shift by horizontal <br/>
     > y(*optional*) - shift by vertical<br/>
@@ -450,7 +450,7 @@ app_loop()
     > background(*optional*) - color of background<br/>
     > padx(*optional*) - offset from widgets by x <br/>
     > pady(*optional*) - offset from widgets by y <br/>
-    Only the frame name is required, all other parameters are optional.
+    
 
 * **multiple windows** <br/>
     Unlimited number of windows can be open at the same time.<br/>

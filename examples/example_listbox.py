@@ -7,10 +7,12 @@ config(size="200x600")
 text = glob.glob("*.*")
 
 def show_info():
-    print(listbox_item_selected("listbox"))
+    pth = listbox_item_selected("listbox")
+    #print full path
+    print(os.path.abspath(pth))
    
-listbox(name="listbox",height=30,width=35,row=0,column=0,text=text)
+listbox(name="listbox",height=30,width=35,row=1,column=0,text=text)
 
-button(text="Get selected",command=show_info,row=1,column=0)
+button(text="Get selected",command=show_info,row=0,column=0)
 
 app_loop()

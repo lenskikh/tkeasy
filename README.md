@@ -542,6 +542,22 @@ app_loop()
     app_loop()
     ```
     ![Screenshot](/screenshots/colorpicker.png)
+
+* **Listbox**<br />
+    A list box is a graphical control element that allows the user to select one or more items from a list contained within a static, multiple line text box. The user clicks inside the box on an item to select it.<br />
+    ```python
+    from tkeasy import *
+    import os
+    import glob
+
+    text = glob.glob("*.*")
+    listbox(name="listbox",height=30,width=35,row=1,column=0,text=text)
+
+    app_loop()
+
+    ```
+    ![Screenshot](/screenshots/listbox.png)
+
     
 * **quit**<br/>
     For destroy window.

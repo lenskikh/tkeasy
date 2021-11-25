@@ -558,6 +558,11 @@ app_loop()
     ```
     ![Screenshot](/screenshots/listbox.png)
 
+* **listbox_item_selected**<br />    
+    With this method, you can get the data where the cursor is.
+    ```python
+    listbox_item_selected("listbox")
+    ```
     
 * **quit**<br/>
     For destroy window.

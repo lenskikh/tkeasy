@@ -121,6 +121,10 @@ def get_info(name):
             #entry,checkbox,radiobox
             return memory[name].get()
 
+def get_selected(info):
+    for i in info.curselection():
+        return info.get(i)
+
 def move_window(event,**kwargs):
     window = new_window(**kwargs) 
     memory[window].geometry(f'+{event.x_root}+{event.y_root}')

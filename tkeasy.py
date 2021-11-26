@@ -376,11 +376,16 @@ def text_area_scroll(name,row,column,**kwargs):
 def text_area_select(name):
     return memory[name].selection_get()
 
-def text_area_clear(name):
-    memory[name].delete('1.0', END)
+def clear_area(name):
+    try:
+        memory[name].delete(0, 'end')
+    except:
+        pass
 
-def entry_clear(name):
-    memory[name].delete(0, 'end')
+    try:
+        memory[name].delete('1.0', END)
+    except:
+        pass
 
 def listbox(name,row,column,**kwargs):
     window = new_window(**kwargs)

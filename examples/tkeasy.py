@@ -425,7 +425,6 @@ def listbox_insert(name,text):
 def listbox_item_selected(name):
     return memory[name].get("active")
 
-
 #for change text in text area
 def insert_text(name,text,color,**kwargs):  
     window = new_window(**kwargs)  
@@ -436,6 +435,9 @@ def insert_text_area(name,text,color,**kwargs):
     window = new_window(**kwargs) 
     memory[name].insert(1.0,text)
     memory[name].config(fg=color)
+
+def focus(name):
+    memory[name].focus()
 
 def msg_box(title,message): 
     msgbox = messagebox.showinfo(title=title, message=message)

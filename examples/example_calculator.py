@@ -8,6 +8,7 @@ the_first_frame = {"name_of_frame":"first_frame","x":27,"y":10,
                    "background":"#7cc5ba","padx":5,"pady":5}
 
 entry(frame=the_first_frame,name="entry 1",width=22,row=1,column=0)
+focus("entry 1")
 
 the_second_frame={"name_of_frame":"second_frame","x":27,"y":50,
                   "border_thickness":1,"border_color":"black",
@@ -18,20 +19,20 @@ screen = ""
 def update(number):
     global screen
     screen+=number
-    entry_clear("entry 1")
+    clear_area("entry 1")
     insert_text(name="entry 1",text=screen,color="black")
 
 def result():
     #You can use entry field for input digit from keyboard
     from_screen = get_info("entry 1").strip()
-    entry_clear("entry 1")
+    clear_area("entry 1")
     total = eval(from_screen)
     insert_text(name="entry 1",text=total,color="black")
 
 def AC():
     global screen
     screen = ""
-    entry_clear("entry 1")
+    clear_area("entry 1")
     insert_text(name="entry 1",text=screen,color="black")
 
 button(frame=the_second_frame,text=" AC ",command=AC,colortext="black",background="#edce54",row=0,column=0)

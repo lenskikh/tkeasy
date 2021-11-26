@@ -399,12 +399,16 @@ app_loop()
     ``` 
 
 * **Select text**<br />
-    text_area_select()<br />
     Get data from selected text in text area.
+    ```python
+    text_area_select()
+    ``` 
 
 * **Clear data**<br />
     Clear data in text area or listbox.
-    clear_area()<br />
+    ```python
+    clear_area()
+    ```
 
 * **Clipboard_in**<br />
     clipboard_in(selected)<br />

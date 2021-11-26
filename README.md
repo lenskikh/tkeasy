@@ -402,8 +402,9 @@ app_loop()
     text_area_select()<br />
     Get data from selected text in text area.
 
-* **Clear data in text area**<br />
-    text_area_clear()<br />
+* **Clear data**<br />
+    Clear data in text area or listbox.
+    clear_area()<br />
 
 * **Clipboard_in**<br />
     clipboard_in(selected)<br />

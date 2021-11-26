@@ -29,6 +29,9 @@ def result():
     total = eval(from_screen)
     insert_text(name="entry 1",text=total,color="black")
 
+def shortcut(event):
+    result()
+
 def AC():
     global screen
     screen = ""
@@ -57,5 +60,8 @@ button(frame=the_second_frame,text="  /  ",command=lambda:update("/"),row=1,colu
 button(frame=the_second_frame,text="  x  ",command=lambda:update("*"),row=2,column=4)
 button(frame=the_second_frame,text="  -  ",command=lambda:update("-"),row=3,column=4)
 button(frame=the_second_frame,text="  +  ",command=lambda:update("+"),row=4,column=4)
+
+#press enter for get result
+advanced().bind("<Return>", shortcut)
 
 app_loop()

@@ -390,6 +390,12 @@ app_loop()
     ```
     ![Screenshot](/screenshots/insert2.png)
 
+* **focus**<br />
+    You can set the focus on a widget.<br />
+    ```python 
+    focus(name_of_widget)
+    ```
+
 * **scroll-able output**<br/>
     Use two methods for scroll-able output<br/>
     method text_area_scroll() and method insert_text_area()

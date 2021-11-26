@@ -56,3 +56,5 @@ button(frame=the_second_frame,text="  /  ",command=lambda:update("/"),row=1,colu
 button(frame=the_second_frame,text="  x  ",command=lambda:update("*"),row=2,column=4)
 button(frame=the_second_frame,text="  -  ",command=lambda:update("-"),row=3,column=4)
 button(frame=the_second_frame,text="  +  ",command=lambda:update("+"),row=4,column=4)
+
+app_loop()

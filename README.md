@@ -561,6 +561,7 @@ app_loop()
 * **listbox_item_selected**<br />    
     With this method, you can get the data where the cursor is.
     ```python
+    listbox(name="listbox",height=30,width=35,row=0,column=0,text=text)
     listbox_item_selected("listbox")
     ```
     

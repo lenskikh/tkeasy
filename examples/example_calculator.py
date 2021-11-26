@@ -22,8 +22,10 @@ def update(number):
     insert_text(name="entry 1",text=screen,color="black")
 
 def result():
+    #You can use entry field for input digit from keyboard
+    from_screen = get_info("entry 1").strip()
     entry_clear("entry 1")
-    total = eval(screen)
+    total = eval(from_screen)
     insert_text(name="entry 1",text=total,color="black")
 
 def AC():

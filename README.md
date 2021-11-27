@@ -575,7 +575,24 @@ app_loop()
     listbox(name="listbox",height=30,width=35,row=0,column=0,text=text)
     listbox_item_selected("listbox")
     ```
-    
+* **Shortcuts**<br />  
+    Using the advanced mode you can create hotkeys
+    ```python
+    from tkeasy import *
+
+    def result():
+        print("hello world")
+
+    #(event) must be present in the function referenced by the hotkey.
+    def shortcut(event):
+        #If your function does not accept anything, then you need to create a referral function
+        result()    
+
+    #When you press Enter, Hello world will be printed
+    advanced().bind("<Return>", shortcut)
+
+    app_loop()
+    ```
 * **quit**<br/>
     For destroy window.
     ```python
@@ -1063,7 +1080,7 @@ app_loop()
                    "border_thickness":1,"border_color":"black",
                    "background":"#7cc5ba","padx":5,"pady":5}
     ```
-    В начале каждого виджета указываете имя словаря.
+    В начале каждого виджета указываете имя словаря. Можно не указывать все параметры. Достаточно имя фрейма и его размеры.
     ```python
     button(frame=the_first_frame,text=" AC ",command=AC,colortext="black",background="#edce54",row=0,column=0)
     ```

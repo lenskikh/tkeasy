@@ -590,10 +590,10 @@ app_loop()
     hotkey("<Return>",command)
     ```
     summary of the most common events with some keypress names explained:<br />
-    <Button-1> Button 1 is the leftmost button, button 2 is the middle button (where available), and button 3 the rightmost button.<br />
-    <B1-Motion>The mouse is moved, with mouse button 1 being held down (use B2 for the middle button, B3 for the right button). <br />
-    <ButtonRelease-1>  Button 1 was released. This is probably a better choice in most cases than the Button event, because if the user accidentally presses the button, they can move the mouse off the widget to avoid setting off the event.<br />
-    <Double-Button-1> Button 1 was double clicked. You can use Double or Triple as prefixes.<br />
+    '''<Button-1>''' Button 1 is the leftmost button, button 2 is the middle button (where available), and button 3 the rightmost button.<br />
+    '''<B1-Motion>'''The mouse is moved, with mouse button 1 being held down (use B2 for the middle button, B3 for the right button). <br />
+    '''<ButtonRelease-1>'''  Button 1 was released. This is probably a better choice in most cases than the Button event, because if the user accidentally presses the button, they can move the mouse off the widget to avoid setting off the event.<br />
+    '''<Double-Button-1>''' Button 1 was double clicked. You can use Double or Triple as prefixes.<br />
 
 
 * **quit**<br/>

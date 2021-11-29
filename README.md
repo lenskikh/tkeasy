@@ -589,7 +589,12 @@ app_loop()
     ```python
     hotkey("<Return>",command)
     ```
-    summary of the most common events with some keypress names explained:<br />
+    For the second window
+    ```python
+    hotkey(window="win",frame="frame_one",key="<Return>",command=command)
+    ```
+
+    Summary of the most common events with some keypress names explained:<br />
     ```
     <Button-1> Button 1 is the leftmost button, button 2 
         is the middle button (where available), and 

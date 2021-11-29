@@ -611,6 +611,8 @@ app_loop()
 
     <Double-Button-1>Button 1 was double clicked. 
         You can use Double or Triple as prefixes.
+
+    <Return> The user pressed the Enter key.
     ```
 
 * **quit**<br/>

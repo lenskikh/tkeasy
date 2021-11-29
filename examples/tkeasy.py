@@ -6,7 +6,7 @@ memory = {}
 
 #version
 def version():
-    return "Version 0.9.2"
+    return "Version 0.9.3"
 
 #new window
 def new_window(**kwargs):
@@ -128,6 +128,10 @@ def move_window(event,**kwargs):
 def advanced(**kwargs):
     window = new_window(**kwargs)
     return memory[window]
+
+def hotkey(key,command,**kwargs):
+    window = new_window(**kwargs)
+    return memory[window].bind(key,command)
 
 def alignment(**kwargs):
     try:

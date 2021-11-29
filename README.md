@@ -590,7 +590,7 @@ app_loop()
     hotkey("<Return>",command)
     ```
     summary of the most common events with some keypress names explained:<br />
-    ```python
+    ```
     <Button-1> Button 1 is the leftmost button, button 2 
         is the middle button (where available), and 
         button 3 the rightmost button.

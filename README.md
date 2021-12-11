@@ -250,7 +250,8 @@ app_loop()
     ![Screenshot](/screenshots/droplist.jpg)
 
 * **file browse dialog**<br/>
-    select_file()<br/>
+    **select_file()**<br/>
+    Gives the full path<br/>
     > command=select_file<br/>
     > Use button method and in the command point out select_file
     ```python
@@ -270,6 +271,16 @@ app_loop()
     app_loop()
     ```
     ![Screenshot](/screenshots/file.jpg)
+
+    **select_file_name()**<br/>
+    Gives only the file name without the full path<br/>
+    ```python
+    from tkeasy import *
+
+    print(select_file_name())
+
+    app_loop()
+    ```
 
 * **folder browse dialog**<br/>
     select_folder()<br/>

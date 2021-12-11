@@ -243,6 +243,9 @@ def colorpicker(**kwargs):
 def select_file():
     return filedialog.askopenfilename(initialdir = os.getcwd()+"./",title = "Select file")
 
+def select_file_name():
+    return filedialog.askopenfilename(initialdir = os.getcwd()+"./",title = "Select file").split("/")[-1]
+
 def select_folder():
     return filedialog.askdirectory(initialdir = os.getcwd()+"./",title = "Select folder")   
 

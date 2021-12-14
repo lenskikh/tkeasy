@@ -324,6 +324,7 @@ app_loop()
     entry(window,name,row,column,sticky,padx,pady)<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of entry<br/>
+    > width = The length of the entry widget<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 

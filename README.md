@@ -9,9 +9,14 @@ Type in terminal or cmd</br>
 <code>git clone https://github.com/lenskikh/tkeasy.git</code></br>
 Run any file with name "example"
 
-On Linux Manjaro install tk first
+On Arch linux install tk first
     ```python
     sudo pacman -S tk
+    ```
+
+On Ubuntu
+    ```python
+    sudo apt-get install python3-tk 
     ```
 
 ## Your fisrt GUI program
@@ -647,11 +652,15 @@ app_loop()
 <code>git clone https://github.com/lenskikh/tkeasy.git</code></br>
 Примеры смотрите в файлах, которые начинаются с "example"</br>
 
-На Linux нужно доустановить tk, например, на Manjaro
+На Arch Linux нужно доустановить tk, например, на Manjaro
     ```
     sudo pacman -S tk
     ```
-
+На Ubuntu 
+    ```python
+    sudo apt-get install python3-tk 
+    ```
+    
 ## Ваша первая GUI программа
 ```python
 from tkeasy import *

@@ -13,7 +13,7 @@ On Arch linux install tk first
     ```python
     sudo pacman -S tk
     ```
-
+<br />
 On Ubuntu
     ```python
     sudo apt-get install python3-tk 
@@ -656,11 +656,12 @@ app_loop()
     ```
     sudo pacman -S tk
     ```
+<br />
 На Ubuntu 
     ```python
     sudo apt-get install python3-tk 
     ```
-    
+
 ## Ваша первая GUI программа
 ```python
 from tkeasy import *

@@ -1248,6 +1248,44 @@ app_loop()
     app_loop()
     ```
     ![Screenshot](/screenshots/colorpicker.png)
+
+* **hotkeys**<br/>
+    Горячие клавиши, указываете горячую клавишу и ссылку на функцию.
+    ```python
+    hotkey("<Return>",command)
+    ```
+    
+    Для второго окна, нужно указать название окна, и фрейм.
+    ```python
+    hotkey(window="win",frame="frame_one",key="<Return>",command=command)
+    ```
+
+    Этот код выводит любое нажатие клавиши в поле entry
+    ```python
+    from tkeasy import *
+
+    def keydown(event):
+        print ('Key was pressed = ', event.char)
+
+    entry(name="ent",row=0,column=0)
+    hotkey("<KeyPress>",command=keydown)
+
+    app_loop()
+    ```
+
+    Некоторые популярные ивенты:<br />
+    ```
+    "<Button-1>" левое нажатие клавиши
+
+    "<B1-Motion>" удерживание левой клавиши мыши. B2 колесо мыши и B3 правая клавиша мыши. 
+
+    "<ButtonRelease-1>" Если левая клавиша мыши была отпущена
+
+    "<Double-Button-1>" Двойное нажатие левой клавиши мыши
+    Triple - тройное нажатие.
+
+    <Return> клавиша Enter.
+    ```
     
 * **Завершение**<br/>
     Выход, закрытие приложения. Часто используется для вверхнего меню <br/>

@@ -632,6 +632,19 @@ app_loop()
     <Return> The user pressed the Enter key.
     ```
 
+    ```python
+    #Print any key that was pressed in entry field
+    from tkeasy import *
+
+    def keydown(event):
+        print ('Key was pressed = ', event.char)
+
+    entry(name="ent",row=0,column=0)
+    hotkey("<KeyPress>",command=keydown)
+
+    app_loop()
+    ```
+
 * **quit**<br/>
     For destroy window.
     ```python

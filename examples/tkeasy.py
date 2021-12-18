@@ -6,7 +6,7 @@ memory = {}
 
 #version
 def version():
-    return "Version 0.9.3"
+    return "Version 0.9.4"
 
 #new window
 def new_window(**kwargs):
@@ -433,10 +433,13 @@ def listbox_item_selected(name):
     return memory[name].get("active")
 
 #for change text in text area
-def insert_text(name,text,color,**kwargs):  
+def insert_text(name,text,**kwargs):  
     window = new_window(**kwargs)  
     memory[name].insert(0,text)
-    memory[name].config(fg=color)
+    try:
+        memory[name].config(fg=kwargs["color"])
+    except:
+        memory[name].config(fg="black")
 
 def insert_text_area(name,text,color,**kwargs):
     window = new_window(**kwargs) 

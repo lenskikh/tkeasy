@@ -382,7 +382,7 @@ app_loop()
     insert_text(name,text,color)<br />
     > name = "name" - name of text area that you are used before<br/>
     > text = "text" which you want to insert in a text area<br/>
-    > color = "#323648" color of text
+    > color (optional) = "#323648" color of text. Black color text by default.
     ```python 
     from tkeasy import *
 
@@ -430,7 +430,7 @@ app_loop()
 * **Clear data**<br />
     Clear data in text area or listbox.
     ```python
-    clear_area()
+    clear_area(name="")
     ```
 
 * **Clipboard_in**<br />
@@ -1078,7 +1078,7 @@ app_loop()
     insert_text(name,text,color)<br />
     > name = введите имя, которое вы уже использовали при создании виджета entry. Так обертка будет точно знать в какое поле вставлять<br/>
     > text = текст, который вы хотите добавить<br/>
-    > color = "#323648" цвет текста в HEX или просто используйте его название, например, color = "gray"
+    > color(необязательно) = "#323648" цвет текста в HEX или просто используйте его название, например, color = "gray". Если color не указать, то черный по умолчанию.
     ```python 
     from tkeasy import *
 
@@ -1106,6 +1106,12 @@ app_loop()
 * **Очистка текста в многострочном выводе**<br />
     Используется для создания нового документа. Смотрите пример в wordpad.py<br />
     text_area_clear()<br />
+
+* **Очистка от текста в однострочном окне**<br />
+    ```python
+    clear_area(name="")
+    ```
+    name укажите имя поля, которое хотите отчистить
 
 * **Копирование в буфер обмена**<br />
     Выделенный текст можно скопировать в буфер обмена. Смотрите пример в wordpad.py<br />

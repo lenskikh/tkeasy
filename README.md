@@ -647,9 +647,9 @@ app_loop()
 
 * **Password widget**<br />  
 This widget allows you to insert asterisks instead of letters.<br/>
-> focus - Set the focus so that the widget understands where to insert the asterisks
-> entry_name - entry name of field that you gonna use for password 
-> password_name. - Use only "password" or "confirm password"
+    > focus - Set the focus so that the widget understands where to insert the asterisks<br/>
+    > entry_name - entry name of field that you gonna use for password <br/>
+    > password_name. - Use only "password" or "confirm password"<br/>
 ![Screenshot](/screenshots/password_asterisks.png)<br/>
 See code in example_password.py
 

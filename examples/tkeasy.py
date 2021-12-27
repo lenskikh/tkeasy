@@ -6,7 +6,7 @@ memory = {}
 
 #version
 def version():
-    return "Version 0.9.4"
+    return "Version 0.9.5"
 
 #new window
 def new_window(**kwargs):

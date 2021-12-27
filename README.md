@@ -653,12 +653,16 @@ This widget allows you to insert asterisks instead of letters.<br/>
 ![Screenshot](/screenshots/password_asterisks.png)<br/>
 See code in example_password.py
 
-* **clear password**<br />     
-    clear_password()<br />  
+* **clear password**<br />   
+    ```python  
+    clear_password()
+    ```
     Erases the password from memory
 
 * **clear confirm password**<br />  
+    ```python  
     clear_confirm_password()<br /> 
+    ```
     Erases the confirm password from memory
 
 * **Get a password**<br /> 

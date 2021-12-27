@@ -117,6 +117,8 @@ def get_info(name):
         #ask file or folder
         if name == "file" or name == "folder" or name == "save":
             return memory[name]
+        elif name == "password" or "confirm":
+            return memory[name]
         else:
             #entry,checkbox,radiobox
             return memory[name].get()
@@ -305,6 +307,24 @@ def entry(name,row,column,**kwargs):
         width = width_entry(**kwargs))
     makegrid(memory[name],row,column,**kwargs)
 
+def password(event,focus,entry_name,password_name):
+    try:
+        memory[password_name]
+    except:
+        memory[password_name] = ""
+
+    if memory[entry_name] == focus:
+        memory[password_name]+= event.char
+        x = len(memory[password_name])        
+        clear_area(name=entry_name)
+        insert_text(name=entry_name,text=x*"*")    
+
+def clear_password():
+    memory["password"] = ""
+    
+def clear_confirm_password():
+    memory["confirm password"] = "" 
+
 def checkbox(name,text,row,column,**kwargs):
     window = new_window(**kwargs)
     frame = frames(**kwargs)
@@ -447,6 +467,7 @@ def insert_text_area(name,text,color,**kwargs):
     memory[name].config(fg=color)
 
 def focus(name):
+    #set focus on specific widget
     memory[name].focus()
 
 def msg_box(title,message): 

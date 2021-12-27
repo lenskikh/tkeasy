@@ -645,6 +645,30 @@ app_loop()
     app_loop()
     ```
 
+* **Password widget**<br />  
+    This widget allows you to insert asterisks instead of letters.<br/>
+    > focus - Set the focus so that the widget understands where to insert the asterisks
+    > entry_name - entry name of field that you gonna use for password 
+    > password_name. - Use only "password" or "confirm password"
+    ![Screenshot](/screenshots/password_asterisks.png)<br/>
+    See code in example_password.py
+
+* **clear password**<br />     
+    clear_password()<br />  
+    Erases the password from memory
+
+* **clear confirm password**<br />  
+    clear_confirm_password()<br /> 
+    Erases the confirm password from memory
+
+* **Get a password**<br /> 
+    Retrieves the user's password from memory<br /> 
+    password = get_info("password")<br />
+
+* **Get the confirmed password**<br /> 
+    Retrieves the user's confirmed password from memory<br /> 
+    confirm password = get_info("confirm password")<br />
+
 * **quit**<br/>
     For destroy window.
     ```python
@@ -1292,6 +1316,31 @@ app_loop()
 
     <Return> клавиша Enter.
     ```
+
+* **Пароль - виджет**<br />  
+    Вводит звездочки в поле для пароля<br/>
+    > focus - Установите фокус, чтобы виджет понимал в каком поле данный момент вводится пароль
+    > entry_name - Укажите имя поля ввода куда виджет будет вставлять звездочки
+    > password_name. - Используйте две переменных для пароля "password" or "confirm password"
+    ![Screenshot](/screenshots/password_asterisks.png)<br/>
+   Полный код смотрите в example_password.py
+
+* **Стереть пароль**<br />     
+    clear_password()<br />  
+    Стирает пароль из памяти
+
+* **Стереть подтвержденный пароль**<br />  
+    clear_confirm_password()<br /> 
+    Стирает подтвержденный пароль из памяти. 
+
+* **Получить пароль**<br /> 
+    Получить пароль из памяти <br /> 
+    password = get_info("password")<br />
+
+* **Получить подтвержденный пароль**<br /> 
+    Получить подтвержденный пароль из памяти<br /> 
+    confirm password = get_info("confirm password")<br />
+
     
 * **Завершение**<br/>
     Выход, закрытие приложения. Часто используется для вверхнего меню <br/>

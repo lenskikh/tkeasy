@@ -661,7 +661,7 @@ See code in example_password.py
 
 * **clear confirm password**<br />  
     ```python  
-    clear_confirm_password()<br /> 
+    clear_confirm_password()
     ```
     Erases the confirm password from memory
 
@@ -1323,28 +1323,35 @@ app_loop()
 
 * **Пароль - виджет**<br />  
     Вводит звездочки в поле для пароля<br/>
-    > focus - Установите фокус, чтобы виджет понимал в каком поле данный момент вводится пароль
-    > entry_name - Укажите имя поля ввода куда виджет будет вставлять звездочки
+    > focus - Установите фокус, чтобы виджет понимал в каком поле данный момент вводится пароль<br/>
+    > entry_name - Укажите имя поля ввода куда виджет будет вставлять звездочки<br/>
     > password_name. - Используйте две переменных для пароля "password" or "confirm password"
     ![Screenshot](/screenshots/password_asterisks.png)<br/>
    Полный код смотрите в example_password.py
 
-* **Стереть пароль**<br />     
-    clear_password()<br />  
+* **Стереть пароль**<br />   
+    ```python
+    clear_password()
+    ```  
     Стирает пароль из памяти
 
 * **Стереть подтвержденный пароль**<br />  
-    clear_confirm_password()<br /> 
+    ```python
+    clear_confirm_password()
+    ```
     Стирает подтвержденный пароль из памяти. 
 
 * **Получить пароль**<br /> 
     Получить пароль из памяти <br /> 
-    password = get_info("password")<br />
+    ```python
+    password = get_info("password")
+    ```
 
 * **Получить подтвержденный пароль**<br /> 
     Получить подтвержденный пароль из памяти<br /> 
-    confirm password = get_info("confirm password")<br />
-
+    ```python
+    confirm password = get_info("confirm password")
+    ```
     
 * **Завершение**<br/>
     Выход, закрытие приложения. Часто используется для вверхнего меню <br/>

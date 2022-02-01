@@ -109,11 +109,11 @@ def config(**kwargs):
     except:
         pass
 
-def get_password(name):
-    return memory[name]
+def get_password():
+    return memory["password"]
 
-def get_confirm_password(name):
-    return memory[name]
+def get_confirm_password():
+    return memory["confirm password"]
 
 def get_info(name):
     try:

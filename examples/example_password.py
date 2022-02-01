@@ -11,7 +11,7 @@ def keydown(event):
     password(event,focus,"ent2","confirm password")
 
 def match_password():
-    if get_password("password") != get_confirm_password("confirm password"):
+    if get_password() != get_confirm_password():
         clear_area(name="ent2")
         msg_box_warning("warning","The password doesn't match!")
         clear_confirm_password()

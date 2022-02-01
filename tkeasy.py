@@ -108,20 +108,18 @@ def config(**kwargs):
         memory[window].iconbitmap(icon)
     except:
         pass
-    
+
+def get_password(name):
+    return memory[name]
+
+def get_confirm_password(name):
+    return memory[name]
+
 def get_info(name):
     try:
-        #text area 
-        return memory[name].get("1.0", 'end')
+        return memory[name].get()
     except:
-        #ask file or folder
-        if name == "file" or name == "folder" or name == "save":
-            return memory[name]
-        elif name == "password" or "confirm":
-            return memory[name]
-        else:
-            #entry,checkbox,radiobox
-            return memory[name].get()
+        return memory[name].get("1.0", 'end')
 
 def move_window(event,**kwargs):
     window = new_window(**kwargs) 

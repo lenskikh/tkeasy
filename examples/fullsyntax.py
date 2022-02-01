@@ -12,11 +12,6 @@ def info():
     print(get_info("scale")) #slider
     print(get_info("radiobox"))
     print(get_info("area 1"))
-    try:
-       print(text_area_select("area 1"))
-    except:
-        pass
-
 
 def open_in_menu():
     print(select_file())

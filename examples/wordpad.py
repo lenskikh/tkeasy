@@ -4,7 +4,7 @@ title("wordpad")
 config(size="250x170")
 
 def new_file():
-    text_area_clear("area 2")
+    clear_area("area 2")
     
 def open_in_menu():
     print(select_file())

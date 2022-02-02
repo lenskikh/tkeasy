@@ -9,3 +9,5 @@ def update():
     print(x)
 
 button(text="+1",command=update,row=0,column=0)
+
+app_loop()

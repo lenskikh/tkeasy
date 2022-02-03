@@ -193,12 +193,19 @@ def pady(**kwargs):
         pady = 2
     return pady
 
-def width_entry(**kwargs):
+def width_settings(**kwargs):
     try:
         width = kwargs["width"]
     except:
-        width = 20
+        width = 30
     return width
+
+def height_settings(**kwargs):
+    try:
+        height = kwargs["height"]
+    except:
+        height = 10
+    return height
 
 def label_font(**kwargs):
     try:
@@ -302,7 +309,7 @@ def entry(name,row,column,**kwargs):
     window = new_window(**kwargs)
     frame = frames(**kwargs)
     memory[name] = Entry(memory[frame],
-        width = width_entry(**kwargs))
+        width = width_settings(**kwargs))
     makegrid(memory[name],row,column,**kwargs)
 
 def password(event,focus,entry_name,password_name):
@@ -382,8 +389,8 @@ def text_area(name,row,column,**kwargs):
     frame = frames(**kwargs)
     memory[name] = Text(memory[frame],
         wrap = WORD,
-        height = 10, 
-        width = 30,
+        height = height_settings(**kwargs), 
+        width = width_settings(**kwargs),
         background = "grey95")
     makegrid(memory[name],row,column,**kwargs)
 
@@ -393,8 +400,8 @@ def text_area_scroll(name,row,column,**kwargs):
     frame = frames(**kwargs)
     memory[name] = scrolledtext.ScrolledText(memory[frame],
         wrap = WORD,
-        height = 10, 
-        width = 30,
+        height = height_settings(**kwargs), 
+        width = width_settings(**kwargs),
         background = "grey95")
     makegrid(memory[name],row,column,**kwargs)
 

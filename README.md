@@ -351,6 +351,8 @@ app_loop()
     > scroll looks ugly on some OS, use text_area() if text is short.<br/>
     > window (*optional*) = "name"<br/>    
     > name = "name" - name of text area<br/>
+    > height = "height" - size of text area by height<br/>
+    > width = "width" - size of text area by width<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 

@@ -66,7 +66,7 @@ app_loop()
     > border(*optional*) = "False". "True" by default.<br/>
     ```python
     from tkeasy import *
-    config(size="300x300",bgcolor="white")
+    config(size="300x300",background="green")
     app_loop()
     ```
     OR
@@ -778,13 +778,13 @@ app_loop()
         Наличие рамки вокруг окна.
     ```python
     from tkeasy import *
-    config(size="300x300",bgcolor="white")
+    config(size="300x300",background="green")
     app_loop()
     ```
     ИЛИ
     ```python
     from tkeasy import *
-    config('200x150+400+300')
+    config('200x150+400+300',background="green)
     app_loop()
     ```
 

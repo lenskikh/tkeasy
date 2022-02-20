@@ -197,14 +197,14 @@ def width_settings(**kwargs):
     try:
         width = kwargs["width"]
     except:
-        width = 30
+        width = None
     return width
 
 def height_settings(**kwargs):
     try:
         height = kwargs["height"]
     except:
-        height = 10
+        height = None
     return height
 
 def label_font(**kwargs):
@@ -288,7 +288,9 @@ def label(text,row,column,**kwargs):
         bg = background(**kwargs),
         justify = justification(**kwargs),
         font = label_font(**kwargs),
-        wrap = label_length(**kwargs))
+        wrap = label_length(**kwargs),
+        width=width_settings(**kwargs),
+        height=height_settings(**kwargs))
     makegrid(memory["label"],row,column,**kwargs)
 
 def label_click():

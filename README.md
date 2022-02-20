@@ -110,6 +110,8 @@ app_loop()
     > colortext (*optional*) = "red" (You can use hex color instead)<br/>
     > background (*optional*) = "#241e14" (You can use hex color)<br/>
     > font (*optional*) = "Times", 13 (font in quotation marks, size of font after comma)<br/>
+    > height (*optional*) = height of the height<br/>
+    > width (*optional*) = width of the height<br/>
     > justify (*optional*) = alignment for text in label, "center" by default<br/>
     > wrap (*optional*) =  wrap for text, 600 by default<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
@@ -784,7 +786,7 @@ app_loop()
     ИЛИ
     ```python
     from tkeasy import *
-    config('200x150+400+300',background="green)
+    config('200x150+400+300',background="green")
     app_loop()
     ```
 
@@ -840,6 +842,8 @@ app_loop()
     > colortext (*необязательно*) = "red" (Можете писать цвет в HEX или просто писать название цвета "black" или "green")<br/>
     > background (*необязательно*) = "#241e14" (Можете писать цвет в HEX)<br/>
     > font (*необязательно*) = "Times", 13 (шрифт указываете в кавычках, лучше использовать тот, который есть на большинстве компьютеров. После запятой указываете размер шрифта)<br/>
+    > height (*необязательно*) высота виджета <br/>
+    > width (*необязательно*) ширина виджета <br/>
     > justify (*необязательно*) = выравнивание текста в текстовом виджете, "center" по умолчанию<br/>
     > wrap (*необязательно*) =  переносы в текстовом виджете, 600 пикселей по умолчанию<br/>
     > row = номер ряда расположения виджета в сетке<br/>

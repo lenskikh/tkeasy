@@ -6,7 +6,7 @@ memory = {}
 
 #version
 def version():
-    return "Version 0.9.5"
+    return "Version 0.9.6"
 
 #new window
 def new_window(**kwargs):
@@ -311,7 +311,8 @@ def entry(name,row,column,**kwargs):
     window = new_window(**kwargs)
     frame = frames(**kwargs)
     memory[name] = Entry(memory[frame],
-        width = width_settings(**kwargs))
+        width = width_settings(**kwargs),
+        justify = justification(**kwargs))
     makegrid(memory[name],row,column,**kwargs)
 
 def password(event,focus,entry_name,password_name):

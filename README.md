@@ -322,11 +322,13 @@ app_loop()
     app_loop()   
     ```
 
-* **one-line text input**<br/>
+* **Entry widget**<br/>
     entry(window,name,row,column,sticky,padx,pady)<br/>
+    One-line text input<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of entry<br/>
     > width = The length of the entry widget<br/>
+    > justify (*optional*) = alignment of text in entry widget, "left" by default. Use "left", "right", or "center"<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
     > sticky (*optional*) = "left" or "right" or "center" Сhoose one<br/> 
@@ -1055,11 +1057,14 @@ app_loop()
     Виджет - однострочное поле ввода. Используется для ввода информации. 
     > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
     > name = "имя" по которому get_info() найдет значение, чтобы забрать информацию с этого виджета<br/>
+    > width (*необязательно*) = ширина виджета<br/>
+    > justify (*необязательно*) = выравнивание текста внутри виджета. Используйте "left", "right", или "center"<br/>    
     > row = номер ряда расположения виджета в сетке<br/>
     > column = номер колонки расположения виджета в сетке<br/>
     > sticky (*необязательно*) = приклеивание кнопки внутри ячейки сетки. Укажите "left" или "right" или "center"<br/> 
     > padx (*необязательно*) = отступ от виджета, добавляет пространство по горизонтале.<br/>
     > pady (*необязательно*) = отступ от виджета, добавляет пространство по вертикале   
+
     ```python   
     from tkeasy import *
 

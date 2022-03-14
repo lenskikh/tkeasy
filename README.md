@@ -653,32 +653,12 @@ app_loop()
     ```
 
 * **Password widget**<br />  
-This widget allows you to insert asterisks instead of letters.<br/>
-    > focus - Set the focus so that the widget understands where to insert the asterisks<br/>
-    > entry_name - entry name of field that you gonna use for password <br/>
-    > password_name. - Use only "password" or "confirm password"<br/>
+If you want to show asterisks in entry widget, just add asterisks="*"<br/>
 ![Screenshot](/screenshots/password_asterisks.png)<br/>
 See code in example_password.py
-
-* **clear password**<br />   
-    ```python  
-    clear_password()
+    ```python
+    entry(name="ent",asterisks="*",row=0,column=0)
     ```
-    Erases the password from memory
-
-* **clear confirm password**<br />  
-    ```python  
-    clear_confirm_password()
-    ```
-    Erases the confirm password from memory
-
-* **Get a password**<br /> 
-    Retrieves the user's password from memory<br /> 
-    password = get_info("password")<br />
-
-* **Get the confirmed password**<br /> 
-    Retrieves the user's confirmed password from memory<br /> 
-    confirm password = get_info("confirm password")<br />
 
 * **quit**<br/>
     For destroy window.
@@ -1336,38 +1316,14 @@ app_loop()
     <Return> клавиша Enter.
     ```
 
-* **Пароль - виджет**<br />  
-    Вводит звездочки в поле для пароля<br/>
-    > focus - Установите фокус, чтобы виджет понимал в каком поле данный момент вводится пароль<br/>
-    > entry_name - Укажите имя поля ввода куда виджет будет вставлять звездочки<br/>
-    > password_name. - Используйте две переменных для пароля "password" or "confirm password"
+* **Отображаем звездочки в виджете entry**<br />  
+    Вы можете показывать звездочки во время ввода пароля в виджете entry, для этого просто добавьте asterisks="*"<br/>
     ![Screenshot](/screenshots/password_asterisks.png)<br/>
-   Полный код смотрите в example_password.py
-
-* **Стереть пароль**<br />   
+    Полный пример смотрите в файле example_password.py
     ```python
-    clear_password()
-    ```  
-    Стирает пароль из памяти
-
-* **Стереть подтвержденный пароль**<br />  
-    ```python
-    clear_confirm_password()
+    entry(name="ent",asterisks="*",row=0,column=0)
     ```
-    Стирает подтвержденный пароль из памяти. 
-
-* **Получить пароль**<br /> 
-    Получить пароль из памяти <br /> 
-    ```python
-    password = get_info("password")
-    ```
-
-* **Получить подтвержденный пароль**<br /> 
-    Получить подтвержденный пароль из памяти<br /> 
-    ```python
-    confirm password = get_info("confirm password")
-    ```
-    
+  
 * **Завершение**<br/>
     Выход, закрытие приложения. Часто используется для вверхнего меню <br/>
     > quit

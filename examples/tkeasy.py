@@ -6,7 +6,7 @@ memory = {}
 
 #version
 def version():
-    return "Version 0.9.6"
+    return "Version 0.97"
 
 #new window
 def new_window(**kwargs):
@@ -228,6 +228,13 @@ def activebg(**kwargs):
         return activebg
     except:
         pass
+
+def inner_border(**kwargs):
+    try: 
+        inner_border = kwargs["inner_border"]
+        return inner_border
+    except:
+        pass
     
 def clipboard_in(selected,**kwargs):
     window = new_window(**kwargs) 
@@ -312,6 +319,7 @@ def entry(name,row,column,**kwargs):
     frame = frames(**kwargs)
     memory[name] = Entry(memory[frame],
         width = width_settings(**kwargs),
+        bd = inner_border(**kwargs),
         justify = justification(**kwargs))
     makegrid(memory[name],row,column,**kwargs)
 

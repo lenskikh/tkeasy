@@ -327,7 +327,8 @@ app_loop()
     One-line text input<br/>
     > window (*optional*) = "name"<br/>
     > name = "name" - name of entry<br/>
-    > width = The length of the entry widget<br/>
+    > width(*optional*) = The length of the entry widget<br/>
+    > inner_border(*optional*) = border inside a widget<br/>
     > justify (*optional*) = alignment of text in entry widget, "left" by default. Use "left", "right", or "center"<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
@@ -1058,6 +1059,7 @@ app_loop()
     > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
     > name = "имя" по которому get_info() найдет значение, чтобы забрать информацию с этого виджета<br/>
     > width (*необязательно*) = ширина виджета<br/>
+    > inner_border(*необязательно*) = внутренняя граница внутри виджета<br/>    
     > justify (*необязательно*) = выравнивание текста внутри виджета. Используйте "left", "right", или "center"<br/>    
     > row = номер ряда расположения виджета в сетке<br/>
     > column = номер колонки расположения виджета в сетке<br/>

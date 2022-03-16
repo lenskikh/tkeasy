@@ -6,7 +6,7 @@ memory = {}
 
 #version
 def version():
-    return "Version 0.98"
+    return "Version 0.99"
 
 #new window
 def new_window(**kwargs):
@@ -385,9 +385,10 @@ def text_area(name,row,column,**kwargs):
     frame = frames(**kwargs)
     memory[name] = Text(memory[frame],
         wrap = WORD,
+        bd = inner_border(**kwargs),
+        bg = background(**kwargs),        
         height = height_settings(**kwargs), 
-        width = width_settings(**kwargs),
-        background = "grey95")
+        width = width_settings(**kwargs))
     makegrid(memory[name],row,column,**kwargs)
 
 #Works slowly at big text (in macos)
@@ -396,6 +397,8 @@ def text_area_scroll(name,row,column,**kwargs):
     frame = frames(**kwargs)
     memory[name] = scrolledtext.ScrolledText(memory[frame],
         wrap = WORD,
+        bd = inner_border(**kwargs),
+        bg = background(**kwargs),        
         height = height_settings(**kwargs), 
         width = width_settings(**kwargs),
         background = "grey95")

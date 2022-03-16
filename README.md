@@ -328,7 +328,8 @@ app_loop()
     > window (*optional*) = "name"<br/>
     > name = "name" - name of entry<br/>
     > width(*optional*) = The length of the entry widget<br/>
-    > inner_border(*optional*) = border inside a widget<br/>
+    > inner_border (*optional*) = border inside of the widget<br/>
+    > background (*optional*) = background color of the widget<br/>
     > justify (*optional*) = alignment of text in entry widget, "left" by default. Use "left", "right", or "center"<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
     > column = 0 (*Number. Without brackets and quotation marks*)<br/>
@@ -356,6 +357,8 @@ app_loop()
     > scroll looks ugly on some OS, use text_area() if text is short.<br/>
     > window (*optional*) = "name"<br/>    
     > name = "name" - name of text area<br/>
+    > inner_border (*optional*) = border inside of the widget<br/>
+    > background (*optional*) = background color of the widget<br/>    
     > height = "height" - size of text area by height<br/>
     > width = "width" - size of text area by width<br/>
     > row = 0 (*Number. Without brackets and quotation marks*)<br/>
@@ -1039,7 +1042,8 @@ app_loop()
     > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
     > name = "имя" по которому get_info() найдет значение, чтобы забрать информацию с этого виджета<br/>
     > width (*необязательно*) = ширина виджета<br/>
-    > inner_border(*необязательно*) = внутренняя граница внутри виджета<br/>    
+    > inner_border(*необязательно*) = внутренняя граница внутри виджета<br/>  
+    > background (*необязательно*) = фон виджета<br/>  
     > justify (*необязательно*) = выравнивание текста внутри виджета. Используйте "left", "right", или "center"<br/>    
     > row = номер ряда расположения виджета в сетке<br/>
     > column = номер колонки расположения виджета в сетке<br/>
@@ -1067,6 +1071,8 @@ app_loop()
     Виджет, который ожидает ввод больше чем в одну строку. 
     > window (*необязательно*) = "имя". window используется для отрытия новых окн. Если у вас нет таковых, то не указываете window".<br/>
     > name = "имя" по которому get_info() найдет значение, чтобы забрать информацию с этого виджета<br/>
+    > inner_border(*необязательно*) = внутренняя граница внутри виджета<br/>  
+    > background (*необязательно*) = фон виджета<br/>      
     > width = ширина текстового поля<br/>
     > height = высота текстового поля<br/>
     > row = номер ряда расположения виджета в сетке<br/>

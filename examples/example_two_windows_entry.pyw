@@ -1,10 +1,10 @@
 from tkeasy import *
 
 def info():
-    print(get_info("entry 1"))
+    msg_box_warning("INFO 1",get_info("entry 1"))
 
 def info2():
-    print(get_info("entry 2"))
+    msg_box_warning("INFO 2",get_info("entry 2"))
 
 frame_1 = {"name_of_frame":"frame_1","x":0,"y":0,"border_thickness":1,
               "border_color":"#7cc5ba", "background":"lightyellow","padx":0,"pady":0}

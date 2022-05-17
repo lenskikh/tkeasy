@@ -8,8 +8,7 @@ text = glob.glob("*.*")
 
 def show_info():
     pth = listbox_item_selected("listbox")
-    #print full path
-    print(os.path.abspath(pth))
+    msg_box_warning("PATH", os.path.abspath(pth))
    
 listbox(name="listbox",height=30,width=35,row=1,column=0,text=text)
 

@@ -16,7 +16,7 @@ def info():
 def open_in_menu():
     print(select_file())
 
-config(size="300x600+500+200",background="#7cc5ba",icon="icon.ico")
+config(size="258x700+500+200",background="#7cc5ba",icon="icon.ico")
 #config(size="600x300+500+200",background="brown",icon="icon.ico",border="False")
 
 label(frame=frame_one,text=" Fill the form ",colortext="white",background="brown",justification="left",font=14,wrap="300",row=0,column=0,sticky="left",padx=5,pady=5)
@@ -33,7 +33,7 @@ radiobox(frame=frame_one,text="choice 1",background="#7cc5ba",activebg="yellow",
 radiobox(frame=frame_one,text="choice 2",background="#7cc5ba",activebg="yellow",sticky="left",row=7,column=0,padx=5,pady=5)
 radiobox(frame=frame_one,text="choice 3",background="#7cc5ba",activebg="yellow",sticky="left",row=8,column=0,padx=5,pady=5)
 
-text_area(frame=frame_one,name="area 1",row=10,column=0,padx=5,pady=5)
+text_area(frame=frame_one,name="area 1",width=30,height=20,row=10,column=0,padx=5,pady=5)
 
 button(frame=frame_one,text="Button",command=info,row=11,column=0,sticky="left",padx=5,pady=5)
 

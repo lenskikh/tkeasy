@@ -4,7 +4,7 @@ from tkeasy import *
 title(text="Ask file")
 
 def showfile():
-    print (select_file())
+    msg_box_warning("PATH",select_file())
 
 label(text="ASK FILE",colortext="white",
       background="BLUE",row=0,column=0)

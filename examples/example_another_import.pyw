@@ -1,7 +1,7 @@
-from tkeasy import entry,button,get_info,app_loop
+from tkeasy import entry,button,get_info,msg_box_warning,app_loop
 
 def frominput():
-    print(get_info("entry 1"))
+    msg_box_warning("Info",get_info("entry 1"))
 
 entry(name="entry 1",row=0,column=0)
 

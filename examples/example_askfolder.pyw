@@ -4,7 +4,7 @@ from tkeasy import *
 title(text="Ask Folder")
 
 def askfolder():
-    print(select_folder())
+    msg_box_warning("PATH",select_folder())
 
 label(text="ASK FOLDER",colortext="white",
       background="green",row=0,column=0)

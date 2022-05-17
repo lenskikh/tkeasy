@@ -12,6 +12,9 @@ cursor = conn.cursor()
 try:
     cursor.execute('''CREATE TABLE info
              (lines text)''')
+
+    cursor.execute('''CREATE TABLE info2
+             (lines text)''')             
 except:
     pass
 

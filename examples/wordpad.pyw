@@ -1,3 +1,4 @@
+from turtle import width
 from tkeasy import *
 
 title("wordpad")
@@ -33,6 +34,6 @@ tabs = {"File":{"New":new_file,"Open":open_in_menu,"Save":save,"Save as":save,"C
 
 top_menu(tabs)
 
-text_area(name="area 2", row=0,column=0)
+text_area(name="area 2",width=30,height=10,row=0,column=0)
 
 app_loop()

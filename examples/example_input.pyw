@@ -3,7 +3,7 @@ from tkeasy import *
 title("Input")
 
 def info():
-    print(get_info("ent1"))  #entry
+    msg_box_warning("INFO", get_info("ent1"))
 
 entry(name="ent1",width=20,row=1,column=0,
       sticky="left",padx=5,pady=5)

@@ -772,7 +772,7 @@ app_loop()
     ИЛИ
     ```python
     from tkeasy import *
-    config('200x150+400+300',background="green")
+    config(size='200x150+400+300',background="green")
     app_loop()
     ```
 

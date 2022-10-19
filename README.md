@@ -72,7 +72,7 @@ app_loop()
     OR
     ```python
     from tkeasy import *
-    config('200x150+400+300')
+    config(size='200x150+400+300')
     app_loop()
     ```
     > 400 shifted on X-axis and 300 shifted on Y-axis

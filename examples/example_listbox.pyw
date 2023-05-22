@@ -1,17 +1,19 @@
 import os
 import glob
-from tkeasy import *
+from tkeasy import TKeasy
 
-title("ListBox")
-config(size="200x600")
-text = glob.glob("*.*")
+gui = TKeasy()
+gui.Title("ListBox")
+gui.config(size="200x600")
+list = glob.glob("*.*")
 
 def show_info():
-    pth = listbox_item_selected("listbox")
-    msg_box_warning("PATH", os.path.abspath(pth))
+    pth = gui.listbox_item_selected("Listbox")
+    gui.msg_box_warning("PATH", os.path.abspath(pth))
    
-listbox(name="listbox",height=30,width=35,row=1,column=0,text=text)
+gui.listbox(height=30,width=35, padx = 5, pady = 5)
+gui.listbox_insert(name= "Listbox", text = list)
 
-button(text="Get selected",command=show_info,row=0,column=0)
+gui.button(text="Get selected",command=show_info,row=1)
 
-app_loop()
+gui.loop()

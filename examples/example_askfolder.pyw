@@ -1,15 +1,15 @@
 #ask folder - gui widget
-from tkeasy import *
+from tkeasy import TKeasy
 
-title(text="Ask Folder")
+gui = TKeasy()
+
+gui.Title("Ask Folder")
 
 def askfolder():
-    msg_box_warning("PATH",select_folder())
+    gui.msg_box_warning("PATH",gui.select_folder())
 
-label(text="ASK FOLDER",colortext="white",
-      background="green",row=0,column=0)
+gui.label(text="ASK FOLDER",fg="white", background="green", padx = 5)
 
-button(text='CHOOSE FOLDER',command=askfolder,
-       row=1,column=0)
+gui.button(text='CHOOSE FOLDER',command=askfolder, padx = 5, row=1,column=0)
 
-app_loop()
+gui.loop()

@@ -1,39 +1,33 @@
-from tkeasy import *
-import random
+from tkeasy import TKeasy
 
-title(text="The first window")
+gui = TKeasy()
 
+gui.Title("The first window")
+gui.config(bg = "white")
 
 
 def info():
-    second = str(random.random())
-    frame2 = {"name_of_frame":str(random.random()),
-              "x":5,"y":5,"border_thickness":1,
-              "border_color":"#7cc5ba",
-              "background":"white",
-              "padx":5,"pady":5}
+    gui2 = TKeasy()
+    gui2.Title("Info")
+    gui2.config(size="160x78", bg = "white")
     
-    title(window=second,text="Info")
-    config(window=second,size="160x78",background="white")
-    
-    label(window=second,frame=frame2,text=" Gender ",background="green",colortext="white",row=0,column=0)
-    label(window=second,frame=frame2,text=get_info("gender var"),
-      background="grey90",row=0,column=1)
-    label(window=second,frame=frame2,text=" Age ",
-      background="green",colortext="white",row=1,column=0)    
-    label(window=second,frame=frame2,text=get_info("age var"),
-      background="grey90",row=1,column=1)    
+    gui2.label(text=" Gender ",background="green",fg ="white")
+    gui2.label(text=gui.get_info("gender_var"),bg ="grey90",column=1)
+    gui2.label(text=" Age ",background="green",fg ="white",row=1)    
+    gui2.label(text=gui.get_info("age_var"), bg ="grey90",row=1,column=1)    
+    gui2.label(text=" Hair color ",background="green",fg ="white",row=2)    
+    gui2.label(text=gui.get_info("hair"), bg ="grey90",row=2,column=1)        
 
-choices = ["=","Female","Male"]
-dropdown_list(variable="gender var",choices=choices,
-             default="Gender",row=0,column=0)
+choices = ["genger","Female","Male"]
+gui.dropdown_list(variable="gender_var",choices=choices, bg="green", fg = "white")
 
-age = ["01-06","7-14","15-23","24-31","31-40","41-55","56-70","71-85","86-105"]
-dropdown_list(variable="age var",choices=age,
-             default="Age",row=1,column=0)
+age = ["age","01-06","7-14","15-23","24-31","31-40","41-55","56-70","71-85","86-105"]
+gui.dropdown_list(variable="age_var",choices=age,row=1,bg="red", fg = "white")
 
-button(text="Get Info",
-       command=info,row=2,column=0)
+hair = ["color hair","brown hair","red hair","blonde hair","gray hair"]
+gui.dropdown_list(variable="hair",choices=hair,row=2,bg="yellow", fg = "black")
+
+gui.button(text="Get Info",command=info,row=3, bg  = "lightgreen")
 
 #you need use it if run code in vsc
-app_loop()
+gui.loop()

@@ -1,10 +1,11 @@
-from tkeasy import *
+from tkeasy import TKeasy
+
+gui = TKeasy()
 
 def color():
-    color = colorpicker()
-    msg_box_warning("PATH","Color is " + color)
+    color = gui.colorpicker()
+    gui.msg_box_warning("PATH","Color is " + color)
 
-button(text="Choose color", command=color,
-        row=0,column=0,padx=5,pady=5)
+gui.button(text="Choose color", command=color)
 
-app_loop()
+gui.loop()

@@ -1,10 +1,12 @@
-from tkeasy import *
+from tkeasy import TKeasy
 
-title("Photos")
+gui = TKeasy()
 
-photo("1.png",0,0)
-photo("2.png",1,0)
-photo("3.png",0,1)
-photo("4.png",1,1)
+gui.Title("Photos")
 
-app_loop()
+gui.photo("1.png")
+gui.photo("2.png",row = 1)
+gui.photo("3.png",column = 1)
+gui.photo("4.png",row = 1,column = 1)
+
+gui.loop()

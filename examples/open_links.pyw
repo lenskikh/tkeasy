@@ -1,21 +1,20 @@
-from tkeasy import *
+from tkeasy import TKeasy
 import webbrowser
+
+gui = TKeasy()
 
 def open_url(link):
     webbrowser.open_new_tab(link)
 
-title("Open links")
+gui.Title("Open links")
     
-label(text="Python official website",
-      colortext="blue",row=0,column=0)
-label_click().bind("<Button-1>",lambda url:open_url("https://www.python.org/"))
+gui.label(text="Python official website", fg="blue",row=0)
+gui.label_click().bind("<Button-1>",lambda url:open_url("https://www.python.org/"))
 
-label(text="Google official website",
-      colortext="blue",row=1,column=0)
-label_click().bind("<Button-1>",lambda url:open_url("https://www.google.com"))
+gui.label(text="Google official website", fg="blue",row=1)
+gui.label_click().bind("<Button-1>",lambda url:open_url("https://www.google.com"))
 
-label(text="Gmail website",
-      colortext="blue",row=2,column=0)
-label_click().bind("<Button-1>",lambda url:open_url("https://www.gmail.com"))
+gui.label(text="Gmail website", fg="blue",row=2)
+gui.label_click().bind("<Button-1>",lambda url:open_url("https://www.gmail.com"))
 
-app_loop()
+gui.loop()

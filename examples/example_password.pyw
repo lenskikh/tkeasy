@@ -1,24 +1,25 @@
-from tkeasy import *
+from tkeasy import TKeasy
 
-title("Check passwords")
+gui = TKeasy()
 
-config(size="300x100")
+gui.Title("Check passwords")
+
+gui.config(size="300x100")
 
 def match_password():
-    if get_info("ent") != get_info("ent2"):
-        clear_area(name="ent2")
-        msg_box_warning("warning","The password doesn't match!")
-        print(get_info("ent"))
+    if gui.get_info("ent") != gui.get_info("ent2"):
+        gui.clear_area("ent2")
+        gui.msg_box_warning("warning","The password doesn't match!")
     else:
-        photo(file="check.png",row=0,column=2)  
-        photo(file="check.png",row=1,column=2) 
+        gui.photo(file="check.png",column=2)  
+        gui.photo(file="check.png",row=1,column=2) 
 
-label(text="Password",sticky="left",row=0,column=0)
-label(text="Confirm password",sticky="left",row=1,column=0)
+gui.label(text="Password")
+gui.label(text="Confirm password", row=1)
 
-entry(name="ent",asterisks="*",row=0,column=1)
-entry(name="ent2",asterisks="*",row=1,column=1)
+gui.entry(name="ent",show = "*", column=1)
+gui.entry(name="ent2",show = "*", row=1, column=1)
 
-button(text="Check password",command=match_password, row=2,column=1)
+gui.button(text="Check password",command=match_password, row=2,column=1)
 
-app_loop()
+gui.loop()

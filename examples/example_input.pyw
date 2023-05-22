@@ -1,13 +1,14 @@
-from tkeasy import *
+from tkeasy import TKeasy
 
-title("Input")
+gui = TKeasy()
+
+gui.Title("Input")
 
 def info():
-    msg_box_warning("INFO", get_info("ent1"))
+    gui.msg_box_warning("INFO", gui.get_info("ent1"))
 
-entry(name="ent1",width=20,row=1,column=0,
-      sticky="left",padx=5,pady=5)
+gui.entry(name="ent1",width=20, padx = 5, pady =5)
 
-button(text="Button",command=info,row=11,column=0,sticky="left",padx=5,pady=5)
+gui.button(text="Button",command=info,row=1)
 
-app_loop()
+gui.loop()

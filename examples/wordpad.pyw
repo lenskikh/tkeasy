@@ -1,39 +1,45 @@
 from turtle import width
-from tkeasy import *
+from tkeasy import TKeasy
 
-title("wordpad")
-config(size="250x170")
+gui = TKeasy()
+
+gui.Title("wordpad")
+gui.config(size="250x170")
 
 def new_file():
-    clear_area("area 2")
+    gui.clear_area("area 2")
     
 def open_in_menu():
-    print(select_file())
+    selected = gui.select_file()
+    with open(selected, 'r', encoding = 'utf-8') as filehandle:
+        read_file = filehandle.read()
+
+    gui.insert_text_area(name = "area 2", text = read_file)
 
 def save():
-    name_for_save = save_file()
+    name_for_save = gui.save_file()
     text_file = open(name_for_save, 'w')
-    text_file.write(get_info("area 2"))
+    text_file.write(gui.get_info("area 2"))
     text_file.close()
 
 def copy():
-    selected = text_area_select("area 2")
-    clipboard_in(selected)
+    selected = gui.text_area_select("area 2")
+    gui.clipboard_in(selected)
 
 def cut():
-    selected = text_area_select("area 2")
-    clipboard_in(selected)
-    delete_selected("area 2")
+    selected = gui.text_area_select("area 2")
+    gui.clipboard_in(selected)
+    gui.delete_selected("area 2")
 
 def paste():
-    paste_text("area 2")
+    gui.paste_text("area 2")
 
 tabs = {"File":{"New":new_file,"Open":open_in_menu,"Save":save,"Save as":save,"Close":new_file,"---":"---","Exit":quit},
 "Edit":{"Undo":"False","---":"---","Cut":cut,"Copy":copy,"Paste":paste,"Delete":"False","Select All":"False"},
 "Help":{"Help Index":"False","About...":"False","Help":"False"}}
 
-top_menu(tabs)
+gui.top_menu(tabs)
 
-text_area(name="area 2",width=30,height=10,row=0,column=0)
+gui.text_area(name="area 2",width=30,height=10,row=0,column=0)
 
-app_loop()
+gui.loop()

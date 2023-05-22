@@ -1,15 +1,15 @@
 #ask folder - gui widget
-from tkeasy import *
+from tkeasy import TKeasy
 
-title(text="Ask file")
+gui = TKeasy()
+
+gui.Title("Ask file")
 
 def showfile():
-    msg_box_warning("PATH",select_file())
+    gui.msg_box_warning("PATH",gui.select_file())
 
-label(text="ASK FILE",colortext="white",
-      background="BLUE",row=0,column=0)
+gui.label(text="ASK FILE", fg="white", background="BLUE", padx = 5, pady = 5,)
 
-button(text="FILE BROWSER",
-       command=showfile,row=1,column=0)
+gui.button(text="FILE BROWSER", command=showfile, padx = 5, row=1, column=0)
 
-app_loop()
+gui.loop()

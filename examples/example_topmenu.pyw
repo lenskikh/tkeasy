@@ -1,4 +1,6 @@
-from tkeasy import *
+from tkeasy import TKeasy
+
+gui = TKeasy()
 
 def new():
     print("new")
@@ -9,10 +11,10 @@ def save():
 def copy():
     print("copy")
 
-tabs = {"File":{"New":"False","Open":"False","Save":"False","Save as":"False","Close":"False","---":"---","Exit":quit},
-"Edit":{"Undo":"False","---":"---","Cut":"False","Copy":"False","Paste":"False","Delete":"False","Select All":"False"},
+tabs = {"File":{"New":new,"Open":lambda:print("Open"),"Save":save,"Save as":"False","Close":"False","---":"---","Exit":quit},
+"Edit":{"Undo":"False","---":"---","Cut":"False","Copy":copy,"Paste":"False","Delete":"False","Select All":"False"},
 "Help":{"Help Index":"False","About...":"False","Help":"False"}}
 
-top_menu(tabs)
+gui.top_menu(tabs)
 
-app_loop()
+gui.loop()

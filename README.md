@@ -16,7 +16,8 @@ On Ubuntu
     ```python
     sudo apt-get install python3-tk 
     ```
-##What's new in this version?
+
+## What's new in this version?
 
 1. Each widget supports all default widget options of TKinter. You take any parameter from the Tkinter documentation and just use it.
 2. Creating a second window or frame is now easier, more logical and clearer. You will be able to open a second window after closing without any problem.
@@ -33,3 +34,26 @@ gui.label(text="The first window", bg = "white")
 gui.loop()
 ```
 ![Screenshot](/screenshots/thefirst.png)
+
+## Your fisrt GUI program
+
+How to get information from a widget? <br />
+
+Use get_info(name) <br />
+If you use several widgets such as entry, for understand which one to take information from, you need to give a name in each widget inside the brackets. See an axample below.
+
+```python
+from tkeasy import TKeasy
+
+gui = TKeasy()
+
+gui.Title("Input")
+
+def info():
+    gui.msg_box_warning("INFO", gui.get_info("ent1"))
+
+gui.entry(name="ent1",width=20, padx = 5, pady =5)
+gui.button(text="Button",command=info,row=1)
+
+gui.loop()
+```

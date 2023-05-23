@@ -39,7 +39,7 @@ gui.loop()
 
 ## How to get information from a widget? 
 
-** Use get_info(name) **<br />
+**Use get_info(name)**<br />
 
 If you use several widgets such as entry, for understand which one to take information from, you need to give a name in each widget inside the brackets. See an example below.
 
@@ -58,3 +58,18 @@ gui.button(text="Button",command=info,row=1)
 
 gui.loop()
 ```
+
+## Window Configuration
+
+config(size="1x2+3+4") <br />
+1 - width<br />
+2 - hight <br />
+3 - position by X<br />
+4 - postion by  Y<br />
+config(size="widthxhight+posX+posY") <br /><br />
+
+Color of background, you can use hex colors<br />
+config(bg="lightgreen")<br /><br />
+
+Icon of window<br />
+config(icon="icon.ico")

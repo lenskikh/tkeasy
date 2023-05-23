@@ -75,7 +75,7 @@ class TKeasy():
                border:int = None,
                icon:str = None):
         
-        self.window.geometry(size) #correct syntax "300x300"
+        self.window.geometry(size) #correct syntax "300x300+300+300"
         self.window.configure(background=bg)
         self.window.iconbitmap(icon)
 

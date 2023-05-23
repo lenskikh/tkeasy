@@ -3,7 +3,9 @@ from tkeasy import TKeasy
 gui = TKeasy()
 
 gui.Title("ListBox")
-gui.config(size="100x150")
+gui.config(size="50x150+400+100")
+gui.config(bg="lightgreen")
+gui.config(icon="icon.ico")
 
 def clear():
     gui.clear_area("Listbox")

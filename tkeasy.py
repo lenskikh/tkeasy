@@ -2,7 +2,7 @@ import os
 import tkinter as tk
 from tkinter import filedialog, scrolledtext, messagebox, colorchooser
 
-#Version 1.0
+#"Version 1.0"
 
  
 def make_grid(func):
@@ -75,7 +75,7 @@ class TKeasy():
                border:int = None,
                icon:str = None):
         
-        self.window.geometry(size) #correct syntax "300x300"
+        self.window.geometry(size) #correct syntax "300x300+300+300"
         self.window.configure(background=bg)
         self.window.iconbitmap(icon)
 

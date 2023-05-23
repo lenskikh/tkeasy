@@ -39,7 +39,7 @@ def AC():
     gui.insert_text(name="entry 1",text=screen,color="black")
 
 gui.frames (frame = "frame 2", x= 20, y = 50,
-            background = "white",
+            background = "lightgreen",
             highlightthickness = 1,
             highlightbackground = "black",
             padx = 5, pady = 5)

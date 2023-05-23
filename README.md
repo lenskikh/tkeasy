@@ -71,8 +71,11 @@ config(size="widthxhight+posX+posY") <br /><br />
 Color of background, you can use hex colors<br />
 config(bg="lightgreen")<br /><br />
 
-Icon of window<br />
-config(icon="icon.ico")<br />
+Icon of a window<br />
+config(icon="icon.ico")<br /><br />
+
+Border of a window<br />
+config(border = "False")
 
 ```python
 from tkeasy import TKeasy
@@ -83,6 +86,7 @@ gui.Title("ICON")
 gui.config(size="50x150+400+100")
 gui.config(bg="lightgreen")
 gui.config(icon="icon.ico")
+gui.config(border = "False")
 
 gui.loop()
 ```

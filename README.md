@@ -74,7 +74,7 @@ config(bg="lightgreen")<br /><br />
 Icon of a window<br />
 config(icon="icon.ico")<br /><br />
 
-Border of a window<br />
+Border of a window. If you don't specify False, it will default to the standard window border width.<br />
 config(border = "False")
 
 ```python

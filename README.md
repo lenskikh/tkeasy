@@ -22,6 +22,8 @@ On Ubuntu
 1. Each widget supports all default widget options of TKinter. You take any parameter from the Tkinter documentation and just use it.
 2. Creating a second window or frame is now easier, more logical and clearer. You will be able to open a second window after closing without any problem.
 3. Some options are already used by default. If your row or column is zero, then you can leave it. If your program is small, consists of two widgets, for example, a temperature converter, then this approach reduces the code. Or you use one vertical column equal to zero, then you can only specify a row. Other values such as pady are None. 
+<br />
+Since the standard library is used, there are no issues with creating an exe
 
 ## Your fisrt GUI program
 ```python
@@ -37,8 +39,9 @@ gui.loop()
 
 ## How to get information from a widget? 
 
-Use get_info(name) <br />
-If you use several widgets such as entry, for understand which one to take information from, you need to give a name in each widget inside the brackets. See an axample below.
+** Use get_info(name) **<br />
+
+If you use several widgets such as entry, for understand which one to take information from, you need to give a name in each widget inside the brackets. See an example below.
 
 ```python
 from tkeasy import TKeasy

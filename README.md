@@ -35,9 +35,7 @@ gui.loop()
 ```
 ![Screenshot](/screenshots/thefirst.png)
 
-## Your fisrt GUI program
-
-How to get information from a widget? <br />
+## How to get information from a widget? 
 
 Use get_info(name) <br />
 If you use several widgets such as entry, for understand which one to take information from, you need to give a name in each widget inside the brackets. See an axample below.

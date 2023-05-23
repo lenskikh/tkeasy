@@ -74,7 +74,7 @@ config(bg="lightgreen")<br /><br />
 Icon of a window<br />
 config(icon="icon.ico")<br /><br />
 
-Border of a window. If you don't specify False, it will default to the standard window border width.<br />
+Border of a window. If you don't specify "False", it will default to the standard window border width.<br />
 config(border = "False")
 
 ```python
@@ -89,4 +89,24 @@ gui.config(icon="icon.ico")
 gui.config(border = "False")
 
 gui.loop()
+```
+
+## Second or third window
+```python
+from tkeasy import TKeasy
+
+gui = TKeasy()
+
+gui.Title("The first window")
+gui.config(size="300x300")
+
+gui2 = TKeasy()
+
+gui2.Title("The second window")
+gui2.config(size="300x300+300+400")
+
+#packing the first window
+gui.loop()
+#packing the second window
+gui2.loop()
 ```

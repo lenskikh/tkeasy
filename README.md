@@ -91,7 +91,7 @@ gui.config(border = "False")
 gui.loop()
 ```
 
-## Second or third window
+## The second window
 ```python
 from tkeasy import TKeasy
 
@@ -109,4 +109,39 @@ gui2.config(size="300x300+300+400")
 gui.loop()
 #packing the second window
 gui2.loop()
+```
+
+## The second frame
+
+What are frames for? Frame allows you to pack widgets at specific coordinates. A frame has own grid. The most striking example is a calculator. In the first frame, you show the screen where the numbers are displayed. In the second frame you have buttons with numbers. <br />
+
+**How to work with frames?**<br />
+
+First you specify the first frame, prescribe its parameters. Then you enumerate the widgets. At the end, open the second frame and list new widgets there. See example below. <br />
+```python
+from tkeasy import TKeasy
+
+gui = TKeasy()
+
+gui.Title("Frames")
+gui.config(size="205x250",bg="white")
+
+gui.frames (frame = "frame 1", x= 21, y = 10,
+            highlightthickness = 1,
+            highlightbackground = "black",
+            padx = 5,
+            pady = 5)
+
+gui.label(text="the first frame", bg = "#f5dc4b")
+
+gui.frames (frame = "frame 2", x= 21, y = 50,
+            highlightthickness = 1,
+            highlightbackground = "black",
+            background = "#cadb66",
+            padx = 5,
+            pady = 5)
+
+gui.label(text="the second frame", bg = "white")
+
+gui.loop()
 ```

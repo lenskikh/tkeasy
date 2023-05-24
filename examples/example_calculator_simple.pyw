@@ -1,4 +1,4 @@
-from tkeasy import *
+from tkeasy import TKeasy
 
 gui = TKeasy()
 

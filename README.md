@@ -145,3 +145,12 @@ gui.label(text="the second frame", bg = "white")
 
 gui.loop()
 ```
+
+## Top menu
+
+The top menu is a dictionary - tabs{} <br />
+See the image below to see how it works.<br />
+![Screenshot](/screenshots/topmenu.jpg)<br />
+
+Remember that on the Mac operation system, the menu is not located in the window itself. The topmenu will be on top of your screen.<br />
+![Screenshot](/screenshots/menubar_mac.jpg)<br />

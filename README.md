@@ -115,6 +115,8 @@ gui2.loop()
 
 What are frames for? Frame allows you to pack widgets at specific coordinates. A frame has own grid. The most striking example is a calculator. In the first frame, you show the screen where the numbers are displayed. In the second frame you have buttons with numbers. <br />
 
+![Screenshot](/screenshots/calc.png)<br />
+
 **How to work with frames?**<br />
 
 First you specify the first frame, prescribe its parameters. Then you enumerate the widgets. At the end, open the second frame and list new widgets there. See example below. <br />

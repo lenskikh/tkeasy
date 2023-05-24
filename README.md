@@ -156,3 +156,18 @@ See the image below to see how it works.<br />
 
 Remember that on the Mac operation system, the menu is not located in the window itself. The topmenu will be on top of your screen.<br />
 ![Screenshot](/screenshots/menubar_mac.jpg)<br />
+
+```python
+from tkeasy import TKeasy
+
+gui = TKeasy()
+
+gui.Title("Top Menu")
+gui.config(size="250x170")
+
+tabs = {"File":{"New":"False","Open":"False"}}
+
+gui.top_menu(tabs)
+
+gui.loop()
+```

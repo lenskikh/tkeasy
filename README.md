@@ -183,3 +183,22 @@ gui.button(text="BUTTON", command=FALSE, padx = 5, row=0, column=0)
 
 gui.loop()
 ```
+
+## Imput widget
+
+```python
+from tkeasy import TKeasy
+
+gui = TKeasy()
+
+gui.Title("Input")
+
+def info():
+    gui.msg_box_warning("INFO", gui.get_info("ent1"))
+
+gui.entry(name="ent1",width=20, padx = 5, pady =5)
+
+gui.button(text="Button",command=info,row=1)
+
+gui.loop()
+```

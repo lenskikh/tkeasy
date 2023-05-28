@@ -171,3 +171,15 @@ gui.top_menu(tabs)
 
 gui.loop()
 ```
+
+## Button widget
+
+```python
+from tkeasy import TKeasy
+
+gui = TKeasy()
+
+gui.button(text="BUTTON", command=FALSE, padx = 5, row=0, column=0)
+
+gui.loop()
+```

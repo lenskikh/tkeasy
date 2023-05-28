@@ -184,7 +184,7 @@ gui.button(text="BUTTON", command=FALSE, padx = 5, row=0, column=0)
 gui.loop()
 ```
 
-## Imput widget
+## Input widget
 
 ```python
 from tkeasy import TKeasy
@@ -199,6 +199,25 @@ def info():
 gui.entry(name="ent1",width=20, padx = 5, pady =5)
 
 gui.button(text="Button",command=info,row=1)
+
+gui.loop()
+```
+
+## Text area
+
+```python
+from tkeasy import *
+
+gui = TKeasy()
+
+gui.Title("Text area")
+gui.config(size="250x200")
+
+def show_info():
+    gui.msg_box_warning("FROM TEXT AREA",gui.get_info("area").strip())
+    
+gui.text_area(name="area",height=10,width=30,)
+gui.button(text="Show Info",command=show_info,row=1)
 
 gui.loop()
 ```

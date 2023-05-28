@@ -186,6 +186,8 @@ gui.loop()
 
 ## Input widget
 
+![Screenshot](/screenshots/input.png)<br />
+
 ```python
 from tkeasy import TKeasy
 

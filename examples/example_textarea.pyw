@@ -3,7 +3,7 @@ from tkeasy import *
 gui = TKeasy()
 
 gui.Title("Text area")
-gui.config(size="250x200")
+gui.config(size="246x200")
 
 def show_info():
     gui.msg_box_warning("FROM TEXT AREA",gui.get_info("area").strip())

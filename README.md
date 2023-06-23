@@ -21,7 +21,7 @@ On Ubuntu
 
 **06/22/23**
 
-* Changed name file is now called image_file
+* Changed name. "file" to "image_file"
 * Added option image for the button widget
 * Added option transparent for a window
 

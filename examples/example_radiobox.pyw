@@ -9,9 +9,9 @@ def show_info():
     else:
         gui.msg_box("Your choice",f'Your choice is {choice}')
 
-gui.radiobox(text="Apple")
-gui.radiobox(text="Melon",row=1)
-gui.radiobox(text="Lemon",row=2)
+gui.radiobox(text="Apple", sticky = "w")
+gui.radiobox(text="Melon", sticky = "w", row=1)
+gui.radiobox(text="Lemon", sticky = "w", row=2)
 gui.button(text="Show Info",command=show_info, padx = 5, row=3)
 
 gui.loop()

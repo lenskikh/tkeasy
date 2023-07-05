@@ -10,7 +10,8 @@ def show_info(name):
 
 image = gui.image_file("noborderbutton.png")
 
-gui.button(text="Button 1",image=image, borderwidth=0,  highlightthickness=0, command=lambda:show_info("Button 1"), row=0, column = 0)
-gui.button(text="Button 2",image=image, borderwidth=0,  highlightthickness=0, command=lambda:show_info("Button 2"), row=0, column = 1)
+#Do not use text, compound mode give a pixel between buttons
+gui.button(image=image, borderwidth=0,  highlightthickness=0, command=lambda:show_info("Button 1"), row=0, column = 0)
+gui.button(image=image, borderwidth=0,  highlightthickness=0,  command=lambda:show_info("Button 2"), row=0, column = 1)
 
 gui.loop()

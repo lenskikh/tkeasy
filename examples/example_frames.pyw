@@ -27,7 +27,7 @@ gui.label (text = "Woman Necklace",
            font = "Arial", background = "white",
            fg = "red", justify = "center",row = 1)
 
-file = gui.file("button.png")
+file = gui.image_file("button.png")
 gui.button (image = file, text = "Button", border = 0, command = False, row = 2)
 
 gui.button (text = "info 2", command = False, row = 3)

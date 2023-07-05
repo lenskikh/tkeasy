@@ -9,11 +9,11 @@ def info():
 
 gui.label(text="What a fruit do you like?")
 
-gui.checkbox(name="checkbox 1", text="Apple",row=1)
+gui.checkbox(name="checkbox 1", sticky = "w", text="Apple",row=1)
 
-gui.checkbox(name="checkbox 2", text="Banan",row=2)
+gui.checkbox(name="checkbox 2", sticky = "w", text="Banan",row=2)
 
-gui.checkbox(name="checkbox 3", text="Orange",row=3)
+gui.checkbox(name="checkbox 3", sticky = "w", text="Orange",row=3)
 
 gui.button(text="show info",command=info,row=4)
 

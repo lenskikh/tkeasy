@@ -1,5 +1,6 @@
 import os
 import tkinter as tk
+import logging
 from tkinter import filedialog, scrolledtext, messagebox, colorchooser
 
 #"Version 1.1"
@@ -19,6 +20,7 @@ def make_grid(func):
             try:
                 result.config(param=kwargs[param])
             except:
+                #logging.warning(param)
                 pass
         return result
     return wrapper
@@ -27,38 +29,27 @@ def make_grid(func):
 class TKeasy():
     
 
-    def __init__(self):
+    def __init__(self,**kwargs):
         self.window = tk.Tk()
 
         #for take information from widgets
         self.memory = {}
 
         #default frame
-        self.frame = tk.Frame(self.window,
-                              highlightbackground = None,
-                              highlightthickness = None,
-                              background = None,
-                              padx = None,
-                              pady = None)
+        self.frame = tk.Frame(self.window,**kwargs)
+        for conf in kwargs:
+            self.frame.config(kwargs)
         
         self.frame.place(x=0,y=0)
 
 
     #add new frame
-    def frames(self,frame,x,y,
-               highlightbackground = None,
-               highlightthickness  = None,
-               background = None,
-               padx = None,
-               pady = None):
+    def frames(self,frame,x,y,**kwargs):
 
         self.frame = frame
-        self.frame = tk.Frame(self.window,
-                              highlightbackground = highlightbackground,
-                              highlightthickness = highlightthickness,
-                              background = background,
-                              padx = padx,
-                              pady = pady)
+        self.frame = tk.Frame(self.window,**kwargs)
+        for conf in kwargs:
+            self.frame.config(kwargs)
         
         self.frame.place(x = x, y = y)
     
@@ -243,11 +234,10 @@ class TKeasy():
             return self.memory[name].get("1.0", 'end')  
 
     def destroy_frame(self,**kwargs):
-        self.frame.destroy()     
+        self.frame.destroy()              
 
     def save_file(self):
-        return filedialog.asksaveasfilename(initialdir = os.getcwd()+"./",title = "Save file") 
-    
+        return filedialog.asksaveasfilename(initialdir = os.getcwd()+"./",title = "Save file")     
 
     def insert_text_area(self,name,text,**kwargs): 
         self.memory[name].insert(1.0,text)    
